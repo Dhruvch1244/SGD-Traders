@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AgentMigrationStateService">
+    <option name="pendingSessionIds">
+      <option value="264b804a-b8dd-4856-bf9d-d3b380a1a841" />
+    </option>
+    <option name="pendingTurns">
+      <map>
+        <entry key="264b804a-b8dd-4856-bf9d-d3b380a1a841">
+          <value>
+            <set>
+              <option value="64f01e10-29fc-4d3d-add8-b99bb6e1da85" />
+              <option value="ef2790f4-467f-490e-be75-338acbf60d2e" />
+              <option value="a4ced68b-4b6e-4b9c-b69b-7859aeb9081b" />
+              <option value="152eab07-34c3-420a-94e2-f0bc0f8a9272" />
+              <option value="37c965f6-22db-4fc7-b257-e05b729e9b8a" />
+              <option value="e2212fee-f4aa-47a9-b1cb-be50c0e9d752" />
+              <option value="a0129767-06d8-4e07-bf09-97ddc072e184" />
+              <option value="232d8465-bf9b-4533-9398-25c9f3c2bff5" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <pendingWorkingSetItems>
+      <entry key="264b804a-b8dd-4856-bf9d-d3b380a1a841">
+        <set>
+          <option value="file://$PROJECT_DIR$/service/package.json" />
+          <option value="file://$PROJECT_DIR$/service/index.js" />
+          <option value="file://$PROJECT_DIR$/service/.env" />
+          <option value="file://$PROJECT_DIR$/testing-guide.md" />
+          <option value="file://$PROJECT_DIR$/../workspace/fse4-t3-ui/src/app/core/services/auth.service.ts" />
+          <option value="file://$PROJECT_DIR$/../workspace/fse4-t3-ui/src/app/core/interceptors/auth.interceptor.ts" />
+          <option value="file://$PROJECT_DIR$/../workspace/fse4-t3-ui/src/app/core/core.module.ts" />
+        </set>
+      </entry>
+    </pendingWorkingSetItems>
+  </component>
+</project><?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AgentMigrationStateService">
+    <option name="migrationStatus" value="COMPLETED" />
+  </component>
+</project>

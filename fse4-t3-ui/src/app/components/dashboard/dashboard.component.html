@@ -1,0 +1,65 @@
+<div class="dashboard-grid">
+  <!-- Top Row -->
+  <div class="grid-row top-row">
+    <mat-card class="dashboard-card small" style="flex: 0.5;">
+      <h1 style="color: white">My Stats</h1>
+      <div class="stats-container">
+        <div class="stats-box blue-box">
+          <div class="stats-text">
+            Total Value:<br>
+            <strong>{{ portfolioSummary?.totalValue | currency }}</strong>
+          </div>
+        </div>
+
+        <div class="stats-box green-box">
+          <div class="stats-text">
+            Total Gain/Loss:<br>
+            <strong>{{ portfolioSummary?.totalGainLoss | currency }}</strong>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+
+    <mat-card class="dashboard-card small" style="flex: 1.5;">
+      <h3>Portfolio Value</h3>
+      <div class="chart-wrapper">
+        <canvas id="lineChart"></canvas>
+      </div>
+    </mat-card>
+
+    <mat-card class="dashboard-card small" style="flex: 1;">
+      <h3>Allocation</h3>
+      <div class="chart-wrapper">
+        <canvas id="pieChart"></canvas>
+      </div>
+    </mat-card>
+  </div>
+
+  <!-- Bottom Row (Performance Chart & Trade History Grid) -->
+  <div class="grid-row bottom-row">
+    <mat-card class="dashboard-card large">
+      <h3>Performance</h3>
+      <div class="chart-wrapper">
+        <canvas id="barChart"></canvas>
+      </div>
+    </mat-card>
+
+    <mat-card class="dashboard-card large">
+      <h3>Trade History</h3>
+      <div class="trade-grid-wrapper">
+        <ag-grid-angular
+          *ngIf="isBrowser"
+          class="ag-theme-alpine-dark trade-grid"
+          [rowData]="rowData!"
+          [columnDefs]="columnDefs"
+          [gridOptions]="gridOptions"
+          [defaultColDef]="defaultColDef"
+          [pagination]="true"
+          [paginationPageSize]="10"
+          style="width: 100%; height: 500px;"
+        >
+        </ag-grid-angular>
+      </div>
+    </mat-card>
+  </div>
+</div>

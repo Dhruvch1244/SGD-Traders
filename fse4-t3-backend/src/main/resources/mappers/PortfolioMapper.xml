@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.repository.PortfolioRepository">
+
+    <select id="findByClientId" resultType="com.example.demo.models.Portfolio">
+        SELECT * FROM PORTFOLIOS WHERE CLIENTID = #{clientId}
+    </select>
+
+    <select id="findHoldingsByPortfolioId" resultType="com.example.demo.models.PortfolioHolding">
+        SELECT * FROM PORTFOLIO_HOLDINGS WHERE PORTFOLIOID = #{portfolioId}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO PORTFOLIOS (CLIENTID) VALUES (#{clientId})
+    </insert>
+
+    <delete id="deleteHoldings">
+        DELETE FROM PORTFOLIO_HOLDINGS WHERE PORTFOLIOID = #{portfolioId}
+    </delete>
+
+    <insert id="insertHolding">
+        INSERT INTO PORTFOLIO_HOLDINGS (PORTFOLIOID, INSTRUMENTID, QUANTITY) VALUES (#{portfolioId}, #{instrumentId}, #{quantity})
+    </insert>
+
+    <select id="findHolding" resultType="com.example.demo.models.PortfolioHolding">
+        SELECT * FROM PORTFOLIO_HOLDINGS 
+        WHERE PORTFOLIOID = #{portfolioId} AND INSTRUMENTID = #{instrumentId}
+        FOR UPDATE
+    </select>
+    <update id="updateHolding">
+        UPDATE PORTFOLIO_HOLDINGS SET QUANTITY = #{quantity}
+        WHERE PORTFOLIOID = #{portfolioId} AND INSTRUMENTID = #{instrumentId}
+    </update>
+
+    <delete id="deleteHolding">
+        DELETE FROM PORTFOLIO_HOLDINGS WHERE PORTFOLIOID = #{portfolioId} AND INSTRUMENTID = #{instrumentId}
+    </delete>
+
+</mapper>

@@ -1,0 +1,61 @@
+<div class="sell-trade-form">
+  <h2>Sell Instrument</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <label for="instrument">Instrument:</label>
+      <select
+        id="instrument"
+        [(ngModel)]="selectedInstrument"
+        name="selectedInstrument"
+        (change)="onInstrumentChange()"
+      >
+        <option value="" disabled>Select instrument</option>
+        <option *ngFor="let h of holdings" [value]="h.instrumentId">
+          {{ h.instrumentName }} (You hold: {{ h.quantity }})
+        </option>
+      </select>
+    </div>
+    <div class="form-row" *ngIf="selectedInstrument">
+      <label for="quantity">Quantity:</label>
+      <div class="quantity-row">
+        <input
+          id="quantity"
+          type="number"
+          [(ngModel)]="quantity"
+          name="quantity"
+          [min]="minQuantity"
+          [max]="maxQuantity"
+          (change)="onQuantityChange(quantity)"
+        />
+        <input
+          type="range"
+          [(ngModel)]="quantity"
+          name="quantitySlider"
+          [min]="minQuantity"
+          [max]="maxQuantity"
+          (input)="onQuantityChange(quantity)"
+        />
+        <span>Min: {{ minQuantity }} | Max: {{ maxQuantity }}</span>
+      </div>
+    </div>
+    <div class="form-row" *ngIf="selectedInstrument">
+      <label>Price per unit:</label>
+      <span>{{ price | number : "1.2-2" }}</span>
+    </div>
+    <div class="form-row" *ngIf="selectedInstrument">
+      <label>Total:</label>
+      <span>{{ quantity * price | number : "1.2-2" }}</span>
+    </div>
+    <button
+      type="submit"
+      [disabled]="
+        !selectedInstrument || quantity < minQuantity || quantity > maxQuantity
+      "
+    >
+      Sell
+    </button>
+  </form>
+  <div *ngIf="tradeResult" class="trade-status">
+    {{ tradeResult }}
+  </div>
+</div>

@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angular-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: angular-app
+  template:
+    metadata:
+      labels:
+        app: angular-app
+    spec:
+      containers:
+      - name: angular-app
+        image: leapfse4.jfrog.io/fse4team3/some-id-frontend:v4.2
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+        - name: some-id-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: angular-app
+spec:
+  type: NodePort
+  selector:
+    app: angular-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 31210

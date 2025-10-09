@@ -1,0 +1,26 @@
+
+[
+  {
+    "clientId": "C001",
+    "holdings": [
+      { "instrumentId": "IN001", "quantity": 50 },
+      { "instrumentId": "IN005", "quantity": 100 },
+      { "instrumentId": "IN010", "quantity": 200 },
+      { "instrumentId": "IN015", "quantity": 150 },
+      { "instrumentId": "IN020", "quantity": 250 }
+    ]
+  },
+  {
+    "clientId": "C002",
+    "holdings": [
+      { "instrumentId": "IN002", "quantity": 75 },
+      { "instrumentId": "IN006", "quantity": 500 },
+      { "instrumentId": "IN012", "quantity": 120 },
+      { "instrumentId": "IN018", "quantity": 80 },
+      { "instrumentId": "IN025", "quantity": 300 },
+      { "instrumentId": "IN030", "quantity": 400 },
+      { "instrumentId": "IN040", "quantity": 600 },
+      { "instrumentId": "IN050", "quantity": 90 }
+    ]
+  }
+]

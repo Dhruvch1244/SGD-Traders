@@ -1,0 +1,12 @@
+INSERT INTO WALLETS (clientId, balance) VALUES ('C001', 10000.00);
+INSERT INTO WALLETS (clientId, balance) VALUES ('C002', 25000.50);
+INSERT INTO WALLETS (clientId, balance) VALUES ('C003', 5000.75);
+INSERT INTO WALLETS (clientId, balance) VALUES ('C004', 75000.00);
+INSERT INTO WALLETS (clientId, balance) VALUES ('C005', 100000.00);
+INSERT INTO WALLETS (clientId, balance) VALUES ('C006', 12000.25);
+INSERT INTO WALLETS (clientId, balance) VALUES ('C007', 3000.00);
+INSERT INTO WALLETS (clientId, balance) VALUES ('C008', 50000.00);
+INSERT INTO WALLETS (clientId, balance) VALUES ('C009', 250000.00);
+INSERT INTO WALLETS (clientId, balance) VALUES ('C010', 15000.00);
+-- ... (50 more wallet records) ...
+INSERT INTO WALLETS (clientId, balance) VALUES ('C060', 42000.00);

@@ -1,0 +1,222 @@
+/* General Body Styles */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* --- Keyframe Animations --- */
+@keyframes background-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.preferences-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #111827, #000000);
+  animation: background-pan 20s ease-in-out infinite;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+/* Two-column container */
+.preferences-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  animation: fade-in-up 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+/* Left panel for branding */
+.welcome-panel {
+  flex: 1;
+  text-align: start;
+}
+
+.preferences-header {
+  margin-bottom: 1rem;
+}
+
+.logo-text {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.logo-s {
+  color: #38bdf8;
+}
+.logo-d {
+  color: #ffffff;
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: #d1d5db;
+}
+
+/* Right panel for the form */
+.preferences-panel {
+  flex: 1.2; /* Give slightly more space to the form */
+  padding: 3rem;
+  background: rgb(9 16 26 / 85%);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.form-container h3 {
+  text-align: center;
+  margin: 0 0 2rem 0;
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.field-container label {
+  font-weight: 500;
+  color: #d1d5db;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+select,
+.field-row span {
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #111827;
+  color: #ffffff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.41 0.59L6 5.17L10.59 0.59L12 2L6 8L0 2L1.41 0.59Z' fill='%23d1d5db'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+}
+
+select:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.field-row span {
+  flex-grow: 1;
+}
+
+.field-row button {
+  background-color: transparent;
+  color: #38bdf8;
+  border: 1px solid #38bdf8;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.field-row button:hover {
+  background-color: #38bdf8;
+  color: #111827;
+}
+
+.terms-label {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  color: #d1d5db;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+}
+
+.terms-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 0.75rem;
+  accent-color: #38bdf8;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #38bdf8;
+  color: #111827;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.register-btn:hover {
+  background-color: #0ea5e9;
+  transform: translateY(-3px);
+}
+
+/* Responsive styles */
+@media (max-width: 950px) {
+  .preferences-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .preferences-panel {
+    padding: 2rem;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

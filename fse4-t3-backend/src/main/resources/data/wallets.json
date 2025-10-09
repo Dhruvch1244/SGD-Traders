@@ -1,0 +1,242 @@
+[
+  {
+    "clientId": "C001",
+    "balance": 10000.00
+  },
+  {
+    "clientId": "C002",
+    "balance": 25000.50
+  },
+  {
+    "clientId": "C003",
+    "balance": 5000.75
+  },
+  {
+    "clientId": "C004",
+    "balance": 75000.00
+  },
+  {
+    "clientId": "C005",
+    "balance": 100000.00
+  },
+  {
+    "clientId": "C006",
+    "balance": 12000.25
+  },
+  {
+    "clientId": "C007",
+    "balance": 3000.00
+  },
+  {
+    "clientId": "C008",
+    "balance": 50000.00
+  },
+  {
+    "clientId": "C009",
+    "balance": 250000.00
+  },
+  {
+    "clientId": "C010",
+    "balance": 15000.00
+  },
+  {
+    "clientId": "C011",
+    "balance": 18000.00
+  },
+  {
+    "clientId": "C012",
+    "balance": 32000.75
+  },
+  {
+    "clientId": "C013",
+    "balance": 7500.25
+  },
+  {
+    "clientId": "C014",
+    "balance": 95000.50
+  },
+  {
+    "clientId": "C015",
+    "balance": 150000.00
+  },
+  {
+    "clientId": "C016",
+    "balance": 14000.75
+  },
+  {
+    "clientId": "C017",
+    "balance": 4000.25
+  },
+  {
+    "clientId": "C018",
+    "balance": 60000.00
+  },
+  {
+    "clientId": "C019",
+    "balance": 300000.00
+  },
+  {
+    "clientId": "C020",
+    "balance": 20000.00
+  },
+  {
+    "clientId": "C021",
+    "balance": 22000.00
+  },
+  {
+    "clientId": "C022",
+    "balance": 45000.50
+  },
+  {
+    "clientId": "C023",
+    "balance": 9000.75
+  },
+  {
+    "clientId": "C024",
+    "balance": 125000.00
+  },
+  {
+    "clientId": "C025",
+    "balance": 175000.00
+  },
+  {
+    "clientId": "C026",
+    "balance": 16000.25
+  },
+  {
+    "clientId": "C027",
+    "balance": 5000.00
+  },
+  {
+    "clientId": "C028",
+    "balance": 70000.00
+  },
+  {
+    "clientId": "C029",
+    "balance": 350000.00
+  },
+  {
+    "clientId": "C030",
+    "balance": 25000.00
+  },
+  {
+    "clientId": "C031",
+    "balance": 28000.00
+  },
+  {
+    "clientId": "C032",
+    "balance": 55000.50
+  },
+  {
+    "clientId": "C033",
+    "balance": 11000.75
+  },
+  {
+    "clientId": "C034",
+    "balance": 145000.00
+  },
+  {
+    "clientId": "C035",
+    "balance": 200000.00
+  },
+  {
+    "clientId": "C036",
+    "balance": 18000.25
+  },
+  {
+    "clientId": "C037",
+    "balance": 6000.00
+  },
+  {
+    "clientId": "C038",
+    "balance": 80000.00
+  },
+  {
+    "clientId": "C039",
+    "balance": 400000.00
+  },
+  {
+    "clientId": "C040",
+    "balance": 30000.00
+  },
+  {
+    "clientId": "C041",
+    "balance": 32000.00
+  },
+  {
+    "clientId": "C042",
+    "balance": 65000.50
+  },
+  {
+    "clientId": "C043",
+    "balance": 13000.75
+  },
+  {
+    "clientId": "C044",
+    "balance": 165000.00
+  },
+  {
+    "clientId": "C045",
+    "balance": 225000.00
+  },
+  {
+    "clientId": "C046",
+    "balance": 20000.25
+  },
+  {
+    "clientId": "C047",
+    "balance": 7000.00
+  },
+  {
+    "clientId": "C048",
+    "balance": 90000.00
+  },
+  {
+    "clientId": "C049",
+    "balance": 450000.00
+  },
+  {
+    "clientId": "C050",
+    "balance": 35000.00
+  },
+  {
+    "clientId": "C051",
+    "balance": 38000.00
+  },
+  {
+    "clientId": "C052",
+    "balance": 75000.50
+  },
+  {
+    "clientId": "C053",
+    "balance": 15000.75
+  },
+  {
+    "clientId": "C054",
+    "balance": 185000.00
+  },
+  {
+    "clientId": "C055",
+    "balance": 250000.00
+  },
+  {
+    "clientId": "C056",
+    "balance": 22000.25
+  },
+  {
+    "clientId": "C057",
+    "balance": 8000.00
+  },
+  {
+    "clientId": "C058",
+    "balance": 100000.00
+  },
+  {
+    "clientId": "C059",
+    "balance": 500000.00
+  },
+  {
+    "clientId": "C060",
+    "balance": 42000.00
+  }
+]

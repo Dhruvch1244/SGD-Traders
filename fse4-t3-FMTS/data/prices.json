@@ -1,0 +1,572 @@
+[
+  {
+    "instrumentId": "N123456",
+    "askPrice": 104.75,
+    "bidPrice": 104.25,
+    "priceTimestamp": "21-AUG-19 10.00.01.042000000 AM GMT"
+  },
+  {
+    "instrumentId": "N123789",
+    "askPrice": 312500,
+    "bidPrice": 312000,
+    "priceTimestamp": "21-AUG-19 05.00.00.040000000 AM -05:00"
+  },
+  {
+    "instrumentId": "C100",
+    "askPrice": 95.92,
+    "bidPrice": 95.42,
+    "priceTimestamp": "21-AUG-19 10.00.02.042000000 AM GMT"
+  },
+  {
+    "instrumentId": "T67890",
+    "askPrice": 1.03375,
+    "bidPrice": 1.03390625,
+    "priceTimestamp": "21-AUG-19 10.00.02.000000000 AM GMT"
+  },
+  {
+    "instrumentId": "T67894",
+    "askPrice": 0.998125,
+    "bidPrice": 0.99828125,
+    "priceTimestamp": "21-AUG-19 10.00.02.002000000 AM GMT"
+  },
+  {
+    "instrumentId": "T67895",
+    "askPrice": 1,
+    "bidPrice": 1.00015625,
+    "priceTimestamp": "21-AUG-19 10.00.02.002000000 AM GMT"
+  },
+  {
+    "instrumentId": "T67897",
+    "askPrice": 0.999375,
+    "bidPrice": 0.999375,
+    "priceTimestamp": "21-AUG-19 10.00.02.002000000 AM GMT"
+  },
+  {
+    "instrumentId": "T67899",
+    "askPrice": 0.999375,
+    "bidPrice": 0.999375,
+    "priceTimestamp": "21-AUG-19 10.00.02.002000000 AM GMT"
+  },
+  {
+    "instrumentId": "T67880",
+    "askPrice": 1.00375,
+    "bidPrice": 1.00375,
+    "priceTimestamp": "21-AUG-19 10.00.02.002000000 AM GMT"
+  },
+  {
+    "instrumentId": "T67883",
+    "askPrice": 1.0596875,
+    "bidPrice": 1.0596875,
+    "priceTimestamp": "21-AUG-19 10.00.02.002000000 AM GMT"
+  },
+  {
+    "instrumentId": "T67878",
+    "askPrice": 0.9853125,
+    "bidPrice": 0.98546875,
+    "priceTimestamp": "21-AUG-19 10.00.02.002000000 AM GMT"
+  },
+  {
+    "instrumentId": "Q123",
+    "askPrice": 1162.42,
+    "bidPrice": 1161.42,
+    "priceTimestamp": "21-AUG-19 06.52.20.350000000 PM AMERICA/NEW_YORK"
+  },
+  {
+    "instrumentId": "Q456",
+    "askPrice": 323.39,
+    "bidPrice": 322.89,
+    "priceTimestamp": "21-AUG-19 06.52.20.356000000 PM AMERICA/NEW_YORK"
+  },
+  {
+    "instrumentId": "IN001",
+    "askPrice": 501.7,
+    "bidPrice": 501.45,
+    "priceTimestamp": "21-AUG-19 06.52.20.356000000 PM AMERICA/NEW_YORK"
+  },
+  {
+    "instrumentId": "IN002",
+    "askPrice": 235.33,
+    "bidPrice": 235.21,
+    "priceTimestamp": "21-AUG-19 06.52.20.356000000 PM AMERICA/NEW_YORK"
+  },
+  {
+    "instrumentId": "IN002",
+    "bidprice": 236.1,
+    "askPrice": 236.62,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN003",
+    "bidprice": 675.2,
+    "askPrice": 675.29,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN004",
+    "bidprice": 228.75,
+    "askPrice": 228.86,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN005",
+    "bidprice": 262.4,
+    "askPrice": 262.16,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN006",
+    "bidprice": 745.6,
+    "askPrice": 745.97,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN007",
+    "bidprice": 263.6,
+    "askPrice": 263.26,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN008",
+    "bidprice": 506.8,
+    "askPrice": 502.05,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN009",
+    "bidprice": 730.25,
+    "askPrice": 730.62,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN060",
+    "bidprice": 305.1,
+    "askPrice": 305.65,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN066",
+    "bidprice": 340.6,
+    "askPrice": 340.27,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN062",
+    "bidprice": 300.9,
+    "askPrice": 306.05,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN063",
+    "bidprice": 350.2,
+    "askPrice": 350.38,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN064",
+    "bidprice": 663.8,
+    "askPrice": 663.86,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN065",
+    "bidprice": 96.1,
+    "askPrice": 96.15,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN067",
+    "bidprice": 592.6,
+    "askPrice": 592.4,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN068",
+    "bidprice": 676.8,
+    "askPrice": 676.89,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN069",
+    "bidprice": 656.4,
+    "askPrice": 656.48,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN020",
+    "bidprice": 405.9,
+    "askPrice": 406.6,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN026",
+    "bidprice": 945.2,
+    "askPrice": 945.67,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN022",
+    "bidprice": 83.7,
+    "askPrice": 83.74,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN023",
+    "bidprice": 209.1,
+    "askPrice": 209.6,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN024",
+    "bidprice": 659.8,
+    "askPrice": 659.88,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN025",
+    "bidprice": 255.6,
+    "askPrice": 255.23,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN027",
+    "bidprice": 6265,
+    "askPrice": 6265.66,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN028",
+    "bidprice": 665.3,
+    "askPrice": 665.38,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN029",
+    "bidprice": 68.7,
+    "askPrice": 68.73,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN030",
+    "bidprice": 648.6,
+    "askPrice": 648.67,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN036",
+    "bidprice": 480.1,
+    "askPrice": 480.74,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN032",
+    "bidprice": 86.9,
+    "askPrice": 86.94,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN033",
+    "bidprice": 490.8,
+    "askPrice": 496.05,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN034",
+    "bidprice": 362.7,
+    "askPrice": 362.86,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN035",
+    "bidprice": 668,
+    "askPrice": 668.06,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN037",
+    "bidprice": 258.4,
+    "askPrice": 258.13,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN038",
+    "bidprice": 69.3,
+    "askPrice": 69.33,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN039",
+    "bidprice": 240.1,
+    "askPrice": 240.62,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN040",
+    "bidprice": 45.2,
+    "askPrice": 45.22,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN046",
+    "bidprice": 99.06,
+    "askPrice": 99.03,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN042",
+    "bidprice": 99.98,
+    "askPrice": 99.99,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN043",
+    "bidprice": 99.96,
+    "askPrice": 99.97,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN044",
+    "bidprice": 99.7,
+    "askPrice": 99.76,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN045",
+    "bidprice": 99.15,
+    "askPrice": 99.16,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN047",
+    "bidprice": 99.93,
+    "askPrice": 99.94,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN048",
+    "bidprice": 96.4,
+    "askPrice": 96.46,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN049",
+    "bidprice": 96.68,
+    "askPrice": 96.69,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN050",
+    "bidprice": 96.97,
+    "askPrice": 96.98,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN056",
+    "bidprice": 97.25,
+    "askPrice": 97.26,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN052",
+    "bidprice": 97.12,
+    "askPrice": 97.13,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN053",
+    "bidprice": 97.8,
+    "askPrice": 97.86,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN054",
+    "bidprice": 98.02,
+    "askPrice": 98.03,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN055",
+    "bidprice": 98.05,
+    "askPrice": 98.06,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN057",
+    "bidprice": 98.1,
+    "askPrice": 98.16,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN058",
+    "bidprice": 98.67,
+    "askPrice": 98.68,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN059",
+    "bidprice": 98.76,
+    "askPrice": 98.72,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN070",
+    "bidprice": 99.96,
+    "askPrice": 99.97,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN076",
+    "bidprice": 99.99,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN072",
+    "bidprice": 600.06,
+    "askPrice": 600.02,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN073",
+    "bidprice": 600.02,
+    "askPrice": 600.03,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN074",
+    "bidprice": 99.25,
+    "askPrice": 99.26,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN075",
+    "bidprice": 600.03,
+    "askPrice": 600.04,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN077",
+    "bidprice": 600,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN078",
+    "bidprice": 600,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN079",
+    "bidprice": 600,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN080",
+    "bidprice": 600,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN086",
+    "bidprice": 600,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN082",
+    "bidprice": 600,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN083",
+    "bidprice": 600,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN084",
+    "bidprice": 600,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN085",
+    "bidprice": 600,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN087",
+    "bidprice": 600,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN088",
+    "bidprice": 600,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN089",
+    "bidprice": 600,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN090",
+    "bidprice": 600,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN096",
+    "bidprice": 600,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN092",
+    "bidprice": 600,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN093",
+    "bidprice": 600,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN094",
+    "bidprice": 600,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN095",
+    "bidprice": 600,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN097",
+    "bidprice": 600,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN098",
+    "bidprice": 600,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  },
+  {
+    "instrumentId": "IN099",
+    "bidprice": 600,
+    "askPrice": 600,
+    "priceTimestamp": "31-AUG-25 08.00.00.000000000 PM"
+  }
+]

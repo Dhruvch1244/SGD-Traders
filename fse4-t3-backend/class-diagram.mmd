@@ -1,0 +1,110 @@
+title: Project Model Class Diagram (Mermaid)
+```mermaid
+classDiagram
+classDiagram
+    Client "1" --o "*" ClientIdentification : has
+    Client "1" --o "1" Wallet : owns
+    Client "1" --o "1" Portfolio : owns
+    Client "1" --o "1" InvestmentPreferences : has
+    Portfolio "1" --o "*" PortfolioHolding : contains
+    PortfolioHolding "*" --o "1" Instrument : refers
+    PortfolioHolding "*" --o "1" Portfolio : belongs to
+    Order "*" --o "1" Client : placed by
+    Order "*" --o "1" Instrument : for
+    Trade "*" --o "1" Client : by
+    Trade "*" --o "1" Instrument : for
+    Trade "*" --o "1" Order : from
+    Price "*" --o "1" Instrument : for
+    InvestmentPreferences "*" --o "1" InvestmentPurpose : purpose
+    InvestmentPreferences "*" --o "1" RiskTolerance : risk
+    InvestmentPreferences "*" --o "1" IncomeCategory : income
+    InvestmentPreferences "*" --o "1" InvestmentDuration : duration
+
+    class Client {
+        String clientId
+        String name
+        String email
+        String dateOfBirth
+        String country
+        String postalCode
+        String password
+    }
+    class ClientIdentification {
+        String id
+        String clientId
+        String type
+        String value
+    }
+    class Wallet {
+        String clientId
+        double balance
+    }
+    class Portfolio {
+        String clientId
+        Set<PortfolioHolding> holdings
+    }
+    class PortfolioHolding {
+        Long holdingId
+        String portfolioId
+        String instrumentId
+        int quantity
+    }
+    class Instrument {
+        String instrumentId
+        String description
+        String externalIdType
+        String externalId
+        String categoryId
+        int minQuantity
+        int maxQuantity
+    }
+    class Order {
+        String orderId
+        String instrumentId
+        int quantity
+        double targetPrice
+        String direction
+        String clientId
+    }
+    class Trade {
+        String tradeId
+        String instrumentId
+        int quantity
+        double executionPrice
+        String direction
+        String clientId
+        String orderId
+        double cashValue
+        LocalDateTime timestamp
+    }
+    class Price {
+        String instrumentId
+        double bidPrice
+        double askPrice
+        LocalDateTime timestamp
+    }
+    class InvestmentPreferences {
+        String clientId
+        Long investmentPurposeId
+        Long riskToleranceId
+        Long incomeCategoryId
+        Long investmentDurationId
+        Long acceptedTerms
+    }
+    class InvestmentPurpose {
+        Long id
+        String purpose
+    }
+    class RiskTolerance {
+        Long id
+        String name
+    }
+    class IncomeCategory {
+        Long id
+        String name
+        String range
+    }
+    class InvestmentDuration {
+        Long id
+        String duration
+    }

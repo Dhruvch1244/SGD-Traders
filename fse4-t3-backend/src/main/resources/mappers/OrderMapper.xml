@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.repository.OrderRepository">
+
+    <select id="findAll" resultType="com.example.demo.models.Order">
+        SELECT * FROM ORDERS
+    </select>
+
+    <select id="findByClientId" resultType="com.example.demo.models.Order">
+        SELECT * FROM ORDERS WHERE CLIENTID = #{clientId}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO ORDERS (ORDERID, INSTRUMENTID, QUANTITY, TARGETPRICE, DIRECTION, CLIENTID) VALUES (#{orderId}, #{instrumentId}, #{quantity}, #{targetPrice}, #{direction}, #{clientId})
+    </insert>
+
+</mapper>

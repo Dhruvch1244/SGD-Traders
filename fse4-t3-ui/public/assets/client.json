@@ -1,0 +1,298 @@
+[
+  {
+    "clientId": "CLT1001",
+    "email": "user1@example.com",
+    "name": "John Doe",
+    "dateOfBirth": "19801226",
+    "country": "IN",
+    "postalCode": "SO1AAZ",
+    "identification": [
+      {
+        "type": "Passport",
+        "value": "ZMKPBIbjtF"
+      }
+    ],
+    "password": "MPkG1ISvlb32"
+  },
+  {
+    "clientId": "CLT1002",
+    "email": "user2@example.com",
+    "name": "Janie Smith",
+    "dateOfBirth": "19840317",
+    "country": "IE",
+    "postalCode": "AMSS5N",
+    "identification": [
+      {
+        "type": "SSN",
+        "value": "3GMBlzoU9d"
+      }
+    ],
+    "password": "7UqnkJxkrb7r"
+  },
+  {
+    "clientId": "CLT1003",
+    "email": "user3@example.com",
+    "name": "Peter Jones",
+    "dateOfBirth": "19720117",
+    "country": "CA",
+    "postalCode": "BMLIGP",
+    "identification": [
+      {
+        "type": "SSN",
+        "value": "4nK7Y3PJ65"
+      }
+    ],
+    "password": "yjnZOeNFXntN"
+  },
+  {
+    "clientId": "CLT1004",
+    "email": "user4@example.com",
+    "name": "Alice Williams",
+    "dateOfBirth": "19810702",
+    "country": "CA",
+    "postalCode": "ZU4ZKJ",
+    "identification": [
+      {
+        "type": "SSN",
+        "value": "Y6yj6xBtNj"
+      }
+    ],
+    "password": "8nR9QmZsyaLe"
+  },
+  {
+    "clientId": "CLT1005",
+    "email": "user5@example.com",
+    "name": "Bob Brown",
+    "dateOfBirth": "19780113",
+    "country": "CA",
+    "postalCode": "FO4QJJ",
+    "identification": [
+      {
+        "type": "Passport",
+        "value": "G6RUgYxz3W"
+      }
+    ],
+    "password": "O1U1bGFMt6FT"
+  },
+  {
+    "clientId": "CLT1006",
+    "email": "user6@example.com",
+    "name": "Charlie Davis",
+    "dateOfBirth": "19720409",
+    "country": "IN",
+    "postalCode": "LBOVOM",
+    "identification": [
+      {
+        "type": "Passport",
+        "value": "0MYbpANUUO"
+      }
+    ],
+    "password": "6TeMwD568PZ4"
+  },
+  {
+    "clientId": "CLT1007",
+    "email": "user7@example.com",
+    "name": "David Miller",
+    "dateOfBirth": "19870705",
+    "country": "IN",
+    "postalCode": "HBSGYX",
+    "identification": [
+      {
+        "type": "TaxID",
+        "value": "cYGfMOsy9A"
+      }
+    ],
+    "password": "D2v6Wtng8szV"
+  },
+  {
+    "clientId": "CLT1008",
+    "email": "user8@example.com",
+    "name": "Eve Wilson",
+    "dateOfBirth": "19921104",
+    "country": "IN",
+    "postalCode": "9AEN4C",
+    "identification": [
+      {
+        "type": "TaxID",
+        "value": "xsibYzDexV"
+      }
+    ],
+    "password": "BHTaEGFELabc"
+  },
+  {
+    "clientId": "CLT1009",
+    "email": "user9@example.com",
+    "name": "Frank Moore",
+    "dateOfBirth": "19920808",
+    "country": "IE",
+    "postalCode": "NBIB6V",
+    "identification": [
+      {
+        "type": "SSN",
+        "value": "7wATHrKuna"
+      }
+    ],
+    "password": "h0VIzwgpwjxo"
+  },
+  {
+    "clientId": "CLT1010",
+    "email": "user10@example.com",
+    "name": "Grace Taylor",
+    "dateOfBirth": "19751102",
+    "country": "US",
+    "postalCode": "YOMKZN",
+    "identification": [
+      {
+        "type": "SSN",
+        "value": "dgZMvj9E9E"
+      }
+    ],
+    "password": "gFT7os8V1EpH"
+  },
+  {
+    "clientId": "CLT1011",
+    "email": "user11@example.com",
+    "name": "Heidi Anderson",
+    "dateOfBirth": "19710309",
+    "country": "IN",
+    "postalCode": "H8X0YE",
+    "identification": [
+      {
+        "type": "Passport",
+        "value": "K3z0gCi6Ah"
+      }
+    ],
+    "password": "DkO3huEfpZmG"
+  },
+  {
+    "clientId": "CLT1012",
+    "email": "user12@example.com",
+    "name": "Ivan Thomas",
+    "dateOfBirth": "19611219",
+    "country": "IN",
+    "postalCode": "BVX47R",
+    "identification": [
+      {
+        "type": "TaxID",
+        "value": "xRqGufmfJj"
+      }
+    ],
+    "password": "VdoardEZKFQi"
+  },
+  {
+    "clientId": "CLT1013",
+    "email": "user13@example.com",
+    "name": "Judy Jackson",
+    "dateOfBirth": "19690511",
+    "country": "IE",
+    "postalCode": "NWPK3O",
+    "identification": [
+      {
+        "type": "TaxID",
+        "value": "txEp27FeXw"
+      }
+    ],
+    "password": "cu53O0S0P1Ra"
+  },
+  {
+    "clientId": "CLT1014",
+    "email": "user14@example.com",
+    "name": "Mallory White",
+    "dateOfBirth": "19750615",
+    "country": "CA",
+    "postalCode": "ZCX8VS",
+    "identification": [
+      {
+        "type": "SSN",
+        "value": "tvFMZHUMhe"
+      }
+    ],
+    "password": "N9C35tvqZnPG"
+  },
+  {
+    "clientId": "CLT1015",
+    "email": "user15@example.com",
+    "name": "Nancy Harris",
+    "dateOfBirth": "19621220",
+    "country": "UK",
+    "postalCode": "RXD7BZ",
+    "identification": [
+      {
+        "type": "Passport",
+        "value": "Mcgk8ZRswB"
+      }
+    ],
+    "password": "hwE9eaI5ud7S"
+  },
+  {
+    "clientId": "CLT1016",
+    "email": "user16@example.com",
+    "name": "Oscar Martin",
+    "dateOfBirth": "19890501",
+    "country": "IE",
+    "postalCode": "3JVGGL",
+    "identification": [
+      {
+        "type": "TaxID",
+        "value": "u5sfQucVw8"
+      }
+    ],
+    "password": "bcRv9RlctNER"
+  },
+  {
+    "clientId": "CLT1017",
+    "email": "user17@example.com",
+    "dateOfBirth": "19830426",
+    "country": "UK",
+    "postalCode": "58A6I2",
+    "identification": [
+      {
+        "type": "Passport",
+        "value": "IcDkxQrYbT"
+      }
+    ],
+    "password": "CXNAF7evi7HB"
+  },
+  {
+    "clientId": "CLT1018",
+    "email": "user18@example.com",
+    "dateOfBirth": "19850608",
+    "country": "IE",
+    "postalCode": "XHXDES",
+    "identification": [
+      {
+        "type": "TaxID",
+        "value": "InMgg3xuIn"
+      }
+    ],
+    "password": "jLSGceDA3s0y"
+  },
+  {
+    "clientId": "CLT1019",
+    "email": "user19@example.com",
+    "dateOfBirth": "19690501",
+    "country": "IN",
+    "postalCode": "CWT9PD",
+    "identification": [
+      {
+        "type": "Passport",
+        "value": "aiBCYENAFv"
+      }
+    ],
+    "password": "mZSBaoCyWKCW"
+  },
+  {
+    "clientId": "CLT1020",
+    "email": "user20@example.com",
+    "dateOfBirth": "19841001",
+    "country": "IN",
+    "postalCode": "HGR9IL",
+    "identification": [
+      {
+        "type": "TaxID",
+        "value": "7p9mznhyja"
+      }
+    ],
+    "password": "PSoxdIzSC09K"
+  }
+]

@@ -1,0 +1,272 @@
+[
+    {
+        "instrumentId": "IN001",
+        "externalIdType": "CUSIP",
+        "externalId": "46625H100",
+        "categoryId": "STOCK",
+        "description": "JPMorgan Chase & Co. Capital Stock",
+        "maxQuantity": 1000,
+        "minQuantity": 1
+    },
+    {
+        "instrumentId": "IN002",
+        "externalIdType": "ISIN",
+        "externalId": "US0846707026",
+        "categoryId": "STOCK",
+        "description": "Berkshire Hathaway Inc. Class A",
+        "maxQuantity": 10,
+        "minQuantity": 1
+    },
+    {
+        "instrumentId": "IN003",
+        "externalIdType": "CUSIP",
+        "externalId": "48123Y5A0",
+        "categoryId": "CD",
+        "description": "JPMorgan Chase Bank, National Association 01/19",
+        "maxQuantity": 1000,
+        "minQuantity": 100
+    },
+    {
+        "instrumentId": "IN004",
+        "externalIdType": "CUSIP",
+        "externalId": "88160R101",
+        "categoryId": "STOCK",
+        "description": "Tesla, Inc. Common Stock",
+        "maxQuantity": 1000,
+        "minQuantity": 1
+    },
+    {
+        "instrumentId": "IN005",
+        "externalIdType": "CUSIP",
+        "externalId": "02079K107",
+        "categoryId": "STOCK",
+        "description": "Alphabet Inc. Class C Capital Stock",
+        "maxQuantity": 1000,
+        "minQuantity": 1
+    },
+    {
+        "instrumentId": "IN006",
+        "externalIdType": "CUSIP",
+        "externalId": "9128285Z9",
+        "categoryId": "GOVT",
+        "description": "USA, Note 2.5 31jan2024 5Y",
+        "maxQuantity": 10000,
+        "minQuantity": 100
+    },
+    {
+        "instrumentId": "IN007",
+        "externalIdType": "CUSIP",
+        "externalId": "9128286A3",
+        "categoryId": "GOVT",
+        "description": "USA, Note 2.625 31jan2026 7Y",
+        "maxQuantity": 10000,
+        "minQuantity": 100
+    },
+    {
+        "instrumentId": "IN008",
+        "externalIdType": "CUSIP",
+        "externalId": "9128285X4",
+        "categoryId": "GOVT",
+        "description": "USA, Note 2.5 31jan2021 2Y",
+        "maxQuantity": 10000,
+        "minQuantity": 100
+    },
+    {
+        "instrumentId": "IN009",
+        "externalIdType": "CUSIP",
+        "externalId": "9128285V8",
+        "categoryId": "GOVT",
+        "description": "USA, Notes 2.5% 15jan2022 3Y",
+        "maxQuantity": 10000,
+        "minQuantity": 100
+    },
+    {
+        "instrumentId": "IN010",
+        "externalIdType": "CUSIP",
+        "externalId": "912810SE9",
+        "categoryId": "GOVT",
+        "description": "USA, Bond 3.375 15nov2048 30Y",
+        "maxQuantity": 10000,
+        "minQuantity": 100
+    },
+    {
+        "instrumentId": "IN011",
+        "externalIdType": "CUSIP",
+        "externalId": "912810SD1",
+        "categoryId": "GOVT",
+        "description": "USA, Bond 3 15aug2048 30Y",
+        "maxQuantity": 10000,
+        "minQuantity": 100
+    },
+    {
+        "instrumentId": "IN012",
+        "externalIdType": "CUSIP",
+        "externalId": "594918104",
+        "categoryId": "STOCK",
+        "description": "Microsoft Corporation Common Stock",
+        "maxQuantity": 1000,
+        "minQuantity": 1
+    },
+    {
+        "instrumentId": "IN013",
+        "externalIdType": "CUSIP",
+        "externalId": "023135106",
+        "categoryId": "STOCK",
+        "description": "Amazon.com, Inc. Common Stock",
+        "maxQuantity": 1000,
+        "minQuantity": 1
+    },
+    {
+        "instrumentId": "IN014",
+        "externalIdType": "ISIN",
+        "externalId": "US0378331005",
+        "categoryId": "STOCK",
+        "description": "Apple Inc. Common Stock",
+        "maxQuantity": 1000,
+        "minQuantity": 1
+    },
+    {
+        "instrumentId": "IN015",
+        "externalIdType": "CUSIP",
+        "externalId": "67066G104",
+        "categoryId": "STOCK",
+        "description": "NVIDIA Corporation Common Stock",
+        "maxQuantity": 1000,
+        "minQuantity": 1
+    },
+    {
+        "instrumentId": "IN016",
+        "externalIdType": "CUSIP",
+        "externalId": "30303M102",
+        "categoryId": "STOCK",
+        "description": "Meta Platforms, Inc. Class A Common Stock",
+        "maxQuantity": 1000,
+        "minQuantity": 1
+    },
+    {
+        "instrumentId": "IN017",
+        "externalIdType": "CUSIP",
+        "externalId": "00206RGU8",
+        "categoryId": "CORP",
+        "description": "AT&T Inc. 5.25% Global Notes due 2049",
+        "maxQuantity": 5000,
+        "minQuantity": 100
+    },
+    {
+        "instrumentId": "IN018",
+        "externalIdType": "CUSIP",
+        "externalId": "92343VBG8",
+        "categoryId": "CORP",
+        "description": "Verizon Communications Inc. 4.862% Notes due 2046",
+        "maxQuantity": 5000,
+        "minQuantity": 100
+    },
+    {
+        "instrumentId": "IN019",
+        "externalIdType": "ISIN",
+        "externalId": "US191216CJ28",
+        "categoryId": "CORP",
+        "description": "The Coca-Cola Company 2.5% Notes due 2026",
+        "maxQuantity": 5000,
+        "minQuantity": 100
+    },
+    {
+        "instrumentId": "IN020",
+        "externalIdType": "CUSIP",
+        "externalId": "78462F103",
+        "categoryId": "ETF",
+        "description": "SPDR S&P 500 ETF Trust",
+        "maxQuantity": 1000,
+        "minQuantity": 1
+    },
+    {
+        "instrumentId": "IN021",
+        "externalIdType": "CUSIP",
+        "externalId": "464287204",
+        "categoryId": "ETF",
+        "description": "Invesco QQQ Trust, Series 1",
+        "maxQuantity": 1000,
+        "minQuantity": 1
+    },
+    {
+        "instrumentId": "IN022",
+        "externalIdType": "CUSIP",
+        "externalId": "478160104",
+        "categoryId": "STOCK",
+        "description": "Johnson & Johnson Common Stock",
+        "maxQuantity": 1000,
+        "minQuantity": 1
+    },
+    {
+        "instrumentId": "IN023",
+        "externalIdType": "ISIN",
+        "externalId": "US7427181091",
+        "categoryId": "STOCK",
+        "description": "The Procter & Gamble Company Common Stock",
+        "maxQuantity": 1000,
+        "minQuantity": 1
+    },
+    {
+        "instrumentId": "IN024",
+        "externalIdType": "CUSIP",
+        "externalId": "92826C839",
+        "categoryId": "STOCK",
+        "description": "Visa Inc. Class A Common Stock",
+        "maxQuantity": 1000,
+        "minQuantity": 1
+    },
+    {
+        "instrumentId": "IN025",
+        "externalIdType": "CUSIP",
+        "externalId": "13063DYS9",
+        "categoryId": "MUNI",
+        "description": "California State GO Bonds 5% due 2049",
+        "maxQuantity": 10000,
+        "minQuantity": 100
+    },
+    {
+        "instrumentId": "IN026",
+        "externalIdType": "CUSIP",
+        "externalId": "64990F103",
+        "categoryId": "MUNI",
+        "description": "New York City GO Bonds 4% due 2042",
+        "maxQuantity": 10000,
+        "minQuantity": 100
+    },
+    {
+        "instrumentId": "IN027",
+        "externalIdType": "CUSIP",
+        "externalId": "912796M57",
+        "categoryId": "GOVT",
+        "description": "USA, T-Bill 0% 15oct2026",
+        "maxQuantity": 10000,
+        "minQuantity": 100
+    },
+    {
+        "instrumentId": "IN028",
+        "externalIdType": "CUSIP",
+        "externalId": "06051GGW8",
+        "categoryId": "CD",
+        "description": "Bank of America Corp CD 2.1% 22oct2025",
+        "maxQuantity": 1000,
+        "minQuantity": 100
+    },
+    {
+        "instrumentId": "IN029",
+        "externalIdType": "ISIN",
+        "externalId": "JP3633400001",
+        "categoryId": "STOCK",
+        "description": "Toyota Motor Corporation",
+        "maxQuantity": 1000,
+        "minQuantity": 1
+    },
+    {
+        "instrumentId": "IN0030",
+        "externalIdType": "CUSIP",
+        "externalId": "91324P102",
+        "categoryId": "STOCK",
+        "description": "UnitedHealth Group Incorporated Common Stock",
+        "maxQuantity": 1000,
+        "minQuantity": 1
+    }
+]

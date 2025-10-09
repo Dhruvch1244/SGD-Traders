@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.repository.PriceRepository">
+
+    <cache/>
+
+    <select id="findAll" resultType="com.example.demo.models.Price">
+        SELECT * FROM prices
+    </select>
+
+    <select id="findLatestPrices" resultType="com.example.demo.models.Price">
+        SELECT * FROM (SELECT p.*, ROW_NUMBER() OVER (PARTITION BY instrumentId ORDER BY timestamp DESC) as rn FROM prices p) WHERE rn = 1
+    </select>
+
+    <select id="findLatestPriceForInstrument" resultType="com.example.demo.models.Price">
+        SELECT * FROM (SELECT p.*, ROW_NUMBER() OVER (PARTITION BY instrumentId ORDER BY timestamp DESC) as rn FROM prices p WHERE p.instrumentId = #{instrumentId}) WHERE rn = 1
+    </select>
+
+</mapper>

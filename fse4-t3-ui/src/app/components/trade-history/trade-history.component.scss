@@ -1,0 +1,67 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a2e; // Full window dark purple
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.trade-table-container {
+  width: 50%;
+  flex: 1;
+  // height:80%;
+  // max-height: 300px;
+  overflow-x: auto;
+  overflow-y: auto;
+  // border-radius: 8px;
+  // padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.trade-grid {
+  --ag-background-color: #1e1e2f; // Background inside grid
+  --ag-header-background-color: #1a1a2e; // Header background
+  // --ag-odd-row-background-color: #141424;
+  // --ag-even-row-background-color: #121222;
+  --ag-foreground-color: #ffffff; // Main text color for the grid, including pagination
+  --ag-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  --ag-header-foreground-color: #ffffff; // Header text color
+  --ag-data-color: #ffffff; // Row text color
+}
+
+.ag-root-wrapper {
+  // overflow-x: auto; /* Enables horizontal scroll */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.ag-root-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+.grid-scroll-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.header {
+  display: flex;
+  justify-content: first baseline;
+  align-items: center;
+  color: white;
+  margin-bottom: 2em;
+}
+
+.trade-content {
+  display: flex;
+  gap: 20px; /* space between chart and table */
+  align-items: flex-start;
+}
+
+/* Chart container size */
+.chart-container {
+  width: 300px; /* fixed width */
+  height: 300px; /* fixed height */
+  flex-shrink: 0; /* prevent shrinking */
+}

@@ -1,0 +1,204 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #1e1e2f, #2a2a40);
+  color: white;
+  padding: 0 24px;
+  height: 64px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeInDown 0.5s ease-in-out;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  animation: slideInLeft 0.6s ease;
+  cursor: pointer;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.animated-button {
+  align-items: center;
+  display: inline-flex;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wallet-balance {
+  margin-left: 12px;
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* --- Updated styles for the Add Money form --- */
+.wallet-container {
+  position: relative;
+  display: inline-block;
+}
+
+.add-money-form-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  background-color: #2a2a40; /* Match header background */
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Slightly darker shadow */
+  z-index: 100;
+  width: 350px;
+  border: 1px solid #3a3a50; /* Subtle border */
+  color: white; /* Text color for the form */
+}
+
+.add-money-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.add-money-form .mat-mdc-button.mat-unthemed {
+  color: white; /* Make cancel button text white */
+}
+
+.amount-input {
+  flex-grow: 1;
+  /* Style the Angular Material form field for the dark theme */
+  --mdc-outlined-text-field-container-shape: 8px;
+  --mat-form-field-container-text-color: #ffffff;
+  --mdc-outlined-text-field-label-text-color: rgba(255, 255, 255, 0.7);
+  --mdc-outlined-text-field-input-text-color: #ffffff;
+  --mdc-outlined-text-field-outline-color: #3a3a50;
+  --mdc-outlined-text-field-hover-outline-color: #42a5f5;
+  --mdc-outlined-text-field-focus-outline-color: #42a5f5;
+}
+
+/* Optional: To remove the default up/down arrows from the number input */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.animated-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.profile-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 16px;
+}
+
+.profile-name {
+  margin: 0 8px;
+  font-weight: 500;
+}
+
+.expand-icon {
+  transition: transform 0.3s ease;
+}
+
+.expand-icon.expanded {
+  transform: rotate(180deg);
+}
+
+.profile-menu {
+  position: absolute;
+  top: 42px;
+  right: 0;
+  background-color: #2a2a40;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  padding: 8px 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  min-width: 220px; /* slightly wider for icons + text */
+}
+
+.profile-menu button {
+  color: white;
+  text-align: left;
+  padding: 8px 16px;
+  width: 100%;
+  
+  display: flex;           /* make button a flex container */
+  align-items: center;     /* vertically center icon + text */
+  gap: 12px;               /* space between icon and text */
+  justify-content: flex-start;
+}
+
+.profile-menu button mat-icon {
+  font-size: 20px;         /* icon size */
+}
+
+.profile-menu button:hover {
+  background-color: #3a3a50;
+}
+
+
+
+.animated-icon {
+  transition: transform 0.3s ease;
+}
+
+.animated-icon:hover {
+  transform: scale(1.2);
+}
+
+.icon {
+  margin-right: 8px;
+  font-size: 22px;
+}
+
+.icon.blue {
+  color: #42a5f5;
+}
+
+.icon.green {
+  color: #66bb6a;
+}
+
+.icon.red {
+  color: #ef5350;
+}
+
+.icon.white {
+  color: #ffffff;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

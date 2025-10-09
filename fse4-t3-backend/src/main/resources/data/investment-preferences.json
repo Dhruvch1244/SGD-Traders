@@ -1,0 +1,19 @@
+
+[
+  {
+    "clientId": "C001",
+    "investmentPurpose": "WEALTH_CREATION",
+    "riskTolerance": "AGGRESSIVE",
+    "incomeCategory": "HIGH",
+    "investmentDuration": "FIVE_TO_SEVEN_YEARS",
+    "acceptedTerms": true
+  },
+  {
+    "clientId": "C002",
+    "investmentPurpose": "RETIREMENT",
+    "riskTolerance": "AVERAGE",
+    "incomeCategory": "MIDDLE",
+    "investmentDuration": "TEN_TO_FIFTEEN_YEARS",
+    "acceptedTerms": true
+  }
+]

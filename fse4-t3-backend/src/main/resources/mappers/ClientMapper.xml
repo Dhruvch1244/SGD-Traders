@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.repository.ClientRepository">
+
+    <select id="findByEmail" resultType="com.example.demo.models.Client">
+        SELECT * FROM CLIENTS WHERE EMAIL = #{email}
+    </select>
+
+    <select id="findById" resultType="com.example.demo.models.Client">
+        SELECT * FROM CLIENTS WHERE CLIENTID = #{clientId}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO CLIENTS (CLIENTID, NAME, EMAIL, DATEOFBIRTH, COUNTRY, POSTALCODE, PASSWORD) VALUES (#{clientId}, #{name}, #{email}, #{dateOfBirth}, #{country}, #{postalCode}, #{password})
+    </insert>
+
+    <update id="update">
+        UPDATE CLIENTS
+        <set>
+            <if test="name != null">NAME = #{name},</if>
+            <if test="country != null">COUNTRY = #{country},</if>
+            <if test="postalCode != null">POSTALCODE = #{postalCode},</if>
+            <if test="password != null">PASSWORD = #{password},</if>
+        </set>
+        WHERE CLIENTID = #{clientId}
+    </update>
+
+    <select id="count" resultType="long">
+        SELECT COUNT(*) FROM CLIENTS
+    </select>
+
+    <delete id="deleteById">
+        DELETE FROM CLIENTS WHERE CLIENTID = #{clientId}
+    </delete>
+
+</mapper>

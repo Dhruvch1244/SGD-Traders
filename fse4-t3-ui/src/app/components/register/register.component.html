@@ -1,0 +1,191 @@
+<div class="register-wrapper">
+  <div class="register-container">
+    <!-- Left Panel for Branding -->
+    <div class="welcome-panel">
+      <header class="register-header">
+        <h1 class="logo-text">
+          <span class="logo-s">S</span><span class="logo-d">G</span><span class="logo-d">D</span>
+        </h1>
+      </header>
+      <h2>Create Your Account</h2>
+      <p class="tagline">Join the next-gen Stock Brokerage Platform</p>
+    </div>
+
+    <!-- Right Panel for the Registration Form -->
+    <div class="register-panel">
+      <form (ngSubmit)="register()" class="register-form">
+        <div class="form-grid">
+          <!-- Name -->
+          <div class="form-field">
+            <input
+              id="name"
+              type="text"
+              [(ngModel)]="name"
+              name="name"
+              required
+              placeholder=" "
+            />
+            <label for="name">Name</label>
+            <div class="error-message" *ngIf="errorMessages['name']">
+              {{ errorMessages["name"] }}
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="form-field">
+            <input
+              id="email"
+              type="email"
+              [(ngModel)]="client.email"
+              name="email"
+              required
+              placeholder=" "
+            />
+            <label for="email">Email</label>
+            <div class="error-message" *ngIf="errorMessages['email']">
+              {{ errorMessages["email"] }}
+            </div>
+          </div>
+
+          <!-- Date of Birth -->
+          <div class="form-field">
+            <input
+              id="dob"
+              type="date"
+              [(ngModel)]="client.dateOfBirth"
+              name="dob"
+              required
+              placeholder=" "
+              (change)="validateAge()"
+            />
+            <label for="dob">Date of Birth</label>
+            <div class="error-message" *ngIf="errorMessages['dateOfBirth']">
+              {{ errorMessages["dateOfBirth"] }}
+            </div>
+          </div>
+
+          <!-- Country -->
+          <div class="form-field">
+            <select
+              id="country"
+              [(ngModel)]="client.country"
+              name="country"
+              required
+              (change)="onCountryChange()"
+            >
+              <!-- <option value="" disabled selected></option> -->
+              <option value="India">India</option>
+              <option value="United States">United States</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="Ireland">Ireland</option>
+              <option value="Canada">Canada</option>
+            </select>
+            <label for="country" class="select-label">Country</label>
+            <div class="error-message" *ngIf="errorMessages['country']">
+              {{ errorMessages["country"] }}
+            </div>
+          </div>
+
+          <!-- Postal Code -->
+          <div class="form-field">
+            <input
+              id="postalCode"
+              type="text"
+              [(ngModel)]="client.postalCode"
+              name="postalCode"
+              required
+              placeholder=" "
+            />
+            <label for="postalCode">Postal Code</label>
+            <div class="error-message" *ngIf="errorMessages['postalCode']">
+              {{ errorMessages["postalCode"] }}
+            </div>
+          </div>
+
+          <!-- ID Type (Read-only) -->
+          <div class="form-field">
+            <input
+              id="idType"
+              type="text"
+              [(ngModel)]="client.identification[0].type"
+              name="idType"
+              required
+              placeholder=" "
+              readonly
+            />
+            <label for="idType">ID Type</label>
+            <div class="error-message" *ngIf="errorMessages['idType']">
+              {{ errorMessages["idType"] }}
+            </div>
+          </div>
+
+          <!-- ID Number (Validates length) -->
+          <div class="form-field">
+            <input
+              id="idValue"
+              type="text"
+              [(ngModel)]="client.identification[0].value"
+              name="idValue"
+              required
+              placeholder=" "
+              (input)="validateIdNumber()"
+            />
+            <label for="idValue">ID Number</label>
+            <div class="error-message" *ngIf="errorMessages['idValue']">
+              {{ errorMessages["idValue"] }}
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="form-field">
+            <input
+              id="password"
+              type="password"
+              [(ngModel)]="client.password"
+              name="password"
+              required
+              placeholder=" "
+            />
+            <label for="password">Password</label>
+            <small class="hint-text" *ngIf="!errorMessages['password']">
+              Min 8 chars, 1 number, 1 special char
+            </small>
+            <div class="error-message" *ngIf="errorMessages['password']">
+              {{ errorMessages["password"] }}
+            </div>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="form-field">
+            <input
+              id="confirmPassword"
+              type="password"
+              [(ngModel)]="confirmPassword"
+              name="confirmPassword"
+              required
+              placeholder=" "
+            />
+            <label for="confirmPassword">Confirm Password</label>
+            <div class="error-message" *ngIf="errorMessages['confirmPassword']">
+              {{ errorMessages["confirmPassword"] }}
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="register-btn">Register</button>
+
+        <p [class.success]="success" [class.error]="!success" *ngIf="message">
+          {{ message }}
+        </p>
+
+        <div class="links">
+          <a (click)="goBack()">Already signed in? Login Now</a>
+        </div>
+      </form>
+
+      <footer>
+        <p>Leap 2025 FSE 4 Team 3</p>
+      </footer>
+    </div>
+  </div>
+</div>

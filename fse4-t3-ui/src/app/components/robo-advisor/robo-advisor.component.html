@@ -1,0 +1,32 @@
+<button class="robo-fab" (click)="toggleChat()" *ngIf="!isOpen" title="Open Robo Advisor">
+	<span class="robo-face">🤖</span>
+</button>
+<div class="robo-chatbot-popup" [class.open]="isOpen" *ngIf="isOpen">
+	<div class="robo-chatbot-header">
+		<span>Robo Advisor</span>
+		<button class="robo-close" (click)="toggleChat()" title="Close">×</button>
+	</div>
+	<div class="robo-chatbot-body">
+		<div *ngFor="let msg of chatMessages" class="robo-chatbot-message" [ngClass]="msg.type">
+			<span *ngIf="msg.type === 'bot'">🤖</span>
+			<span *ngIf="msg.type === 'user'">🧑</span>
+			<span>{{msg.text}}</span>
+		</div>
+		<div *ngIf="showRecommendations">
+			<div class="robo-chatbot-message bot">
+				<span>🤖</span>
+				<span>
+					<b>Recommended Stocks:</b>
+					<ul>
+						<li *ngFor="let rec of recommendations">
+							{{rec.description}} <span style="color: #888">({{rec.category}})</span>
+						</li>
+					</ul>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="robo-chatbot-footer">
+		<button (click)="onRecommend()" [disabled]="showRecommendations">Recommend</button>
+	</div>
+</div>

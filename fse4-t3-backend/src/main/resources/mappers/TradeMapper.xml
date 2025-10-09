@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.repository.TradeRepository">
+
+    <select id="findAll" resultType="com.example.demo.models.Trade">
+        SELECT * FROM TRADES
+    </select>
+
+    <select id="findByClientId" resultType="com.example.demo.models.Trade">
+        SELECT * FROM TRADES WHERE CLIENTID = #{clientId}
+    </select>
+
+    <select id="findByClientIdAndTimestampAfter" resultType="com.example.demo.models.Trade">
+        SELECT * FROM TRADES WHERE CLIENTID = #{clientId} AND TIMESTAMP > #{timestamp}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO TRADES (TRADEID, CLIENTID, INSTRUMENTID, QUANTITY, EXECUTIONPRICE, DIRECTION, ORDERID, CASHVALUE, TIMESTAMP) VALUES (#{tradeId}, #{clientId}, #{instrumentId}, #{quantity}, #{executionPrice}, #{direction}, #{orderId}, #{cashValue}, #{timestamp})
+    </insert>
+
+</mapper>

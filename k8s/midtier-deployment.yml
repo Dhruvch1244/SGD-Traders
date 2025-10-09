@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mid-nodejs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mid-nodejs
+  template:
+    metadata:
+      labels:
+        app: mid-nodejs
+    spec:
+      containers:
+      - name: mid-nodejs
+        image: leapfse4.jfrog.io/fse4team3/some-id-middle-tier:v4.2
+        ports:
+        - containerPort: 3002
+        env:
+        - name: PORT
+          value: "3002"
+        - name: JWT_SECRET
+          value: "c8d7e6f5a4b3c2d1e0f9g8h7i6j5k4l3m2n1o0p9q8r7s6t5u4v3w2x1y0z"
+        - name: NODE_ENV
+          value: "development"
+        - name: ANGULAR_APP_URL
+          value: "http://localhost:4200"
+        - name: JAVA_API_URL
+          value: "http://spring-app:8080/api"
+        - name: API_KEY
+          value: "secure_service_to_service_key_for_backend_communication"
+        - name: TOKEN_EXPIRY
+          value: "3600000"
+        - name: SESSION_SECRET
+          value: "uygygyyu87y778yh76t7f56s546fr7686866tgh9898j9o9j8i9h67rg7bt646gwvtu"
+        - name: SESSION_MAX_AGE
+          value: "3600000"
+      imagePullSecrets:
+        - name: some-id-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mid-nodejs
+spec:
+  type: ClusterIP
+  selector:
+    app: mid-nodejs
+  ports:
+    - protocol: TCP
+      port: 3002
+      targetPort: 3002

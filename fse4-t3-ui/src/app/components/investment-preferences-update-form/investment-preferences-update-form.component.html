@@ -1,0 +1,46 @@
+<div class="preferences-wrapper">
+  <div class="form-container">
+    <h2>Update Investment Preferences</h2>
+
+    <!-- Loading -->
+    <p *ngIf="isLoading">Loading preferences...</p>
+
+    <!-- Form -->
+    <form *ngIf="!isLoading && preferences" [formGroup]="form" (ngSubmit)="save()">
+
+      <div *ngFor="let field of ['investmentPurpose','riskTolerance','incomeCategory','investmentDuration']" class="field-row">
+        <label>{{ splitCamelCase(field) | titlecase }}</label>
+        <div style="display: flex; align-items: center; width: 100%; gap: 0.5rem;">
+          <ng-container *ngIf="editingField === field; else readOnlyField">
+            <select [formControlName]="field" style="flex: 1 1 auto;">
+              <option *ngFor="let option of getOptions(getMapForField(field))" [value]="option.value">
+                {{ option.label }}
+              </option>
+            </select>
+          </ng-container>
+          <ng-template #readOnlyField>
+            <span 
+              style="flex: 1 1 auto; padding: 0.5rem 1rem; color: #fff; background: rgba(255,255,255,0.08); border-radius: 6px; font-weight: 500; letter-spacing: 0.5px; margin-left: 0.5rem;"
+            >
+              {{ getLabelForValue(field, getPreferenceField(field)) | titlecase }}
+            </span>
+          </ng-template>
+          <button type="button" class="edit-btn" (click)="editField(field)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+      </div>
+
+
+      <label>
+        <input type="checkbox" formControlName="acceptedTerms" />
+        I accept the RoboAdvisor Terms & Conditions.
+      </label>
+      <div *ngIf="form.get('acceptedTerms')?.invalid && form.get('acceptedTerms')?.touched" style="color: #e53935; font-size: 0.95em; margin-bottom: 1rem;">
+        You must accept the terms to continue.
+      </div>
+
+      <button type="submit" [disabled]="form.invalid" class="register-btn">Update Preferences</button>
+    </form>
+  </div>
+</div>

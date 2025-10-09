@@ -1,0 +1,758 @@
+[
+  {
+    "Purpose": "Retirement",
+    "Risk": "Low Risk",
+    "Income": "Low Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Low Risk",
+    "Income": "Low Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Low Risk",
+    "Income": "Low Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Low Risk",
+    "Income": "Low Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Low Risk",
+    "Income": "Medium Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Low Risk",
+    "Income": "Medium Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Low Risk",
+    "Income": "Medium Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Low Risk",
+    "Income": "Medium Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Low Risk",
+    "Income": "High Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Low Risk",
+    "Income": "High Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Low Risk",
+    "Income": "High Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Low Risk",
+    "Income": "High Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Medium Risk",
+    "Income": "Low Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Medium Risk",
+    "Income": "Low Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Medium Risk",
+    "Income": "Low Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Medium Risk",
+    "Income": "Low Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Medium Risk",
+    "Income": "Medium Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Medium Risk",
+    "Income": "Medium Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Medium Risk",
+    "Income": "Medium Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Medium Risk",
+    "Income": "Medium Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Medium Risk",
+    "Income": "High Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Medium Risk",
+    "Income": "High Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Medium Risk",
+    "Income": "High Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "Medium Risk",
+    "Income": "High Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "High Risk",
+    "Income": "Low Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "High Risk",
+    "Income": "Low Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "High Risk",
+    "Income": "Low Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "High Risk",
+    "Income": "Low Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "High Risk",
+    "Income": "Medium Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "High Risk",
+    "Income": "Medium Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "High Risk",
+    "Income": "Medium Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "High Risk",
+    "Income": "Medium Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "High Risk",
+    "Income": "High Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "High Risk",
+    "Income": "High Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "High Risk",
+    "Income": "High Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Retirement",
+    "Risk": "High Risk",
+    "Income": "High Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Low Risk",
+    "Income": "Low Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Low Risk",
+    "Income": "Low Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Low Risk",
+    "Income": "Low Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Low Risk",
+    "Income": "Low Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Low Risk",
+    "Income": "Medium Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Low Risk",
+    "Income": "Medium Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Low Risk",
+    "Income": "Medium Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Low Risk",
+    "Income": "Medium Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Low Risk",
+    "Income": "High Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Low Risk",
+    "Income": "High Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Low Risk",
+    "Income": "High Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Low Risk",
+    "Income": "High Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Medium Risk",
+    "Income": "Low Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Medium Risk",
+    "Income": "Low Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Medium Risk",
+    "Income": "Low Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Medium Risk",
+    "Income": "Low Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Medium Risk",
+    "Income": "Medium Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Medium Risk",
+    "Income": "Medium Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Medium Risk",
+    "Income": "Medium Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Medium Risk",
+    "Income": "Medium Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Medium Risk",
+    "Income": "High Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Medium Risk",
+    "Income": "High Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Medium Risk",
+    "Income": "High Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "Medium Risk",
+    "Income": "High Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "High Risk",
+    "Income": "Low Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "High Risk",
+    "Income": "Low Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "High Risk",
+    "Income": "Low Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "High Risk",
+    "Income": "Low Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "High Risk",
+    "Income": "Medium Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "High Risk",
+    "Income": "Medium Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "High Risk",
+    "Income": "Medium Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "High Risk",
+    "Income": "Medium Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "High Risk",
+    "Income": "High Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "High Risk",
+    "Income": "High Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "High Risk",
+    "Income": "High Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Wealth Creation",
+    "Risk": "High Risk",
+    "Income": "High Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Low Risk",
+    "Income": "Low Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Low Risk",
+    "Income": "Low Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Low Risk",
+    "Income": "Low Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Low Risk",
+    "Income": "Low Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Low Risk",
+    "Income": "Medium Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Low Risk",
+    "Income": "Medium Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Low Risk",
+    "Income": "Medium Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Low Risk",
+    "Income": "Medium Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Low Risk",
+    "Income": "High Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Low Risk",
+    "Income": "High Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Low Risk",
+    "Income": "High Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Low Risk",
+    "Income": "High Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Medium Risk",
+    "Income": "Low Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Medium Risk",
+    "Income": "Low Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Medium Risk",
+    "Income": "Low Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Medium Risk",
+    "Income": "Low Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Medium Risk",
+    "Income": "Medium Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Medium Risk",
+    "Income": "Medium Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Medium Risk",
+    "Income": "Medium Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Medium Risk",
+    "Income": "Medium Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Medium Risk",
+    "Income": "High Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Medium Risk",
+    "Income": "High Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Medium Risk",
+    "Income": "High Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "Medium Risk",
+    "Income": "High Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "High Risk",
+    "Income": "Low Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 1"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "High Risk",
+    "Income": "Low Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "High Risk",
+    "Income": "Low Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "High Risk",
+    "Income": "Low Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "High Risk",
+    "Income": "Medium Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 2"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "High Risk",
+    "Income": "Medium Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "High Risk",
+    "Income": "Medium Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "High Risk",
+    "Income": "Medium Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "High Risk",
+    "Income": "High Income",
+    "Duration": "0-5 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "High Risk",
+    "Income": "High Income",
+    "Duration": "5-7 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "High Risk",
+    "Income": "High Income",
+    "Duration": "7-10 years",
+    "Tier": "Tier 3"
+  },
+  {
+    "Purpose": "Education",
+    "Risk": "High Risk",
+    "Income": "High Income",
+    "Duration": "10-15 years",
+    "Tier": "Tier 3"
+  }
+]

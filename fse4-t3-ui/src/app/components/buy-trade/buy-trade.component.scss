@@ -1,0 +1,103 @@
+:host {
+  display: block;
+  background-color: #12121a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buy-trade-form {
+  max-width: 420px;
+  min-width: 420px;
+  margin: auto;
+  background: #1f1f2a;
+  padding: 24px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  color: #fff;
+}
+
+.buy-trade-form h2 {
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 1.4rem;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+select,
+input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 0.25rem;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #0f0f13;
+  color: #fff;
+}
+
+.input-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.input-group .col {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="number"] {
+  width: 100px;
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
+button {
+  margin-top: 1.2rem;
+  width: 100%;
+  padding: 10px 0;
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:disabled {
+  background: #444;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.wallet-row {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #cfd8dc;
+}
+
+.trade-status {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffd600;
+}
+
+.meta-row {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #dfe6e9;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}

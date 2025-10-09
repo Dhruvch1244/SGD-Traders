@@ -1,0 +1,70 @@
+.sidebar {
+  width: 60px;
+  background: linear-gradient(to bottom, #1e1e2f, #2a2a40);
+  color: white;
+  height: 100vh;
+  transition: width 0.4s ease, background-color 0.3s ease;
+  overflow: hidden;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  animation: fadeInLeft 0.5s ease-in-out;
+}
+
+.sidebar:not(.collapsed) {
+  width: 200px;
+}
+
+mat-list-item {
+  padding: 15px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+mat-list-item:hover {
+  background-color: #33334d;
+  transform: translateX(4px);
+}
+
+.item-content {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  white-space: nowrap;
+  overflow: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 22px;
+  transition: color 0.3s ease;
+}
+
+/* Icon Colors */
+.icon.blue {
+  color: #42a5f5;
+}
+.icon.green {
+  color: #66bb6a;
+}
+.icon.yellow {
+  color: #ffca28;
+}
+.icon.red {
+  color: #ef5350;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

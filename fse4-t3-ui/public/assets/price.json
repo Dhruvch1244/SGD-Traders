@@ -1,0 +1,317 @@
+[
+  {
+    "instrumentId": "IN001",
+    "bidPrice": 33.96,
+    "askPrice": 162.81,
+    "timestamp": "20250812T084123.000Z",
+    "instrument": {
+      "instrumentId": "IN001",
+      "description": "Instrument 1",
+      "externalIdType": "CUSIP",
+      "externalId": "90JQADOXJJI6",
+      "categoryId": "CAT3",
+      "minQuantity": 1,
+      "maxQuantity": 1000
+    }
+  },
+  {
+    "instrumentId": "IN001",
+    "bidPrice": 32.96,
+    "askPrice": 161.81,
+    "timestamp": "20250811T084123.000Z",
+    "instrument": {
+      "instrumentId": "IN001",
+      "description": "Instrument 1",
+      "externalIdType": "CUSIP",
+      "externalId": "90JQADOXJJI6",
+      "categoryId": "CAT3",
+      "minQuantity": 1,
+      "maxQuantity": 1000
+    }
+  },
+  {
+    "instrumentId": "IN002",
+    "bidPrice": 76.46,
+    "askPrice": 150.9,
+    "timestamp": "20250812T084123.000Z",
+    "instrument": {
+      "instrumentId": "IN002",
+      "description": "Instrument 2",
+      "externalIdType": "ISIN",
+      "externalId": "1P5HE2QXLZHO",
+      "categoryId": "CAT2",
+      "minQuantity": 1,
+      "maxQuantity": 1000
+    }
+  },
+  {
+    "instrumentId": "IN003",
+    "bidPrice": 45.15,
+    "askPrice": 173.94,
+    "timestamp": "20250812T084123.000Z",
+    "instrument": {
+      "instrumentId": "IN003",
+      "description": "Instrument 3",
+      "externalIdType": "ISIN",
+      "externalId": "1I14MUWNSPC3",
+      "categoryId": "CAT4",
+      "minQuantity": 1,
+      "maxQuantity": 1000
+    }
+  },
+  {
+    "instrumentId": "IN004",
+    "bidPrice": 76.58,
+    "askPrice": 196.69,
+    "timestamp": "20250812T084123.000Z",
+    "instrument": {
+      "instrumentId": "IN004",
+      "description": "Instrument 4",
+      "externalIdType": "ISIN",
+      "externalId": "B4PYSZCD4186",
+      "categoryId": "CAT2",
+      "minQuantity": 1,
+      "maxQuantity": 1000
+    }
+  },
+  {
+    "instrumentId": "IN005",
+    "bidPrice": 56.87,
+    "askPrice": 106.24,
+    "timestamp": "20250812T084123.000Z",
+    "instrument": {
+      "instrumentId": "IN005",
+      "description": "Instrument 5",
+      "externalIdType": "ISIN",
+      "externalId": "OP9IJS8F6NBT",
+      "categoryId": "CAT1",
+      "minQuantity": 1,
+      "maxQuantity": 1000
+    }
+  },
+  {
+    "instrumentId": "IN006",
+    "bidPrice": 22.85,
+    "askPrice": 150.6,
+    "timestamp": "20250812T084123.000Z",
+    "instrument": {
+      "instrumentId": "IN006",
+      "description": "Instrument 6",
+      "externalIdType": "ISIN",
+      "externalId": "K0HZVKHUKPVW",
+      "categoryId": "CAT5",
+      "minQuantity": 1,
+      "maxQuantity": 1000
+    }
+  },
+  {
+    "instrumentId": "IN007",
+    "bidPrice": 62.41,
+    "askPrice": 181.27,
+    "timestamp": "20250812T084123.000Z",
+    "instrument": {
+      "instrumentId": "IN007",
+      "description": "Instrument 7",
+      "externalIdType": "CUSIP",
+      "externalId": "G50KPMQVK7CD",
+      "categoryId": "CAT5",
+      "minQuantity": 1,
+      "maxQuantity": 1000
+    }
+  },
+  {
+    "instrumentId": "IN008",
+    "bidPrice": 20.64,
+    "askPrice": 113.18,
+    "timestamp": "20250812T084123.000Z",
+    "instrument": {
+      "instrumentId": "IN008",
+      "description": "Instrument 8",
+      "externalIdType": "CUSIP",
+      "externalId": "Q6RM32B6QT28",
+      "categoryId": "CAT3",
+      "minQuantity": 1,
+      "maxQuantity": 1000
+    }
+  },
+  {
+    "instrumentId": "IN009",
+    "bidPrice": 28.75,
+    "askPrice": 157.24,
+    "timestamp": "20250812T084123.000Z",
+    "instrument": {
+      "instrumentId": "IN009",
+      "description": "Instrument 9",
+      "externalIdType": "ISIN",
+      "externalId": "JI6R8VAO09NX",
+      "categoryId": "CAT3",
+      "minQuantity": 1,
+      "maxQuantity": 1000
+    }
+  },
+  {
+    "instrumentId": "IN010",
+    "bidPrice": 12.66,
+    "askPrice": 199.03,
+    "timestamp": "20250812T084123.000Z",
+    "instrument": {
+      "instrumentId": "IN010",
+      "description": "Instrument 10",
+      "externalIdType": "ISIN",
+      "externalId": "0A0KWXXDPTWW",
+      "categoryId": "CAT3",
+      "minQuantity": 1,
+      "maxQuantity": 1000
+    }
+  },
+  {
+    "instrumentId": "IN011",
+    "bidPrice": 88.7,
+    "askPrice": 135.2,
+    "timestamp": "20250812T084123.000Z",
+    "instrument": {
+      "instrumentId": "IN011",
+      "description": "Instrument 11",
+      "externalIdType": "CUSIP",
+      "externalId": "U161E43OADYM",
+      "categoryId": "CAT1",
+      "minQuantity": 1,
+      "maxQuantity": 1000
+    }
+  },
+  {
+    "instrumentId": "IN012",
+    "bidPrice": 75.52,
+    "askPrice": 163.21,
+    "timestamp": "20250812T084123.000Z",
+    "instrument": {
+      "instrumentId": "IN012",
+      "description": "Instrument 12",
+      "externalIdType": "ISIN",
+      "externalId": "906SY1BZVFOL",
+      "categoryId": "CAT5",
+      "minQuantity": 1,
+      "maxQuantity": 1000
+    }
+  },
+  {
+    "instrumentId": "IN013",
+    "bidPrice": 76.37,
+    "askPrice": 187.7,
+    "timestamp": "20250812T084123.000Z",
+    "instrument": {
+      "instrumentId": "IN013",
+      "description": "Instrument 13",
+      "externalIdType": "CUSIP",
+      "externalId": "XSBGURO029U2",
+      "categoryId": "CAT1",
+      "minQuantity": 1,
+      "maxQuantity": 1000
+    }
+  },
+  {
+    "instrumentId": "IN014",
+    "bidPrice": 18.3,
+    "askPrice": 193.68,
+    "timestamp": "20250812T084123.000Z",
+    "instrument": {
+      "instrumentId": "IN014",
+      "description": "Instrument 14",
+      "externalIdType": "CUSIP",
+      "externalId": "ZM5FWRFFQQZX",
+      "categoryId": "CAT5",
+      "minQuantity": 1,
+      "maxQuantity": 1000
+    }
+  },
+  {
+    "instrumentId": "IN015",
+    "bidPrice": 79.27,
+    "askPrice": 189.24,
+    "timestamp": "20250812T084123.000Z",
+    "instrument": {
+      "instrumentId": "IN015",
+      "description": "Instrument 15",
+      "externalIdType": "ISIN",
+      "externalId": "Y2BCFE8L4L76",
+      "categoryId": "CAT3",
+      "minQuantity": 1,
+      "maxQuantity": 1000
+    }
+  },
+  {
+    "instrumentId": "IN016",
+    "bidPrice": 72.17,
+    "askPrice": 102.85,
+    "timestamp": "20250812T084123.000Z",
+    "instrument": {
+      "instrumentId": "IN016",
+      "description": "Instrument 16",
+      "externalIdType": "CUSIP",
+      "externalId": "JGWC9DNXM2ST",
+      "categoryId": "CAT2",
+      "minQuantity": 1,
+      "maxQuantity": 1000
+    }
+  },
+  {
+    "instrumentId": "IN017",
+    "bidPrice": 24.22,
+    "askPrice": 107.87,
+    "timestamp": "20250812T084123.000Z",
+    "instrument": {
+      "instrumentId": "IN017",
+      "description": "Instrument 17",
+      "externalIdType": "CUSIP",
+      "externalId": "LHEQBQKXW6Q2",
+      "categoryId": "CAT2",
+      "minQuantity": 1,
+      "maxQuantity": 1000
+    }
+  },
+  {
+    "instrumentId": "IN018",
+    "bidPrice": 95.25,
+    "askPrice": 141.12,
+    "timestamp": "20250812T084123.000Z",
+    "instrument": {
+      "instrumentId": "IN018",
+      "description": "Instrument 18",
+      "externalIdType": "CUSIP",
+      "externalId": "OILD1WSS65WM",
+      "categoryId": "CAT4",
+      "minQuantity": 1,
+      "maxQuantity": 1000
+    }
+  },
+  {
+    "instrumentId": "IN019",
+    "bidPrice": 73.68,
+    "askPrice": 142.17,
+    "timestamp": "20250812T084123.000Z",
+    "instrument": {
+      "instrumentId": "IN019",
+      "description": "Instrument 19",
+      "externalIdType": "CUSIP",
+      "externalId": "FU10J0BUCN11",
+      "categoryId": "CAT2",
+      "minQuantity": 1,
+      "maxQuantity": 1000
+    }
+  },
+  {
+    "instrumentId": "IN020",
+    "bidPrice": 23.32,
+    "askPrice": 128.06,
+    "timestamp": "20250812T084123.000Z",
+    "instrument": {
+      "instrumentId": "IN020",
+      "description": "Instrument 20",
+      "externalIdType": "CUSIP",
+      "externalId": "JT4ZP0JXADR8",
+      "categoryId": "CAT2",
+      "minQuantity": 1,
+      "maxQuantity": 1000
+    }
+  }
+]

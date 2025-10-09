@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+// @use "ag-grid-community/styles/ag-grid" as *;
+// @use "ag-grid-community/styles/ag-theme-alpine-dark" as *;
+@import "ag-grid-community/styles/ag-grid.css";
+@import "ag-grid-community/styles/ag-theme-alpine.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #111827, #000000);
+  color: white;
+}

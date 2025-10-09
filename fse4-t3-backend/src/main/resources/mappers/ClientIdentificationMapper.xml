@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.repository.ClientIdentificationRepository">
+
+    <select id="countByValueIn" resultType="long">
+        SELECT COUNT(*) FROM CLIENT_IDENTIFICATIONS WHERE VALUE IN
+        <foreach item="item" index="index" collection="values" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <select id="findByValueIn" resultType="com.example.demo.models.ClientIdentification">
+        SELECT * FROM CLIENT_IDENTIFICATIONS WHERE VALUE IN
+        <foreach item="item" index="index" collection="values" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <select id="findByClientId" resultType="com.example.demo.models.ClientIdentification">
+        SELECT * FROM CLIENT_IDENTIFICATIONS WHERE CLIENTID = #{clientId}
+    </select>
+
+    <select id="findByClientIdAndType" resultType="com.example.demo.models.ClientIdentification">
+        SELECT * FROM CLIENT_IDENTIFICATIONS WHERE CLIENTID = #{clientId} AND TYPE = #{type}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO CLIENT_IDENTIFICATIONS (ID, CLIENTID, TYPE, VALUE) VALUES (#{id}, #{clientId}, #{type}, #{value})
+    </insert>
+
+    <update id="updateValue">
+        UPDATE CLIENT_IDENTIFICATIONS SET VALUE = #{value} WHERE ID = #{id}
+    </update>
+
+</mapper>

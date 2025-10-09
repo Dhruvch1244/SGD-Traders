@@ -1,0 +1,34 @@
+<div class="header">
+  <h1>My Portfolio</h1>
+</div>
+
+<div *ngIf="isBrowser" class="portfolio-content">
+  <!-- AG Grid -->
+  <div class="portfolio-table-container">
+    <ag-grid-angular
+      class="ag-theme-alpine-dark portfolio-grid"
+      [rowData]="rowData"
+      [columnDefs]="columnDefs"
+      [gridOptions]="gridOptions"
+      [defaultColDef]="defaultColDef"
+      [pagination]="true"
+      [paginationPageSize]="10"
+      (gridReady)="onGridReady($event)"
+    >
+    </ag-grid-angular>
+  </div>
+
+  <!-- Charts Wrapper -->
+  <div class="charts-wrapper">
+    <!-- Category Pie Chart -->
+    <div class="chart-container">
+      <canvas #portfolioPieChart></canvas>
+      <h3 class="chart-title">Asset Allocation by Category</h3>
+    </div>
+    <!-- Instrument Pie Chart -->
+    <div class="chart-container">
+      <canvas #instrumentPieChart></canvas>
+      <h3 class="chart-title">Asset Allocation by Instrument</h3>
+    </div>
+  </div>
+</div>

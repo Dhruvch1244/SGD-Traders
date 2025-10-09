@@ -1,0 +1,83 @@
+[
+  {
+    "clientId": "CLT1001",
+    "balance": 10000
+  },
+  {
+    "clientId": "CLT1002",
+    "balance": 20000
+  },
+  {
+    "clientId": "CLT1003",
+    "balance": 30000
+  },
+  {
+    "clientId": "CLT1004",
+    "balance": 40000
+  },
+  {
+    "clientId": "CLT1005",
+    "balance": 50000
+  },
+  {
+    "clientId": "CLT1006",
+    "balance": 60000
+  },
+  {
+    "clientId": "CLT1007",
+    "balance": 70000
+  },
+  {
+    "clientId": "CLT1008",
+    "balance": 80000
+  },
+  {
+    "clientId": "CLT1009",
+    "balance": 90000
+  },
+  {
+    "clientId": "CLT1010",
+    "balance": 100000
+  },
+  {
+    "clientId": "CLT1011",
+    "balance": 110000
+  },
+  {
+    "clientId": "CLT1012",
+    "balance": 120000
+  },
+  {
+    "clientId": "CLT1013",
+    "balance": 130000
+  },
+  {
+    "clientId": "CLT1014",
+    "balance": 140000
+  },
+  {
+    "clientId": "CLT1015",
+    "balance": 150000
+  },
+  {
+    "clientId": "CLT1016",
+    "balance": 160000
+  },
+  {
+    "clientId": "CLT1017",
+    "balance": 170000
+  },
+  {
+    "clientId": "CLT1018",
+    "balance": 180000
+  },
+
+  {
+    "clientId": "CLT1019",
+    "balance": 190000
+  },
+  {
+    "clientId": "CLT1020",
+    "balance": 200000
+  }
+]

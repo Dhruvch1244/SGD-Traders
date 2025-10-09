@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - SGD Markets</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+      :root {
+        --background-color: #0d1117;
+        --form-background: #161b22;
+        --primary-blue: #3898ff;
+        --primary-blue-hover: #57abff;
+        --text-primary: #e6edf3;
+        --text-secondary: #8b949e;
+        --border-color: #30363d;
+        --input-background: #010409;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-primary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .login-container {
+        display: flex;
+        width: 900px;
+        height: 600px;
+        max-width: 90%;
+        background-color: var(--form-background);
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .info-panel {
+        flex: 1;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: linear-gradient(
+            rgba(13, 17, 23, 0.8),
+            rgba(13, 17, 23, 0.8)
+          ),
+          url("https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1050&q=80")
+            no-repeat center center;
+        background-size: cover;
+      }
+
+      .info-panel h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .info-panel p {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+
+      .form-panel {
+        flex: 1;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .form-panel h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        font-weight: 600;
+      }
+
+      .input-group {
+        position: relative;
+        margin-bottom: 1.5rem;
+      }
+
+      .input-field {
+        width: 100%;
+        padding: 14px;
+        background-color: var(--input-background);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        color: var(--text-primary);
+        font-size: 1rem;
+        transition: border-color 0.3s;
+      }
+
+      .input-field:focus {
+        outline: none;
+        border-color: var(--primary-blue);
+      }
+
+      /* Floating Label Logic */
+      .input-label {
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        color: var(--text-secondary);
+        pointer-events: none;
+        transition: all 0.2s ease-out;
+      }
+      .input-field:focus + .input-label,
+      .input-field:not(:placeholder-shown) + .input-label {
+        top: -10px;
+        left: 10px;
+        font-size: 0.8rem;
+        color: var(--primary-blue);
+        background-color: var(--form-background);
+        padding: 0 5px;
+      }
+
+      .password-toggle {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: var(--text-secondary);
+      }
+
+      .options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+      }
+
+      .remember-me {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .forgot-password {
+        color: var(--primary-blue);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .forgot-password:hover {
+        color: var(--primary-blue-hover);
+      }
+
+      .login-btn {
+        width: 100%;
+        padding: 15px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-blue),
+          var(--primary-blue-hover)
+        );
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.3s;
+      }
+      .login-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(56, 152, 255, 0.3);
+      }
+
+      .divider {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: var(--text-secondary);
+        margin: 2rem 0;
+        font-size: 0.9rem;
+      }
+      .divider::before,
+      .divider::after {
+        content: "";
+        flex: 1;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .divider:not(:empty)::before {
+        margin-right: 1em;
+      }
+      .divider:not(:empty)::after {
+        margin-left: 1em;
+      }
+
+      .social-login {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .social-btn {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        padding: 12px;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        background-color: transparent;
+        color: var(--text-primary);
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: background-color 0.3s;
+      }
+      .social-btn:hover {
+        background-color: var(--border-color);
+      }
+      .social-btn svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .signup-link {
+        text-align: center;
+        margin-top: 2rem;
+        color: var(--text-secondary);
+      }
+      .signup-link a {
+        color: var(--primary-blue);
+        font-weight: 500;
+        text-decoration: none;
+      }
+      .signup-link a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="info-panel">
+        <h1>SGD Markets</h1>
+        <p>
+          Your intelligent gateway to global stock markets. Trade smarter, not
+          harder.
+        </p>
+      </div>
+      <div class="form-panel">
+        <h2>Welcome Back</h2>
+
+        <form>
+          <div class="input-group">
+            <input
+              type="email"
+              id="email"
+              class="input-field"
+              placeholder=" "
+              required
+            />
+            <label for="email" class="input-label">Email Address</label>
+          </div>
+
+          <div class="input-group">
+            <input
+              type="password"
+              id="password"
+              class="input-field"
+              placeholder=" "
+              required
+            />
+            <label for="password" class="input-label">Password</label>
+            <span class="password-toggle" onclick="togglePassword()">
+              <svg
+                fill="currentColor"
+                viewBox="0 0 16 16"
+                height="1em"
+                width="1em"
+              >
+                <path
+                  d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 011.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0114.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.12 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 011.172 8z"
+                ></path>
+                <path
+                  d="M8 5.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM4.5 8a3.5 3.5 0 117 0 3.5 3.5 0 01-7 0z"
+                ></path>
+              </svg>
+            </span>
+          </div>
+
+          <div class="options">
+            <div class="remember-me">
+              <input type="checkbox" id="remember" />
+              <label for="remember">Remember me</label>
+            </div>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+          </div>
+
+          <button type="submit" class="login-btn">Login</button>
+        </form>
+
+        <div class="divider">or continue with</div>
+
+        <div class="social-login">
+          <button class="social-btn">
+            <svg
+              role="img"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Google</title>
+              <path
+                d="M12.48 10.92v3.28h7.84c-.24 1.84-.85 3.18-1.73 4.1-1.02 1.08-2.58 2.26-4.8 2.26-4.22 0-7.65-3.5-7.65-7.8s3.43-7.8 7.65-7.8c2.44 0 3.98.98 4.8 1.8l2.54-2.54C18.17 2.44 15.64 1 12.48 1 5.88 1 1 5.98 1 12.6s4.88 11.6 11.48 11.6c6.26 0 10.23-4.4 10.23-10.45 0-.7-.07-1.35-.2-1.9H12.48z"
+                fill="currentColor"
+              />
+            </svg>
+            Google
+          </button>
+          <button class="social-btn">
+            <svg
+              role="img"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Apple</title>
+              <path
+                d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.048-3.804 1.236-4.824 3.12-1.368 2.52-1.152 6.336.504 8.688.804 1.176 1.68 2.472 2.976 2.472 1.224 0 1.632-.792 3.24-.792 1.632 0 2.04.792 3.24.792 1.272 0 2.112-1.272 2.916-2.424.876-1.224 1.2-2.4 1.224-3.84-.024-2.208-1.632-3.48-3.24-3.48-.984 0-1.896.528-2.592.528-.672 0-1.68-.504-2.52-.504zm-1.32 11.28c-.072.024-.144.024-.216.024-.864 0-1.488-.624-2.232-1.704-.792-1.128-1.44-2.832-1.224-4.584.24-.024.24-.048.24-.048.024.024.048.024.048.048.024.024.024.024.048.024.12.024.216.048.336.048.96 0 2.376.984 3.864.912 1.944-.096 3.552-1.224 4.512-3.024.528-1.008.84-2.28.6-3.816-.576-1.32-1.8-2.088-3.096-2.088-.744 0-1.584.456-2.328.456-.744 0-1.512-.456-2.28-.456-1.512 0-2.832.912-3.648 2.184-.048.048-.072.072-.096.12-.024.024-.024.048-.048.072-.096.144-.168.288-.24.432l-.024.048c-.024.048-.024.072-.048.12-.024.024-.048.048-.048.072-.024.048-.024.072-.024.096v.024c0 .024 0 .024 0 .048-.024.12-.024.24-.024.36 0 2.16.936 4.344 2.448 5.928.816.816 1.776 1.56 2.976 1.56.096 0 .192 0 .288-.024z"
+                fill="currentColor"
+              />
+            </svg>
+            Apple
+          </button>
+        </div>
+
+        <p class="signup-link">
+          Don't have an account? <a href="#">Sign Up</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

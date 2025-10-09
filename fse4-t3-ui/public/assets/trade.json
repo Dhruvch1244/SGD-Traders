@@ -1,0 +1,342 @@
+[
+  {
+    "instrumentId": "IN001",
+    "quantity": 65,
+    "executionPrice": 46.05,
+    "direction": "B",
+    "clientId": "CL001",
+    "order": {
+      "instrumentId": "IN001",
+      "quantity": 65,
+      "targetPrice": 86.5,
+      "direction": "B",
+      "clientId": "CL001",
+      "orderId": "ORD001"
+    },
+    "tradeId": "TRD001",
+    "cashValue": 4541.65
+  },
+  {
+    "instrumentId": "IN002",
+    "quantity": 45,
+    "executionPrice": 185.15,
+    "direction": "S",
+    "clientId": "CL002",
+    "order": {
+      "instrumentId": "IN002",
+      "quantity": 45,
+      "targetPrice": 11.33,
+      "direction": "S",
+      "clientId": "CL002",
+      "orderId": "ORD002"
+    },
+    "tradeId": "TRD002",
+    "cashValue": 1834.78
+  },
+  {
+    "instrumentId": "IN003",
+    "quantity": 1,
+    "executionPrice": 185.37,
+    "direction": "S",
+    "clientId": "CL003",
+    "order": {
+      "instrumentId": "IN003",
+      "quantity": 1,
+      "targetPrice": 88.76,
+      "direction": "S",
+      "clientId": "CL003",
+      "orderId": "ORD003"
+    },
+    "tradeId": "TRD003",
+    "cashValue": 50.83
+  },
+  {
+    "instrumentId": "IN004",
+    "quantity": 14,
+    "executionPrice": 190.03,
+    "direction": "B",
+    "clientId": "CL004",
+    "order": {
+      "instrumentId": "IN004",
+      "quantity": 14,
+      "targetPrice": 65.88,
+      "direction": "B",
+      "clientId": "CL004",
+      "orderId": "ORD004"
+    },
+    "tradeId": "TRD004",
+    "cashValue": 733.32
+  },
+  {
+    "instrumentId": "IN005",
+    "quantity": 95,
+    "executionPrice": 136.03,
+    "direction": "S",
+    "clientId": "CL005",
+    "order": {
+      "instrumentId": "IN005",
+      "quantity": 95,
+      "targetPrice": 165.34,
+      "direction": "S",
+      "clientId": "CL005",
+      "orderId": "ORD005"
+    },
+    "tradeId": "TRD005",
+    "cashValue": 17626.87
+  },
+  {
+    "instrumentId": "IN006",
+    "quantity": 71,
+    "executionPrice": 177.7,
+    "direction": "S",
+    "clientId": "CL006",
+    "order": {
+      "instrumentId": "IN006",
+      "quantity": 71,
+      "targetPrice": 163.29,
+      "direction": "S",
+      "clientId": "CL006",
+      "orderId": "ORD006"
+    },
+    "tradeId": "TRD006",
+    "cashValue": 9498.25
+  },
+  {
+    "instrumentId": "IN007",
+    "quantity": 38,
+    "executionPrice": 72.0,
+    "direction": "S",
+    "clientId": "CL007",
+    "order": {
+      "instrumentId": "IN007",
+      "quantity": 38,
+      "targetPrice": 177.1,
+      "direction": "S",
+      "clientId": "CL007",
+      "orderId": "ORD007"
+    },
+    "tradeId": "TRD007",
+    "cashValue": 6451.18
+  },
+  {
+    "instrumentId": "IN008",
+    "quantity": 7,
+    "executionPrice": 193.3,
+    "direction": "S",
+    "clientId": "CL008",
+    "order": {
+      "instrumentId": "IN008",
+      "quantity": 7,
+      "targetPrice": 94.31,
+      "direction": "S",
+      "clientId": "CL008",
+      "orderId": "ORD008"
+    },
+    "tradeId": "TRD008",
+    "cashValue": 1183.26
+  },
+  {
+    "instrumentId": "IN009",
+    "quantity": 59,
+    "executionPrice": 163.64,
+    "direction": "B",
+    "clientId": "CL009",
+    "order": {
+      "instrumentId": "IN009",
+      "quantity": 59,
+      "targetPrice": 14.11,
+      "direction": "B",
+      "clientId": "CL009",
+      "orderId": "ORD009"
+    },
+    "tradeId": "TRD009",
+    "cashValue": 8904.56
+  },
+  {
+    "instrumentId": "IN010",
+    "quantity": 1,
+    "executionPrice": 190.42,
+    "direction": "S",
+    "clientId": "CL010",
+    "order": {
+      "instrumentId": "IN010",
+      "quantity": 1,
+      "targetPrice": 126.81,
+      "direction": "S",
+      "clientId": "CL010",
+      "orderId": "ORD010"
+    },
+    "tradeId": "TRD010",
+    "cashValue": 160.29
+  },
+  {
+    "instrumentId": "IN011",
+    "quantity": 67,
+    "executionPrice": 103.08,
+    "direction": "S",
+    "clientId": "CL011",
+    "order": {
+      "instrumentId": "IN011",
+      "quantity": 67,
+      "targetPrice": 59.06,
+      "direction": "S",
+      "clientId": "CL011",
+      "orderId": "ORD011"
+    },
+    "tradeId": "TRD011",
+    "cashValue": 4315.37
+  },
+  {
+    "instrumentId": "IN012",
+    "quantity": 32,
+    "executionPrice": 125.49,
+    "direction": "B",
+    "clientId": "CL012",
+    "order": {
+      "instrumentId": "IN012",
+      "quantity": 32,
+      "targetPrice": 197.59,
+      "direction": "B",
+      "clientId": "CL012",
+      "orderId": "ORD012"
+    },
+    "tradeId": "TRD012",
+    "cashValue": 2155.94
+  },
+  {
+    "instrumentId": "IN013",
+    "quantity": 2,
+    "executionPrice": 187.06,
+    "direction": "S",
+    "clientId": "CL013",
+    "order": {
+      "instrumentId": "IN013",
+      "quantity": 2,
+      "targetPrice": 163.35,
+      "direction": "S",
+      "clientId": "CL013",
+      "orderId": "ORD013"
+    },
+    "tradeId": "TRD013",
+    "cashValue": 49.57
+  },
+  {
+    "instrumentId": "IN014",
+    "quantity": 55,
+    "executionPrice": 116.52,
+    "direction": "S",
+    "clientId": "CL014",
+    "order": {
+      "instrumentId": "IN014",
+      "quantity": 55,
+      "targetPrice": 77.08,
+      "direction": "S",
+      "clientId": "CL014",
+      "orderId": "ORD014"
+    },
+    "tradeId": "TRD014",
+    "cashValue": 7734.48
+  },
+  {
+    "instrumentId": "IN015",
+    "quantity": 68,
+    "executionPrice": 111.17,
+    "direction": "B",
+    "clientId": "CL015",
+    "order": {
+      "instrumentId": "IN015",
+      "quantity": 68,
+      "targetPrice": 109.87,
+      "direction": "B",
+      "clientId": "CL015",
+      "orderId": "ORD015"
+    },
+    "tradeId": "TRD015",
+    "cashValue": 1459.5
+  },
+  {
+    "instrumentId": "IN016",
+    "quantity": 8,
+    "executionPrice": 16.89,
+    "direction": "B",
+    "clientId": "CL016",
+    "order": {
+      "instrumentId": "IN016",
+      "quantity": 8,
+      "targetPrice": 189.5,
+      "direction": "B",
+      "clientId": "CL016",
+      "orderId": "ORD016"
+    },
+    "tradeId": "TRD016",
+    "cashValue": 361.42
+  },
+  {
+    "instrumentId": "IN017",
+    "quantity": 10,
+    "executionPrice": 172.13,
+    "direction": "B",
+    "clientId": "CL017",
+    "order": {
+      "instrumentId": "IN017",
+      "quantity": 10,
+      "targetPrice": 171.59,
+      "direction": "B",
+      "clientId": "CL017",
+      "orderId": "ORD017"
+    },
+    "tradeId": "TRD017",
+    "cashValue": 1777.4
+  },
+  {
+    "instrumentId": "IN018",
+    "quantity": 2,
+    "executionPrice": 38.87,
+    "direction": "B",
+    "clientId": "CL018",
+    "order": {
+      "instrumentId": "IN018",
+      "quantity": 2,
+      "targetPrice": 70.72,
+      "direction": "B",
+      "clientId": "CL018",
+      "orderId": "ORD018"
+    },
+    "tradeId": "TRD018",
+    "cashValue": 216.21
+  },
+  {
+    "instrumentId": "IN019",
+    "quantity": 15,
+    "executionPrice": 95.06,
+    "direction": "B",
+    "clientId": "CL019",
+    "order": {
+      "instrumentId": "IN019",
+      "quantity": 15,
+      "targetPrice": 33.94,
+      "direction": "B",
+      "clientId": "CL019",
+      "orderId": "ORD019"
+    },
+    "tradeId": "TRD019",
+    "cashValue": 2467.56
+  },
+  {
+    "instrumentId": "IN020",
+    "quantity": 45,
+    "executionPrice": 151.18,
+    "direction": "S",
+    "clientId": "CL020",
+    "order": {
+      "instrumentId": "IN020",
+      "quantity": 45,
+      "targetPrice": 83.28,
+      "direction": "S",
+      "clientId": "CL020",
+      "orderId": "ORD020"
+    },
+    "tradeId": "TRD020",
+    "cashValue": 5279.24
+  }
+]

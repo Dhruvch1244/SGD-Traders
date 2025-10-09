@@ -1,0 +1,293 @@
+{
+  "portfolioSummary": {
+    "totalValue": 120000,
+    "totalGainLoss": 7500
+  },
+  "lineChartData": {
+    "labels": [
+      "2025-08-05",
+      "2025-08-06",
+      "2025-08-07",
+      "2025-08-08",
+      "2025-08-09",
+      "2025-08-10",
+      "2025-08-11",
+      "2025-08-12",
+      "2025-08-13",
+      "2025-08-14"
+    ],
+    "datasets": [
+      {
+        "label": "Portfolio Value",
+        "data": [
+          123365,
+          124256,
+          110690,
+          124048,
+          119966,
+          120670,
+          113208,
+          116850,
+          119678,
+          110933
+        ],
+        "borderColor": "#42a5f5",
+        "fill": false
+      }
+    ]
+  },
+  "pieChartData": {
+    "labels": [
+      "Stocks",
+      "Bonds",
+      "Real Estate",
+      "Crypto",
+      "Cash"
+    ],
+    "datasets": [
+      {
+        "data": [
+          40,
+          25,
+          15,
+          10,
+          10
+        ],
+        "backgroundColor": [
+          "#42a5f5",
+          "#66bb6a",
+          "#ef5350",
+          "#ffa726",
+          "#ab47bc"
+        ]
+      }
+    ]
+  },
+  "performanceColumns": [
+    {
+      "headerName": "Date",
+      "field": "date"
+    },
+    {
+      "headerName": "Daily Gain/Loss",
+      "field": "gainLoss"
+    },
+    {
+      "headerName": "Volume",
+      "field": "volume"
+    }
+  ],
+  "performanceData": [
+    {
+      "date": "2025-08-14",
+      "gainLoss": 212.52,
+      "volume": 3506
+    },
+    {
+      "date": "2025-08-13",
+      "gainLoss": -250.59,
+      "volume": 1347
+    },
+    {
+      "date": "2025-08-12",
+      "gainLoss": -32.26,
+      "volume": 4995
+    },
+    {
+      "date": "2025-08-11",
+      "gainLoss": 54.12,
+      "volume": 2756
+    },
+    {
+      "date": "2025-08-10",
+      "gainLoss": -86.26,
+      "volume": 2587
+    },
+    {
+      "date": "2025-08-09",
+      "gainLoss": -405.28,
+      "volume": 2390
+    },
+    {
+      "date": "2025-08-08",
+      "gainLoss": -229.25,
+      "volume": 3175
+    },
+    {
+      "date": "2025-08-07",
+      "gainLoss": 309.35,
+      "volume": 4035
+    },
+    {
+      "date": "2025-08-06",
+      "gainLoss": 21.26,
+      "volume": 2263
+    },
+    {
+      "date": "2025-08-05",
+      "gainLoss": 144.15,
+      "volume": 2917
+    }
+  ],
+  "barChartData": {
+    "labels": [
+      "2025-08-14",
+      "2025-08-13",
+      "2025-08-12",
+      "2025-08-11",
+      "2025-08-10",
+      "2025-08-09",
+      "2025-08-08",
+      "2025-08-07",
+      "2025-08-06",
+      "2025-08-05"
+    ],
+    "datasets": [
+      {
+        "label": "Daily Gain/Loss",
+        "data": [
+          212.52,
+          -250.59,
+          -32.26,
+          54.12,
+          -86.26,
+          -405.28,
+          -229.25,
+          309.35,
+          21.26,
+          144.15
+        ],
+        "backgroundColor": "#66bb6a"
+      }
+    ]
+  },
+  "tradeHistoryColumns": [
+    {
+      "headerName": "Date",
+      "field": "date"
+    },
+    {
+      "headerName": "Asset",
+      "field": "asset"
+    },
+    {
+      "headerName": "Type",
+      "field": "type"
+    },
+    {
+      "headerName": "Amount",
+      "field": "amount"
+    },
+    {
+      "headerName": "Price",
+      "field": "price"
+    }
+  ],
+  "tradeHistoryData": [
+    {
+      "date": "2025-07-22",
+      "asset": "AAPL",
+      "type": "Buy",
+      "amount": 90.64,
+      "price": 446.65
+    },
+    {
+      "date": "2025-07-18",
+      "asset": "GOOGL",
+      "type": "Buy",
+      "amount": 44.28,
+      "price": 463.44
+    },
+    {
+      "date": "2025-07-26",
+      "asset": "AAPL",
+      "type": "Sell",
+      "amount": 14.05,
+      "price": 413.67
+    },
+    {
+      "date": "2025-08-07",
+      "asset": "BTC",
+      "type": "Buy",
+      "amount": 50.39,
+      "price": 229.37
+    },
+    {
+      "date": "2025-08-10",
+      "asset": "AAPL",
+      "type": "Buy",
+      "amount": 43.27,
+      "price": 620.63
+    },
+    {
+      "date": "2025-07-18",
+      "asset": "AAPL",
+      "type": "Sell",
+      "amount": 31.01,
+      "price": 852.54
+    },
+    {
+      "date": "2025-08-07",
+      "asset": "AAPL",
+      "type": "Sell",
+      "amount": 49.25,
+      "price": 252.57
+    },
+    {
+      "date": "2025-07-25",
+      "asset": "AAPL",
+      "type": "Sell",
+      "amount": 80.75,
+      "price": 396.33
+    },
+    {
+      "date": "2025-08-06",
+      "asset": "TSLA",
+      "type": "Sell",
+      "amount": 56.22,
+      "price": 102.71
+    },
+    {
+      "date": "2025-07-30",
+      "asset": "GOOGL",
+      "type": "Buy",
+      "amount": 78.7,
+      "price": 161.18
+    },
+    {
+      "date": "2025-07-25",
+      "asset": "ETH",
+      "type": "Sell",
+      "amount": 22.29,
+      "price": 745.98
+    },
+    {
+      "date": "2025-08-10",
+      "asset": "BTC",
+      "type": "Sell",
+      "amount": 86.17,
+      "price": 713.88
+    },
+    {
+      "date": "2025-07-26",
+      "asset": "GOOGL",
+      "type": "Sell",
+      "amount": 98.52,
+      "price": 148.75
+    },
+    {
+      "date": "2025-07-31",
+      "asset": "ETH",
+      "type": "Buy",
+      "amount": 57.57,
+      "price": 618.97
+    },
+    {
+      "date": "2025-07-23",
+      "asset": "TSLA",
+      "type": "Sell",
+      "amount": 15.53,
+      "price": 352.29
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* Keyframe Animations */
+@keyframes background-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Main Wrapper and Container Styles --- */
+.register-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem; /* Reduced padding */
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #111827, #000000);
+  color: #d1d5db;
+}
+
+.register-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  animation: fade-in-up 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+/* Left panel for branding/welcome */
+.welcome-panel {
+  flex: 1;
+  padding: 2rem; /* Reduced padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  color: #ffffff;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #d1d5db;
+  margin-bottom: 2.5rem;
+}
+
+/* Right panel for the form */
+.register-panel {
+  flex: 1.5; /* Give form panel more space */
+  padding: 2.5rem; /* Reduced padding */
+  background: rgb(9 16 26 / 85%);
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.1), 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.4rem; /* Reduced gap */
+}
+
+/* --- Input Styling --- */
+.form-field {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.5rem; /* Space for error messages */
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1.2rem 1rem 0.5rem;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* NEW: Styles for the select dropdown options */
+.form-field select option {
+  background: #111827;
+  color: #ffffff;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.3);
+}
+
+.form-field label {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  pointer-events: none;
+  color: #d1d5db;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Move label up when input is focused or has content */
+.form-field input:focus + label,
+.form-field input:not(:placeholder-shown) + label,
+.form-field select:focus + label,
+.form-field select:valid + label {
+  top: 0.25rem;
+  left: 0.75rem;
+  font-size: 0.75rem;
+  color: #38bdf8;
+}
+
+/* Special handling for date input label */
+.form-field input[type="date"] + label {
+  top: 0.25rem;
+  left: 0.75rem;
+  font-size: 0.75rem;
+  color: #38bdf8;
+}
+.form-field input[type="date"] {
+  color-scheme: dark;
+}
+
+/* --- Error and Hint Text --- */
+.error-message {
+  color: #f87171;
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: -1.4rem;
+  left: 0;
+}
+
+.hint-text {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  position: absolute;
+  bottom: -1.4rem;
+  left: 0;
+}
+
+/* --- Form Button Styles --- */
+.register-btn {
+  width: 100%;
+  padding: 0.85rem;
+  background-color: #38bdf8;
+  color: #111827;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.register-btn:hover {
+  background-color: #0ea5e9;
+  transform: translateY(-2px);
+}
+
+.register-btn:active {
+  transform: translateY(0);
+}
+
+.success {
+  color: #4ade80;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.error {
+  color: #f87171;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.links {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.links a {
+  font-size: 0.9rem;
+  color: #38bdf8;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.links a:hover {
+  color: #0ea5e9;
+  text-decoration: underline;
+}
+
+footer {
+  margin-top: 1.5rem; /* Reduced margin */
+  font-size: 0.8rem;
+  color: #d1d5db;
+  opacity: 0.7;
+  text-align: center;
+}
+
+/* Responsive styles */
+@media (max-width: 950px) {
+  .register-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .welcome-panel {
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+  }
+  .register-panel {
+    padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

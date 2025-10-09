@@ -1,0 +1,82 @@
+[
+  {
+    "clientId": "client1",
+    "investmentPurpose": "Wealth Creation",
+    "riskTolerance": "High Risk",
+    "incomeCategory": "Middle Income",
+    "investmentDuration": "10 years",
+    "acceptedTerms": true
+  },
+  {
+    "clientId": "client2",
+    "investmentPurpose": "Retirement",
+    "riskTolerance": "Medium",
+    "incomeCategory": "Middle",
+    "investmentDuration": "10 years",
+    "acceptedTerms": true
+  },
+  {
+    "clientId": "client3",
+    "investmentPurpose": "Retirement",
+    "riskTolerance": "Medium",
+    "incomeCategory": "Middle",
+    "investmentDuration": "10 years",
+    "acceptedTerms": true
+  },
+  {
+    "clientId": "client4",
+    "investmentPurpose": "Retirement",
+    "riskTolerance": "Medium",
+    "incomeCategory": "Middle",
+    "investmentDuration": "10 years",
+    "acceptedTerms": true
+  },
+  {
+    "clientId": "client5",
+    "investmentPurpose": "Retirement",
+    "riskTolerance": "Medium",
+    "incomeCategory": "Middle",
+    "investmentDuration": "10 years",
+    "acceptedTerms": true
+  },
+  {
+    "clientId": "client6",
+    "investmentPurpose": "Retirement",
+    "riskTolerance": "Medium",
+    "incomeCategory": "Middle",
+    "investmentDuration": "10 years",
+    "acceptedTerms": true
+  },
+  {
+    "clientId": "client7",
+    "investmentPurpose": "Retirement",
+    "riskTolerance": "Medium",
+    "incomeCategory": "Middle",
+    "investmentDuration": "10 years",
+    "acceptedTerms": true
+  },
+  {
+    "clientId": "client8",
+    "investmentPurpose": "Retirement",
+    "riskTolerance": "Medium",
+    "incomeCategory": "Middle",
+    "investmentDuration": "10 years",
+    "acceptedTerms": true
+  },
+  {
+    "clientId": "client9",
+    "investmentPurpose": "Retirement",
+    "riskTolerance": "Medium",
+    "incomeCategory": "Middle",
+    "investmentDuration": "10 years",
+    "acceptedTerms": true
+  },
+  {
+    "clientId": "client10",
+    "investmentPurpose": "Retirement",
+    "riskTolerance": "Medium",
+    "incomeCategory": "Middle",
+    "investmentDuration": "10 years",
+    "acceptedTerms": true
+  }
+]

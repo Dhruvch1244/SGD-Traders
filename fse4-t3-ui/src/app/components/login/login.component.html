@@ -1,0 +1,159 @@
+<div class="wrapper" id="login-page">
+  <div class="container">
+    <div class="welcome-panel">
+      <h3>Welcome to<br /></h3>
+      <h1>SGD Markets</h1>
+      <p class="tagline">A next-gen Stock Brokerage Platform</p>
+    </div>
+
+    <div class="form-panel">
+      <div class="form-box">
+        <!-- Login Form -->
+        <form
+          *ngIf="formState === 'login'"
+          id="login-form"
+          (ngSubmit)="login()"
+          #loginForm="ngForm"
+        >
+          <h1>Login</h1>
+          <div
+            *ngIf="message"
+            class="status-message"
+            [ngClass]="{ success: success, error: !success }"
+          >
+            {{ message }}
+          </div>
+          <div class="form-field">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              email
+              placeholder=" "
+              [(ngModel)]="email"
+              #emailInput="ngModel"
+            />
+            <label for="email">Email Address</label>
+          </div>
+          <div class="form-field">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              placeholder=" "
+              [(ngModel)]="password"
+            />
+            <label for="password">Password</label>
+          </div>
+          <button
+            type="submit"
+            class="form-btn"
+            [disabled]="!loginForm.form.valid"
+          >
+            Login
+          </button>
+          <div class="links">
+            <a (click)="showForgotPassword()">Forgot Password?</a>
+            <a (click)="register()">New to Platform? Register Here</a>
+          </div>
+        </form>
+
+        <!-- Forgot Password Form -->
+        <form
+          *ngIf="formState === 'forgotPassword'"
+          id="forgot-password-form"
+          (ngSubmit)="verifyIdentity()"
+          #forgotPasswordForm="ngForm"
+        >
+          <h1>Forgot Password</h1>
+          <div
+            *ngIf="message"
+            class="status-message"
+            [ngClass]="{ success: success, error: !success }"
+          >
+            {{ message }}
+          </div>
+          <div class="form-field">
+            <input
+              type="email"
+              id="email-forgot"
+              name="email-forgot"
+              required
+              email
+              placeholder=" "
+              [(ngModel)]="email"
+            />
+            <label for="email-forgot">Email Address</label>
+          </div>
+          <div class="form-field">
+            <input
+              type="date"
+              id="dob-forgot"
+              name="dob-forgot"
+              required
+              placeholder=" "
+              [(ngModel)]="dateOfBirth"
+            />
+            <label for="dob-forgot">Date of Birth</label>
+          </div>
+          <button
+            type="submit"
+            class="form-btn"
+            [disabled]="!forgotPasswordForm.form.valid"
+          >
+            Verify
+          </button>
+          <div class="links">
+            <a (click)="cancel()">Back to Login</a>
+          </div>
+        </form>
+
+        <!-- Change Password Form -->
+        <form
+          *ngIf="formState === 'changePassword'"
+          id="change-password-form"
+          (ngSubmit)="changePassword()"
+          #changePasswordForm="ngForm"
+        >
+          <h1>Change Password</h1>
+          <div
+            *ngIf="message"
+            class="status-message"
+            [ngClass]="{ success: success, error: !success }"
+          >
+            {{ message }}
+          </div>
+          <div class="form-field">
+            <input
+              type="password"
+              id="new-password"
+              name="new-password"
+              required
+              minlength="8"
+              placeholder=" "
+              [(ngModel)]="newPassword"
+            />
+            <label for="new-password">New Password</label>
+            <small class="hint-text">Min 8 chars, 1 number, 1 special char</small>
+          </div>
+          <button
+            type="submit"
+            class="form-btn"
+            [disabled]="!changePasswordForm.form.valid"
+          >
+            Change Password
+          </button>
+          <div class="links">
+            <a (click)="cancel()">Back to Login</a>
+          </div>
+        </form>
+
+        <footer>
+          <p>Leap 2025 FSE 4 Team 3</p>
+        </footer>
+      </div>
+    </div>
+  </div>
+</div>

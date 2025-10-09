@@ -1,0 +1,79 @@
+[
+  {
+    "clientId": "CLT1001",
+    "holdings": [
+      {
+        "instrumentId": "IN001",
+        "quantity": 100
+      },
+      {
+        "instrumentId": "IN006",
+        "quantity": 500
+      },
+      {
+        "instrumentId": "IN020",
+        "quantity": 50
+      }
+    ]
+  },
+  {
+    "clientId": "CLT1002",
+    "holdings": [
+      {
+        "instrumentId": "IN002",
+        "quantity": 5
+      },
+      {
+        "instrumentId": "IN014",
+        "quantity": 200
+      }
+    ]
+  },
+  {
+    "clientId": "CLT1003",
+    "holdings": [
+      {
+        "instrumentId": "IN004",
+        "quantity": 20
+      },
+      {
+        "instrumentId": "IN017",
+        "quantity": 1000
+      },
+      {
+        "instrumentId": "IN025",
+        "quantity": 2000
+      }
+    ]
+  },
+  {
+    "clientId": "CLT1004",
+    "holdings": [
+      {
+        "instrumentId": "IN005",
+        "quantity": 30
+      },
+      {
+        "instrumentId": "IN012",
+        "quantity": 150
+      }
+    ]
+  },
+  {
+    "clientId": "CLT1005",
+    "holdings": [
+      {
+        "instrumentId": "IN010",
+        "quantity": 1000
+      },
+      {
+        "instrumentId": "IN021",
+        "quantity": 100
+      },
+      {
+        "instrumentId": "IN029",
+        "quantity": 500
+      }
+    ]
+  }
+]

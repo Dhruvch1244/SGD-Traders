@@ -1,0 +1,994 @@
+[
+  {
+    "instrumentId": "Q123",
+    "externalIdType": "CUSIP",
+    "externalId": "02079K107",
+    "categoryId": "STOCK",
+    "instrumentDescription": "Alphabet Inc. Class C Capital Stock",
+    "maxQuantity": 1000,
+    "minQuantity": 1
+  },
+  {
+    "instrumentId": "Q456",
+    "externalIdType": "CUSIP",
+    "externalId": "88160R101",
+    "categoryId": "STOCK",
+    "instrumentDescription": "Tesla, Inc. Common Stock",
+    "maxQuantity": 1000,
+    "minQuantity": 1
+  },
+  {
+    "instrumentId": "N123456",
+    "externalIdType": "CUSIP",
+    "externalId": "46625H100",
+    "categoryId": "STOCK",
+    "instrumentDescription": "JPMorgan Chase & Co. Capital Stock",
+    "maxQuantity": 1000,
+    "minQuantity": 1
+  },
+  {
+    "instrumentId": "N123789",
+    "externalIdType": "ISIN",
+    "externalId": "US0846707026",
+    "categoryId": "STOCK",
+    "instrumentDescription": "Berkshire Hathaway Inc. Class A",
+    "maxQuantity": 10,
+    "minQuantity": 1
+  },
+  {
+    "instrumentId": "C100",
+    "externalIdType": "CUSIP",
+    "externalId": "48123Y5A0",
+    "categoryId": "CD",
+    "instrumentDescription": "JPMorgan Chase Bank, National Association 01/19",
+    "maxQuantity": 1000,
+    "minQuantity": 100
+  },
+  {
+    "instrumentId": "T67890",
+    "externalIdType": "CUSIP",
+    "externalId": "9128285M8",
+    "categoryId": "GOVT",
+    "instrumentDescription": "USA, Note 3.125 15nov2028 10Y",
+    "maxQuantity": 10000,
+    "minQuantity": 100
+  },
+  {
+    "instrumentId": "T67894",
+    "externalIdType": "CUSIP",
+    "externalId": "9128285Z9",
+    "categoryId": "GOVT",
+    "instrumentDescription": "USA, Note 2.5 31jan2024 5Y",
+    "maxQuantity": 10000,
+    "minQuantity": 100
+  },
+  {
+    "instrumentId": "T67895",
+    "externalIdType": "CUSIP",
+    "externalId": "9128286A3",
+    "categoryId": "GOVT",
+    "instrumentDescription": "USA, Note 2.625 31jan2026 7Y",
+    "maxQuantity": 10000,
+    "minQuantity": 100
+  },
+  {
+    "instrumentId": "T67897",
+    "externalIdType": "CUSIP",
+    "externalId": "9128285X4",
+    "categoryId": "GOVT",
+    "instrumentDescription": "USA, Note 2.5 31jan2021 2Y",
+    "maxQuantity": 10000,
+    "minQuantity": 100
+  },
+  {
+    "instrumentId": "T67899",
+    "externalIdType": "CUSIP",
+    "externalId": "9128285V8",
+    "categoryId": "GOVT",
+    "instrumentDescription": "USA, Notes 2.5% 15jan2022 3Y",
+    "maxQuantity": 10000,
+    "minQuantity": 100
+  },
+  {
+    "instrumentId": "T67880",
+    "externalIdType": "CUSIP",
+    "externalId": "9128285U0",
+    "categoryId": "GOVT",
+    "instrumentDescription": "USA, Note 1.5 31dec2023 5Y",
+    "maxQuantity": 10000,
+    "minQuantity": 100
+  },
+  {
+    "instrumentId": "T67883",
+    "externalIdType": "CUSIP",
+    "externalId": "912810SE9",
+    "categoryId": "GOVT",
+    "instrumentDescription": "USA, Bond 3.375 15nov2048 30Y",
+    "maxQuantity": 10000,
+    "minQuantity": 100
+  },
+  {
+    "instrumentId": "T67878",
+    "externalIdType": "CUSIP",
+    "externalId": "912810SD1",
+    "categoryId": "GOVT",
+    "instrumentDescription": "USA, Bond 3 15aug2048 30Y",
+    "maxQuantity": 10000,
+    "minQuantity": 100
+  },
+  {
+    "instrumentId": "IN001",
+    "externalIdType": "CUSIP",
+    "externalId": "912810SD2",
+    "categoryId": "STOCK",
+    "instrumentDescription": "MSFT - MICROSOFT CORP",
+    "maxQuantity": 10000,
+    "minQuantity": 1
+  },
+  {
+    "instrumentId": "IN002",
+    "externalIdType": "CUSIP",
+    "externalId": "912810SD4",
+    "categoryId": "STOCK",
+    "instrumentDescription": "AAPL - APPLE INC",
+    "maxQuantity": 10000,
+    "minQuantity": 1
+  },
+  {
+    "instrumentId": "IN003",
+    "instrumentDescription": "NVDA - NVIDIA CORP",
+    "externalIdType": "CUSIP",
+    "externalId": "67066G104",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN004",
+    "instrumentDescription": "AMZN - AMAZON COM INC",
+    "externalIdType": "CUSIP",
+    "externalId": "023135106",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN005",
+    "instrumentDescription": "GOOGL - ALPHABET INC CLASS A",
+    "externalIdType": "CUSIP",
+    "externalId": "02079K305",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN006",
+    "instrumentDescription": "META - META PLATFORMS INC CLASS A",
+    "externalIdType": "CUSIP",
+    "externalId": "30303M102",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN007",
+    "instrumentDescription": "GOOG - ALPHABET INC CLASS C",
+    "externalIdType": "CUSIP",
+    "externalId": "02079K107",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN008",
+    "instrumentDescription": "BRK.B - BERKSHIRE HATHAWAY INC CL B",
+    "externalIdType": "CUSIP",
+    "externalId": "084670702",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN009",
+    "instrumentDescription": "LLY - LILLY (ELI) 200",
+    "externalIdType": "CUSIP",
+    "externalId": "532457108",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN010",
+    "instrumentDescription": "AVGO - BROADCOM INC",
+    "externalIdType": "CUSIP",
+    "externalId": "11135F101",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN011",
+    "instrumentDescription": "TSLA - TESLA INC",
+    "externalIdType": "CUSIP",
+    "externalId": "88160R101",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN012",
+    "instrumentDescription": "JPM - JPMORGAN CHASE 20",
+    "externalIdType": "CUSIP",
+    "externalId": "46625H100",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN013",
+    "instrumentDescription": "V - VISA INC CLASS A",
+    "externalIdType": "CUSIP",
+    "externalId": "92826C839",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN014",
+    "instrumentDescription": "XOM - EXXON MOBIL CORP",
+    "externalIdType": "CUSIP",
+    "externalId": "30231G102",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN015",
+    "instrumentDescription": "WMT - WALMART INC",
+    "externalIdType": "CUSIP",
+    "externalId": "931142103",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN016",
+    "instrumentDescription": "UNH - UNITEDHEALTH GROUP INC",
+    "externalIdType": "CUSIP",
+    "externalId": "91324P102",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN017",
+    "instrumentDescription": "MA - MASTERCARD INC CLASS A",
+    "externalIdType": "CUSIP",
+    "externalId": "57636Q104",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN018",
+    "instrumentDescription": "JNJ - JOHNSON 10",
+    "externalIdType": "CUSIP",
+    "externalId": "478160104",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN019",
+    "instrumentDescription": "PG - PROCTER 20 CO",
+    "externalIdType": "CUSIP",
+    "externalId": "742718109",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN020",
+    "instrumentDescription": "HD - HOME DEPOT INC",
+    "externalIdType": "CUSIP",
+    "externalId": "437076102",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN021",
+    "instrumentDescription": "COST - COSTCO WHOLESALE CORP",
+    "externalIdType": "CUSIP",
+    "externalId": "22160K105",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN022",
+    "instrumentDescription": "MRK - MERCK 20 INC.",
+    "externalIdType": "CUSIP",
+    "externalId": "58933Y105",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN023",
+    "instrumentDescription": "ABBV - ABBVIE INC",
+    "externalIdType": "CUSIP",
+    "externalId": "00287Y109",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN024",
+    "instrumentDescription": "CVX - CHEVRON CORP",
+    "externalIdType": "CUSIP",
+    "externalId": "166764100",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN025",
+    "instrumentDescription": "CRM - SALESFORCE INC",
+    "externalIdType": "CUSIP",
+    "externalId": "79466L302",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN026",
+    "instrumentDescription": "BAC - BANK OF AMERICA CORP",
+    "externalIdType": "CUSIP",
+    "externalId": "060505104",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN027",
+    "instrumentDescription": "NFLX - NETFLIX INC",
+    "externalIdType": "CUSIP",
+    "externalId": "64110L106",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN028",
+    "instrumentDescription": "AMD - ADVANCED MICRO DEVICES",
+    "externalIdType": "CUSIP",
+    "externalId": "007903107",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN029",
+    "instrumentDescription": "KO - COCA-COLA CO",
+    "externalIdType": "CUSIP",
+    "externalId": "191216100",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN030",
+    "instrumentDescription": "PEP - PEPSICO INC",
+    "externalIdType": "CUSIP",
+    "externalId": "713448108",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN031",
+    "instrumentDescription": "LIN - LINDE PLC",
+    "externalIdType": "CUSIP",
+    "externalId": "G5494J103",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN032",
+    "instrumentDescription": "WFC - WELLS FARGO 10",
+    "externalIdType": "CUSIP",
+    "externalId": "949746101",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN033",
+    "instrumentDescription": "TMO - THERMO FISHER SCIENTIFIC INC",
+    "externalIdType": "CUSIP",
+    "externalId": "883556102",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN034",
+    "instrumentDescription": "MCD - MCDONALD'S CORP",
+    "externalIdType": "CUSIP",
+    "externalId": "580135101",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN035",
+    "instrumentDescription": "DIS - WALT DISNEY CO",
+    "externalIdType": "CUSIP",
+    "externalId": "254687106",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN036",
+    "instrumentDescription": "ABT - ABBOTT LABORATORIES",
+    "externalIdType": "CUSIP",
+    "externalId": "002824100",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN037",
+    "instrumentDescription": "ACN - ACCENTURE PLC CLASS A",
+    "externalIdType": "CUSIP",
+    "externalId": "G1151C101",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN038",
+    "instrumentDescription": "CSCO - CISCO SYSTEMS INC",
+    "externalIdType": "CUSIP",
+    "externalId": "17275R102",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN039",
+    "instrumentDescription": "DHR - DANAHER CORP",
+    "externalIdType": "CUSIP",
+    "externalId": "235851102",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN040",
+    "instrumentDescription": "INTC - INTEL CORP",
+    "externalIdType": "CUSIP",
+    "externalId": "458140100",
+    "categoryId": "STOCK",
+    "minQuantity": 1,
+    "maxQuantity": 10000
+  },
+  {
+    "instrumentId": "IN041",
+    "instrumentDescription": "US T-BOND MAT 2055-08-15",
+    "externalIdType": "CUSIP",
+    "externalId": "912810UM8",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN042",
+    "instrumentDescription": "US T-BOND MAT 2045-09-02",
+    "externalIdType": "CUSIP",
+    "externalId": "912810UN6",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN043",
+    "instrumentDescription": "US T-NOTE MAT 2035-08-15",
+    "externalIdType": "CUSIP",
+    "externalId": "91282CNT4",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN044",
+    "instrumentDescription": "US T-NOTE MAT 2032-08-31",
+    "externalIdType": "CUSIP",
+    "externalId": "91282CNW7",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN045",
+    "instrumentDescription": "US T-NOTE MAT 2030-08-31",
+    "externalIdType": "CUSIP",
+    "externalId": "91282CNX5",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN046",
+    "instrumentDescription": "US T-NOTE MAT 2027-08-31",
+    "externalIdType": "CUSIP",
+    "externalId": "91282CNV9",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN047",
+    "instrumentDescription": "US T-NOTE MAT 2027-07-31",
+    "externalIdType": "CUSIP",
+    "externalId": "91282CNQ0",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN048",
+    "instrumentDescription": "US T-BILL MAT 2026-08-06",
+    "externalIdType": "CUSIP",
+    "externalId": "912797RG4",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN049",
+    "instrumentDescription": "US T-BILL MAT 2026-07-09",
+    "externalIdType": "CUSIP",
+    "externalId": "912797RF6",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN050",
+    "instrumentDescription": "US T-BILL MAT 2026-06-11",
+    "externalIdType": "CUSIP",
+    "externalId": "912797QX8",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN051",
+    "instrumentDescription": "US T-BILL MAT 2026-05-14",
+    "externalIdType": "CUSIP",
+    "externalId": "912797QN0",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN052",
+    "instrumentDescription": "US T-BILL MAT 2026-04-16",
+    "externalIdType": "CUSIP",
+    "externalId": "912797QD2",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN053",
+    "instrumentDescription": "US T-BILL MAT 2026-03-19",
+    "externalIdType": "CUSIP",
+    "externalId": "912797PV3",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN054",
+    "instrumentDescription": "US T-BILL MAT 2026-02-26",
+    "externalIdType": "CUSIP",
+    "externalId": "912797RU3",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN055",
+    "instrumentDescription": "US T-BILL MAT 2026-02-19",
+    "externalIdType": "CUSIP",
+    "externalId": "912797PM3",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN056",
+    "instrumentDescription": "US T-BILL MAT 2026-01-29",
+    "externalIdType": "CUSIP",
+    "externalId": "912797RK5",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN057",
+    "instrumentDescription": "US T-BILL MAT 2026-01-08",
+    "externalIdType": "CUSIP",
+    "externalId": "912797RH2",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN058",
+    "instrumentDescription": "US T-BILL MAT 2025-12-30",
+    "externalIdType": "CUSIP",
+    "externalId": "912797RZ2",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN059",
+    "instrumentDescription": "US T-BILL MAT 2025-12-18",
+    "externalIdType": "CUSIP",
+    "externalId": "912797QZ3",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN060",
+    "instrumentDescription": "US T-BILL MAT 2025-11-28",
+    "externalIdType": "CUSIP",
+    "externalId": "912797NL7",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN061",
+    "instrumentDescription": "US T-BILL MAT 2025-11-13",
+    "externalIdType": "CUSIP",
+    "externalId": "912797QQ3",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN062",
+    "instrumentDescription": "US T-BILL MAT 2025-10-30",
+    "externalIdType": "CUSIP",
+    "externalId": "912797NA1",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN063",
+    "instrumentDescription": "US T-BILL MAT 2025-10-28",
+    "externalIdType": "CUSIP",
+    "externalId": "912797RE9",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN064",
+    "instrumentDescription": "US T-BILL MAT 2025-10-09",
+    "externalIdType": "CUSIP",
+    "externalId": "912797QE0",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN065",
+    "instrumentDescription": "US T-BILL MAT 2025-09-30",
+    "externalIdType": "CUSIP",
+    "externalId": "912797QW0",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN066",
+    "instrumentDescription": "US T-BILL MAT 2025-09-25",
+    "externalIdType": "CUSIP",
+    "externalId": "912797PY7",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN067",
+    "instrumentDescription": "US T-BILL MAT 2025-09-11",
+    "externalIdType": "CUSIP",
+    "externalId": "912797PW1",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN068",
+    "instrumentDescription": "US T-BILL MAT 2025-09-02",
+    "externalIdType": "CUSIP",
+    "externalId": "912797QM2",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN069",
+    "instrumentDescription": "US T-NOTE MAT 2025-08-31",
+    "externalIdType": "CUSIP",
+    "externalId": "9128284Z0",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN070",
+    "instrumentDescription": "US T-BILL MAT 2025-08-28",
+    "externalIdType": "CUSIP",
+    "externalId": "912797PQ4",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN071",
+    "instrumentDescription": "US T-BILL MAT 2025-08-26",
+    "externalIdType": "CUSIP",
+    "externalId": "912797QL4",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN072",
+    "instrumentDescription": "US T-NOTE MAT 2026-02-28",
+    "externalIdType": "CUSIP",
+    "externalId": "912821ST3",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN073",
+    "instrumentDescription": "US T-NOTE MAT 2026-02-28",
+    "externalIdType": "CUSIP",
+    "externalId": "912821SS5",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN074",
+    "instrumentDescription": "US T-NOTE MAT 2025-10-31",
+    "externalIdType": "CUSIP",
+    "externalId": "91282CAT8",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN075",
+    "instrumentDescription": "US T-NOTE MAT 2025-09-30",
+    "externalIdType": "CUSIP",
+    "externalId": "91282CJB8",
+    "categoryId": "GOVT",
+    "minQuantity": 100,
+    "maxQuantity": 10000000
+  },
+  {
+    "instrumentId": "IN076",
+    "instrumentDescription": "CAPITAL ONE CD 12-MONTH 4.25%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 1000,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN077",
+    "instrumentDescription": "CHASE BANK CD 6-MONTH 3.50%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 1000,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN078",
+    "instrumentDescription": "BANK OF AMERICA CD 12-MONTH 3.75%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 1000,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN079",
+    "instrumentDescription": "MARCUS BY GOLDMAN SACHS CD 18-MONTH 4.40%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 500,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN080",
+    "instrumentDescription": "ALLY BANK CD 3-YEAR 4.00%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 1000,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN081",
+    "instrumentDescription": "U.S. BANK CD 5-YEAR 3.80%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 500,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN082",
+    "instrumentDescription": "PNC BANK CD 7-MONTH 4.00%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 1000,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN083",
+    "instrumentDescription": "TD BANK CD 3-MONTH 4.00%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 250,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN084",
+    "instrumentDescription": "VANGUARD BROKERED CD 2-YEAR 4.00%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 1000,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN085",
+    "instrumentDescription": "MORGAN STANLEY PRIVATE BANK CD 5-YEAR 4.20%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 0,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN086",
+    "instrumentDescription": "BASK BANK CD 2-YEAR 4.30%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 1000,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN087",
+    "instrumentDescription": "POPULAR DIRECT CD 5-YEAR 4.30%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 10000,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN088",
+    "instrumentDescription": "FIRST INTERNET BANK CD 3-YEAR 4.28%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 1000,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN089",
+    "instrumentDescription": "SALEM FIVE DIRECT CD 2-YEAR 4.15%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 10000,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN090",
+    "instrumentDescription": "ALLIANT CREDIT UNION CD 1-YEAR 4.10%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 1000,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN091",
+    "instrumentDescription": "CITIBANK CD 12-MONTH 3.90%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 500,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN092",
+    "instrumentDescription": "DISCOVER BANK CD 10-YEAR 3.75%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 2500,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN093",
+    "instrumentDescription": "CAPITAL ONE CD 30-MONTH 4.15%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 1000,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN094",
+    "instrumentDescription": "CHASE BANK CD 24-MONTH 3.25%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 1000,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN095",
+    "instrumentDescription": "BANK OF AMERICA CD 7-MONTH 4.00%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 1000,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN096",
+    "instrumentDescription": "MARCUS BY GOLDMAN SACHS CD 6-YEAR 4.40%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 500,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN097",
+    "instrumentDescription": "U.S. BANK CD 12-MONTH SPECIAL 4.10%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 1000,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN098",
+    "instrumentDescription": "PNC BANK CD 13-MONTH 2.00%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 1000,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN099",
+    "instrumentDescription": "TD BANK CD 5-YEAR 2.25%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 250,
+    "maxQuantity": 250000
+  },
+  {
+    "instrumentId": "IN100",
+    "instrumentDescription": "VANGUARD BROKERED CD 10-YEAR 3.85%",
+    "externalIdType": "CD",
+    "categoryId": "CUSIP",
+    "minQuantity": 1000,
+    "maxQuantity": 250000
+  }
+]

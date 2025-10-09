@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.repository.WalletRepository">
+
+    <select id="findByClientId" resultType="com.example.demo.models.Wallet">
+        SELECT * FROM WALLETS WHERE CLIENTID = #{clientId}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO WALLETS (CLIENTID, BALANCE) VALUES (#{clientId}, #{balance})
+    </insert>
+
+    <update id="update">
+        UPDATE WALLETS SET BALANCE = #{balance} WHERE CLIENTID = #{clientId}
+    </update>
+
+</mapper>

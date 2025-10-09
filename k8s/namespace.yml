@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: some-id-leapcloud
+  labels:
+    environment: development
+    team: fse4team3
+    project: trading-app

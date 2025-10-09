@@ -1,0 +1,72 @@
+<div class="buy-trade-form">
+  <h2>Buy Trade</h2>
+
+  <label>Category</label>
+  <select [(ngModel)]="selectedCategory" (change)="onCategoryChange()">
+    <option [value]="''">All</option>
+    <option *ngFor="let cat of categories" [value]="cat">
+      {{ cat | uppercase }}
+    </option>
+  </select>
+
+  <label>Instrument</label>
+  <select
+    [(ngModel)]="selectedInstrument"
+    (change)="onInstrumentSelectChange($event)"
+  >
+    <option value="" disabled selected>Select Instrument</option>
+    <option value="__search__">🔍 Search instruments...</option>
+    <option
+      *ngFor="let inst of filteredInstruments"
+      [value]="inst.instrumentId"
+    >
+      {{ inst.description }} ({{ inst.instrumentId }})
+    </option>
+  </select>
+
+  <div class="input-group" *ngIf="selectedInstrument">
+    <div class="col">
+      <label>Quantity</label>
+      <input
+        type="number"
+        [(ngModel)]="quantity"
+        (change)="onQuantityChangeLocal(quantity)"
+        [min]="minQuantity"
+        [max]="maxQuantity"
+      />
+    </div>
+
+    <div class="col" style="flex: 1">
+      <label>Amount</label>
+      <input
+        type="range"
+        [min]="minAmount"
+        [max]="maxAmount"
+        [step]="price || 1"
+        [value]="buyAmount"
+        (input)="onAmountChangeLocal($any($event.target).valueAsNumber)"
+      />
+    </div>
+  </div>
+
+  <div *ngIf="selectedInstrument" class="meta-row">
+    <div>Price per unit: {{ price | number : "1.2-2" }}</div>
+    <div>
+      Total: {{ buyAmount | number : "1.2-2" }} | Min:
+      {{ minAmount | number : "1.2-2" }} | Max:
+      {{ maxAmount | number : "1.2-2" }}
+    </div>
+  </div>
+
+  <button
+    class="submit-button"
+    (click)="onSubmit()"
+    [disabled]="
+      !selectedInstrument || quantity < minQuantity || quantity > maxQuantity
+    "
+  >
+    Submit
+  </button>
+
+  <div class="trade-status" *ngIf="tradeResult">{{ tradeResult }}</div>
+</div>

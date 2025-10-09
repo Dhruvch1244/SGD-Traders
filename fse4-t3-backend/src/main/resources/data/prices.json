@@ -1,0 +1,23 @@
+
+[
+  {"instrumentId": "INST001", "bidPrice": 172.50, "askPrice": 172.55, "timestamp": "2023-10-27T10:00:00Z"},
+  {"instrumentId": "INST001", "bidPrice": 172.51, "askPrice": 172.56, "timestamp": "2023-10-27T10:01:00Z"},
+  {"instrumentId": "INST001", "bidPrice": 172.52, "askPrice": 172.57, "timestamp": "2023-10-27T10:02:00Z"},
+  {"instrumentId": "INST001", "bidPrice": 172.53, "askPrice": 172.58, "timestamp": "2023-10-27T10:03:00Z"},
+  {"instrumentId": "INST001", "bidPrice": 172.54, "askPrice": 172.59, "timestamp": "2023-10-27T10:04:00Z"},
+  {"instrumentId": "INST001", "bidPrice": 172.55, "askPrice": 172.60, "timestamp": "2023-10-27T10:05:00Z"},
+  {"instrumentId": "INST001", "bidPrice": 172.56, "askPrice": 172.61, "timestamp": "2023-10-27T10:06:00Z"},
+  {"instrumentId": "INST001", "bidPrice": 172.57, "askPrice": 172.62, "timestamp": "2023-10-27T10:07:00Z"},
+  {"instrumentId": "INST001", "bidPrice": 172.58, "askPrice": 172.63, "timestamp": "2023-10-27T10:08:00Z"},
+  {"instrumentId": "INST001", "bidPrice": 172.59, "askPrice": 172.64, "timestamp": "2023-10-27T10:09:00Z"},
+  {"instrumentId": "INST002", "bidPrice": 330.80, "askPrice": 330.85, "timestamp": "2023-10-27T10:00:00Z"},
+  {"instrumentId": "INST002", "bidPrice": 330.81, "askPrice": 330.86, "timestamp": "2023-10-27T10:01:00Z"},
+  {"instrumentId": "INST002", "bidPrice": 330.82, "askPrice": 330.87, "timestamp": "2023-10-27T10:02:00Z"},
+  {"instrumentId": "INST002", "bidPrice": 330.83, "askPrice": 330.88, "timestamp": "2023-10-27T10:03:00Z"},
+  {"instrumentId": "INST002", "bidPrice": 330.84, "askPrice": 330.89, "timestamp": "2023-10-27T10:04:00Z"},
+  {"instrumentId": "INST002", "bidPrice": 330.85, "askPrice": 330.90, "timestamp": "2023-10-27T10:05:00Z"},
+  {"instrumentId": "INST002", "bidPrice": 330.86, "askPrice": 330.91, "timestamp": "2023-10-27T10:06:00Z"},
+  {"instrumentId": "INST002", "bidPrice": 330.87, "askPrice": 330.92, "timestamp": "2023-10-27T10:07:00Z"},
+  {"instrumentId": "INST002", "bidPrice": 330.88, "askPrice": 330.93, "timestamp": "2023-10-27T10:08:00Z"},
+  {"instrumentId": "INST002", "bidPrice": 330.89, "askPrice": 330.94, "timestamp": "2023-10-27T10:09:00Z"}
+]

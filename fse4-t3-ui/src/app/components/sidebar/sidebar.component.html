@@ -1,0 +1,25 @@
+<div
+  class="sidebar"
+  [class.collapsed]="isCollapsed"
+  (mouseenter)="isCollapsed = false"
+  (mouseleave)="isCollapsed = true"
+>
+  <mat-nav-list>
+    <mat-list-item (click)="navigateTo('/landing')" class="item-content">
+      <mat-icon class="icon blue">dashboard</mat-icon>
+      <span class="label" *ngIf="!isCollapsed">Dashboard</span>
+    </mat-list-item>
+    <mat-list-item (click)="navigateTo('/portfolio')" class="item-content">
+      <mat-icon class="icon green">pie_chart</mat-icon>
+      <span class="label" *ngIf="!isCollapsed">Portfolio</span>
+    </mat-list-item>
+    <mat-list-item (click)="navigateTo('/trade')" class="item-content">
+      <mat-icon class="icon yellow">swap_horiz</mat-icon>
+      <span class="label" *ngIf="!isCollapsed">Trade</span>
+    </mat-list-item>
+    <mat-list-item (click)="navigateTo('/history')" class="item-content">
+      <mat-icon class="icon red">history</mat-icon>
+      <span class="label" *ngIf="!isCollapsed">History</span>
+    </mat-list-item>
+  </mat-nav-list>
+</div>

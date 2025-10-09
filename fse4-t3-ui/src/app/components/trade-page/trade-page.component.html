@@ -1,0 +1,53 @@
+<div class="header">
+  <h2>Trade Stocks</h2>
+</div>
+<div class="main">
+  <div class="Instrument-Grid">
+      <div class="search-box">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search instruments..."
+        [(ngModel)]="searchText"
+        (input)="onSearchChange($event)"
+      />
+      <i class="fas fa-search search-icon"></i>
+    </div>
+    <ag-grid-angular
+      class="ag-theme-alpine-dark grid"
+      [rowData]="rowData"
+      [columnDefs]="columnDefs"
+      [pagination]="true"
+      [gridOptions]="gridOptions"
+      [paginationPageSize]="10"
+      [domLayout]="'autoHeight'"
+      (gridReady)="onGridReady($event)"
+      style="width: 100%"
+    >
+    </ag-grid-angular>
+  </div>
+  <div class="Buy-Sell-Trade">
+    <div class="buy-sell-content">
+      <div class="toggle-buttons">
+        <button [class.active]="selected === 'buy'" (click)="select('buy')">
+          Buy
+        </button>
+        <button [class.active]="selected === 'sell'" (click)="select('sell')">
+          Sell
+        </button>
+      </div>
+
+      <!-- You can conditionally show content below -->
+      <div class="trade-panel">
+        <ng-container *ngIf="selected === 'buy'">
+          <!-- Buy content -->
+          <app-buy-trade></app-buy-trade>
+        </ng-container>
+        <ng-container *ngIf="selected === 'sell'">
+          <!-- Sell content -->
+          <app-sell-trade></app-sell-trade>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

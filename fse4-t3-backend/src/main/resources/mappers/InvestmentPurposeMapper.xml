@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.repository.InvestmentPurposeRepository">
+
+    <select id="findAll" resultType="com.example.demo.models.InvestmentPurpose">
+        SELECT * FROM INVESTMENT_PURPOSES
+    </select>
+
+    <select id="findByPurpose" resultType="long">
+        SELECT ID FROM INVESTMENT_PURPOSES WHERE PURPOSE = #{purpose}
+    </select>
+
+</mapper>

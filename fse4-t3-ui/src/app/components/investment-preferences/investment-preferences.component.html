@@ -1,0 +1,119 @@
+<!-- 
+  This is the HTML template for the Investment Preferences component.
+  It's designed to work with the provided TypeScript logic, using 
+  [(ngModel)] for simple, two-way data binding.
+-->
+<div class="preferences-wrapper">
+  <div class="preferences-container">
+    <!-- Welcome panel on the left -->
+    <div class="welcome-panel">
+      <header class="preferences-header">
+        <h1 class="logo-text">
+          <span class="logo-s">S</span><span class="logo-d">G</span
+          ><span class="logo-d">D</span>
+        </h1>
+      </header>
+      <h2>Investment Preferences</h2>
+      <p class="tagline">Tailor your investment journey with us.</p>
+    </div>
+
+    <!-- Form panel on the right -->
+    <div class="preferences-panel">
+      <div class="form-container">
+        <h3>Set Your Preferences</h3>
+        <!-- 
+          The form doesn't need a special submit handler, as the button's 
+          click event is handled directly.
+        -->
+        <form>
+          <div class="form-grid">
+            <!-- Investment Purpose Dropdown -->
+            <div class="field-container">
+              <label>Investment Purpose</label>
+              <!-- Each select uses [(ngModel)] to bind to the 'preferences' object -->
+              <!-- A 'name' attribute is required for ngModel to work inside a form -->
+              <select
+                name="investmentPurpose"
+                [(ngModel)]="preferences.investmentPurpose"
+              >
+                <!-- The getOptions() method populates the dropdown -->
+                <option
+                  *ngFor="let option of getOptions(InvestmentPurposeMap)"
+                  [value]="option.value"
+                >
+                  {{ option.label }}
+                </option>
+              </select>
+            </div>
+
+            <!-- Risk Tolerance Dropdown -->
+            <div class="field-container">
+              <label>Risk Tolerance</label>
+              <select
+                name="riskTolerance"
+                [(ngModel)]="preferences.riskTolerance"
+              >
+                <option
+                  *ngFor="let option of getOptions(RiskToleranceMap)"
+                  [value]="option.value"
+                >
+                  {{ option.label }}
+                </option>
+              </select>
+            </div>
+
+            <!-- Income Category Dropdown -->
+            <div class="field-container">
+              <label>Income Category</label>
+              <select
+                name="incomeCategory"
+                [(ngModel)]="preferences.incomeCategory"
+              >
+                <option
+                  *ngFor="let option of getOptions(IncomeCategoryMap)"
+                  [value]="option.value"
+                >
+                  {{ option.label }}
+                </option>
+              </select>
+            </div>
+
+            <!-- Investment Duration Dropdown -->
+            <div class="field-container">
+              <label>Investment Duration</label>
+              <select
+                name="investmentDuration"
+                [(ngModel)]="preferences.investmentDuration"
+              >
+                <option
+                  *ngFor="let option of getOptions(InvestmentDurationMap)"
+                  [value]="option.value"
+                >
+                  {{ option.label }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <label class="terms-label">
+            <input
+              type="checkbox"
+              name="acceptedTerms"
+              [checked]="preferences.acceptedTerms === 1"
+              (change)="onAcceptedTermsChange($event)"
+            />
+            I accept the RoboAdvisor Terms & Conditions.
+          </label>
+          <button
+            type="button"
+            (click)="save()"
+            [disabled]="!isFormValid()"
+            class="register-btn"
+          >
+            Save Preferences
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

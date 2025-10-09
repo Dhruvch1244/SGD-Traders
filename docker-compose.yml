@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  angular-app:
+    image: leapfse4.jfrog.io/fse4team3/some-id-frontend:${APP_VERSION}
+    ports:
+      - "4200:80"
+    depends_on:
+      - fmts-nodejs
+      - spring-app
+      - mid-nodejs
+
+  fmts-nodejs:
+    image: leapfse4.jfrog.io/fse4team3/some-id-fmts:${APP_VERSION}
+    ports:
+      - "3000:3000"
+
+  mid-nodejs:
+    image: leapfse4.jfrog.io/fse4team3/some-id-middle-tier:${APP_VERSION}
+    ports:
+      - "3002:3002"
+    depends_on:
+      - spring-app
+      - fmts-nodejs
+    environment:
+      PORT: 3002
+      JWT_SECRET: c8d7e6f5a4b3c2d1e0f9g8h7i6j5k4l3m2n1o0p9q8r7s6t5u4v3w2x1y0z
+      NODE_ENV: development
+      ANGULAR_APP_URL: http://localhost:4200
+      JAVA_API_URL: http://spring-app:8080/api
+      API_KEY: secure_service_to_service_key_for_backend_communication
+      TOKEN_EXPIRY: 3600000
+      SESSION_SECRET: uygygyyu87y778yh76t7f56s546fr7686866tgh9898j9o9j8i9h67rg7bt646gwvtu
+      SESSION_MAX_AGE: 3600000
+
+  spring-app:
+    image: leapfse4.jfrog.io/fse4team3/some-id-backend:${APP_VERSION}
+    ports:
+      - "8080:8080"
+    depends_on:
+      - fmts-nodejs
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:oracle:thin:@some-id-rds.czisqegmscrt.ap-south-1.rds.amazonaws.com:1521/ORCL
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: LA2025fmr

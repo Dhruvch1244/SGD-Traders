@@ -1,0 +1,142 @@
+<!-- profile-content.component.html -->
+<div class="profile-container" *ngIf="profile">
+  <div class="profile-card">
+    <div class="card-header">
+      <h2>Profile Details</h2>
+      <button class="btn btn-primary" (click)="toggleEdit()">
+        {{ isEditing ? 'Cancel' : 'Edit Profile' }}
+      </button>
+    </div>
+
+    <div class="card-content">
+      <form [formGroup]="profileForm" *ngIf="isEditing; else profileView">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            formControlName="name"
+            [class.error]="errorMessages['name']"
+          >
+          <span class="error-message" *ngIf="errorMessages['name']">{{ errorMessages['name'] }}</span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            [disabled]="true"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="dateOfBirth">Date of Birth</label>
+          <input
+            type="text"
+            id="dateOfBirth"
+            formControlName="dateOfBirth"
+            [disabled]="true"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input
+            type="text"
+            id="country"
+            formControlName="country"
+            [class.error]="errorMessages['country']"
+          >
+          <span class="error-message" *ngIf="errorMessages['country']">{{ errorMessages['country'] }}</span>
+        </div>
+
+        <div class="form-group">
+          <label for="postalCode">Postal Code</label>
+          <input
+            type="text"
+            id="postalCode"
+            formControlName="postalCode"
+            [class.error]="errorMessages['postalCode']"
+          >
+          <span class="error-message" *ngIf="errorMessages['postalCode']">{{ errorMessages['postalCode'] }}</span>
+        </div>
+
+        <h3>Identifications</h3>
+        <div formArrayName="identification" class="identification-list">
+          <div *ngFor="let id of identificationArray.controls; let i = index" [formGroupName]="i" class="identification-item">
+            <div class="id-form-group">
+              <div class="form-group">
+                <label>Type</label>
+                <input
+                  type="text"
+                  formControlName="type"
+                  [class.error]="getIdErrorMessage(i, 'type')"
+                >
+                <span class="error-message" *ngIf="getIdErrorMessage(i, 'type')">{{ getIdErrorMessage(i, 'type') }}</span>
+              </div>
+
+              <div class="form-group">
+                <label>Value</label>
+                <input
+                  type="text"
+                  formControlName="value"
+                  [class.error]="getIdErrorMessage(i, 'value')"
+                >
+                <span class="error-message" *ngIf="getIdErrorMessage(i, 'value')">{{ getIdErrorMessage(i, 'value') }}</span>
+              </div>
+
+              <button class="btn-icon btn-delete" (click)="removeIdentification(i)">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <button class="btn btn-outline" type="button" (click)="addIdentification()">
+            <i class="fas fa-plus"></i> Add Identification
+          </button>
+          <button class="btn btn-primary" (click)="saveProfile()">Save Changes</button>
+        </div>
+      </form>
+
+      <ng-template #profileView>
+        <div class="profile-info">
+          <div class="info-row">
+            <span class="label">Name:</span>
+            <span class="value">{{ profile.name }}</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Email:</span>
+            <span class="value">{{ profile.email }}</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Date of Birth:</span>
+            <span class="value">{{ profile.dateOfBirth }}</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Country:</span>
+            <span class="value">{{ profile.country }}</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Postal Code:</span>
+            <span class="value">{{ profile.postalCode }}</span>
+          </div>
+        </div>
+
+        <h3>Identifications</h3>
+        <div class="id-cards">
+          <div class="id-card" *ngFor="let id of profile.identification">
+            <div class="id-badge">ID</div>
+            <div class="id-content">
+              <div class="id-type">{{ id.type }}</div>
+              <div class="id-value">{{ id.value }}</div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

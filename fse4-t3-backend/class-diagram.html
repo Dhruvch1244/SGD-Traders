@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Diagram - Project Models</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f8f9fa; }
+        .diagram { display: flex; flex-wrap: wrap; gap: 24px; }
+        .class-box {
+            background: #fff;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            min-width: 260px;
+            max-width: 340px;
+            margin: 12px;
+            box-shadow: 0 2px 8px #0001;
+        }
+        .class-title {
+            background: #007bff;
+            color: #fff;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 6px 6px 0 0;
+            font-size: 1.1em;
+        }
+        .class-fields {
+            padding: 10px 16px;
+            font-size: 0.98em;
+        }
+        .relation {
+            margin: 0 0 0 16px;
+            color: #555;
+            font-size: 0.95em;
+        }
+        .footer { margin-top: 32px; color: #888; font-size: 0.95em; }
+    </style>
+</head>
+<body>
+    <h1>Class Diagram - Project Models</h1>
+    <div class="diagram">
+        <div class="class-box">
+            <div class="class-title">Client</div>
+            <div class="class-fields">
+                - clientId: String<br>
+                - name: String<br>
+                - email: String<br>
+                - dateOfBirth: String<br>
+                - country: String<br>
+                - postalCode: String<br>
+                - password: String<br>
+            </div>
+            <div class="relation">1 - * ClientIdentification</div>
+            <div class="relation">1 - 1 Wallet</div>
+            <div class="relation">1 - 1 Portfolio</div>
+            <div class="relation">1 - 1 InvestmentPreferences</div>
+        </div>
+        <div class="class-box">
+            <div class="class-title">ClientIdentification</div>
+            <div class="class-fields">
+                - id: String<br>
+                - clientId: String<br>
+                - type: String<br>
+                - value: String<br>
+            </div>
+            <div class="relation">* - 1 Client</div>
+        </div>
+        <div class="class-box">
+            <div class="class-title">Wallet</div>
+            <div class="class-fields">
+                - clientId: String<br>
+                - balance: double<br>
+            </div>
+            <div class="relation">1 - 1 Client</div>
+        </div>
+        <div class="class-box">
+            <div class="class-title">Portfolio</div>
+            <div class="class-fields">
+                - clientId: String<br>
+                - holdings: Set&lt;PortfolioHolding&gt;<br>
+            </div>
+            <div class="relation">1 - * PortfolioHolding</div>
+            <div class="relation">1 - 1 Client</div>
+        </div>
+        <div class="class-box">
+            <div class="class-title">PortfolioHolding</div>
+            <div class="class-fields">
+                - holdingId: Long<br>
+                - portfolioId: String<br>
+                - instrumentId: String<br>
+                - quantity: int<br>
+            </div>
+            <div class="relation">* - 1 Portfolio</div>
+            <div class="relation">* - 1 Instrument</div>
+        </div>
+        <div class="class-box">
+            <div class="class-title">Instrument</div>
+            <div class="class-fields">
+                - instrumentId: String<br>
+                - description: String<br>
+                - externalIdType: String<br>
+                - externalId: String<br>
+                - categoryId: String<br>
+                - minQuantity: int<br>
+                - maxQuantity: int<br>
+            </div>
+        </div>
+        <div class="class-box">
+            <div class="class-title">Order</div>
+            <div class="class-fields">
+                - orderId: String<br>
+                - instrumentId: String<br>
+                - quantity: int<br>
+                - targetPrice: double<br>
+                - direction: String<br>
+                - clientId: String<br>
+            </div>
+            <div class="relation">* - 1 Client</div>
+            <div class="relation">* - 1 Instrument</div>
+        </div>
+        <div class="class-box">
+            <div class="class-title">Trade</div>
+            <div class="class-fields">
+                - tradeId: String<br>
+                - instrumentId: String<br>
+                - quantity: int<br>
+                - executionPrice: double<br>
+                - direction: String<br>
+                - clientId: String<br>
+                - orderId: String<br>
+                - cashValue: double<br>
+                - timestamp: LocalDateTime<br>
+            </div>
+            <div class="relation">* - 1 Client</div>
+            <div class="relation">* - 1 Instrument</div>
+            <div class="relation">* - 1 Order</div>
+        </div>
+        <div class="class-box">
+            <div class="class-title">Price</div>
+            <div class="class-fields">
+                - instrumentId: String<br>
+                - bidPrice: double<br>
+                - askPrice: double<br>
+                - timestamp: LocalDateTime<br>
+            </div>
+            <div class="relation">* - 1 Instrument</div>
+        </div>
+        <div class="class-box">
+            <div class="class-title">InvestmentPreferences</div>
+            <div class="class-fields">
+                - clientId: String<br>
+                - investmentPurposeId: Long<br>
+                - riskToleranceId: Long<br>
+                - incomeCategoryId: Long<br>
+                - investmentDurationId: Long<br>
+                - acceptedTerms: Long<br>
+            </div>
+            <div class="relation">1 - 1 Client</div>
+            <div class="relation">* - 1 InvestmentPurpose</div>
+            <div class="relation">* - 1 RiskTolerance</div>
+            <div class="relation">* - 1 IncomeCategory</div>
+            <div class="relation">* - 1 InvestmentDuration</div>
+        </div>
+        <div class="class-box">
+            <div class="class-title">InvestmentPurpose</div>
+            <div class="class-fields">
+                - id: Long<br>
+                - purpose: String<br>
+            </div>
+        </div>
+        <div class="class-box">
+            <div class="class-title">RiskTolerance</div>
+            <div class="class-fields">
+                - id: Long<br>
+                - name: String<br>
+            </div>
+        </div>
+        <div class="class-box">
+            <div class="class-title">IncomeCategory</div>
+            <div class="class-fields">
+                - id: Long<br>
+                - name: String<br>
+                - range: String<br>
+            </div>
+        </div>
+        <div class="class-box">
+            <div class="class-title">InvestmentDuration</div>
+            <div class="class-fields">
+                - id: Long<br>
+                - duration: String<br>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <b>Legend:</b> <br>
+        <b>1 - 1</b>: One-to-one &nbsp; <b>1 - *</b>: One-to-many &nbsp; <b>* - 1</b>: Many-to-one<br>
+        <br>
+        <b>Note:</b> This diagram is auto-generated and may not show all indirect or DTO relationships.<br>
+        <b>Generated:</b> 2025-09-19
+    </div>
+</body>
+</html>
