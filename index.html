@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hot-Cold Party Game | Team Challenge</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    /* Reset & Base Variables */
+    :root {
+      --bg-color: #050505;
+      --card-bg: rgba(255, 255, 255, 0.02);
+      --card-inner: #0a0a0a;
+      --border-light: rgba(255, 255, 255, 0.08);
+      --text-primary: #f5f5f7;
+      --text-secondary: #86868b;
+      --primary-glow: rgba(99, 102, 241, 0.15);
+      --accent-color: #6366f1;
+      --accent-hover: #4f46e5;
+      --danger-color: #ef4444;
+      --success-color: #10b981;
+      --transition-spring: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-y: auto;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient Animated Mesh Background */
+    .bg-mesh {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .bg-orb {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent-color) 0%, rgba(99, 102, 241, 0) 70%);
+      opacity: 0.15;
+      filter: blur(80px);
+      animation: float-slow 20s infinite ease-in-out alternate;
+    }
+
+    .bg-orb-1 {
+      top: -10%;
+      left: -10%;
+      background: radial-gradient(circle, #ec4899 0%, rgba(236, 72, 153, 0) 70%);
+    }
+
+    .bg-orb-2 {
+      bottom: -10%;
+      right: -10%;
+      background: radial-gradient(circle, #6366f1 0%, rgba(99, 102, 241, 0) 70%);
+      animation-delay: -5s;
+    }
+
+    @keyframes float-slow {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(50px, -50px) scale(1.1); }
+      100% { transform: translate(-30px, 30px) scale(0.9); }
+    }
+
+    /* App Container */
+    main {
+      width: 100%;
+      max-width: 800px;
+      padding: 2rem 1.5rem;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 10;
+      margin: auto 0;
+    }
+
+    /* Double Bezel Card System */
+    .outer-shell {
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      padding: 0.5rem;
+      border-radius: 2rem;
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      transition: var(--transition-smooth);
+    }
+
+    .inner-core {
+      background: var(--card-inner);
+      border-radius: calc(2rem - 0.5rem);
+      padding: 2.5rem 2rem;
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (max-width: 600px) {
+      .inner-core {
+        padding: 2rem 1.25rem;
+      }
+    }
+
+    /* Micro Tag Badges */
+    .eyebrow-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 9999px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 1.5rem;
+      align-self: center;
+    }
+
+    .eyebrow-tag i {
+      font-size: 0.8rem;
+      color: var(--accent-color);
+    }
+
+    /* Headings */
+    h1, h2, h3 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #ffffff 40%, #a5b4fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .slide h1 i {
+      background: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Buttons & Micro-interactions */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 9999px;
+      padding: 0.85rem 1.75rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+      outline: none;
+    }
+
+    .btn:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-primary);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: none;
+      transform: translateY(-2px);
+    }
+
+    .btn-danger {
+      background: var(--danger-color);
+    }
+
+    .btn-danger:hover {
+      background: #dc2626;
+      box-shadow: 0 10px 20px -5px rgba(239, 68, 68, 0.4);
+    }
+
+    .btn-success {
+      background: var(--success-color);
+    }
+
+    .btn-success:hover {
+      background: #059669;
+      box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.4);
+    }
+
+    .btn-icon-wrapper {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      transition: var(--transition-smooth);
+    }
+
+    .btn:hover .btn-icon-wrapper {
+      transform: translateX(4px) scale(1.1);
+    }
+
+    /* Screen View Transition System */
+    .screen-view {
+      display: none;
+      opacity: 0;
+      transform: translateY(30px) scale(0.98);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .screen-view.active {
+      display: flex;
+      flex-direction: column;
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Tutorial Slide Elements & Staggered Entry reveals */
+    .slider-container {
+      position: relative;
+      width: 100%;
+      min-height: 320px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      .slider-container {
+        min-height: 380px;
+      }
+    }
+
+    .slides-wrapper {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .slide {
+      min-width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+    }
+
+    /* Staggered slide reveal offsets */
+    .slide * {
+      opacity: 0;
+      transform: translateY(15px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .slide.active * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .slide.active .slide-graphic { transition-delay: 0.05s; }
+    .slide.active h1 { transition-delay: 0.15s; }
+    .slide.active p { transition-delay: 0.25s; }
+
+    .slide-graphic {
+      width: 100%;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      border-radius: 1.25rem;
+      background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.05) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.5s var(--transition-spring);
+    }
+
+    .slide.active .slide-graphic {
+      transform: scale(1);
+    }
+
+    @media (max-width: 600px) {
+      .slide-graphic {
+        height: 90px;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .glow-orb {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+      opacity: 0.3;
+      filter: blur(30px);
+      z-index: 1;
+      pointer-events: none;
+      transform: translate3d(0,0,0);
+    }
+
+    .slide-graphic i {
+      font-size: 3.5rem;
+      color: var(--accent-color);
+      z-index: 2;
+      position: relative;
+      transform: translate3d(0,0,0);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .slide-progress-bar {
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 9999px;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide-progress-fill {
+      height: 100%;
+      background: var(--accent-color);
+      width: 20%;
+      transition: width 0.4s ease;
+    }
+
+    .slider-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    /* Forms & Text Areas */
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .input-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 160px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-light);
+      border-radius: 1rem;
+      padding: 1rem;
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 0.95rem;
+      resize: vertical;
+      outline: none;
+      transition: var(--transition-smooth);
+    }
+
+    textarea:focus {
+      border-color: var(--accent-color);
+      background: rgba(255, 255, 255, 0.04);
+      box-shadow: 0 0 0 4px var(--primary-glow);
+    }
+
+    .setup-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    /* Bento Grid for Teams */
+    .teams-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      .teams-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .team-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-light);
+      border-radius: 1.25rem;
+      padding: 1.25rem;
+      text-align: left;
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    .team-card:hover {
+      border-color: rgba(99, 102, 241, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .team-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .team-card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .team-card-badge {
+      font-size: 0.7rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.5rem;
+      color: var(--text-secondary);
+    }
+
+    .team-members-list {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      max-height: 80px;
+      overflow-y: auto;
+      line-height: 1.4;
+      padding-right: 0.5rem;
+    }
+
+    /* Custom scrollbar for members list */
+    .team-members-list::-webkit-scrollbar {
+      width: 4px;
+    }
+    .team-members-list::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .team-members-list::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+    }
+
+    /* Game board HUD */
+    .hud-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .hud-title-wrap {
+      text-align: left;
+    }
+
+    .hud-sub {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .active-team-banner {
+      font-size: 1.8rem;
+      font-weight: 800;
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #a5b4fc 0%, #6366f1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    /* Dynamic Task Container */
+    .task-box {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-light);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+
+    .task-placeholder {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+    }
+
+    .task-placeholder i {
+      font-size: 2rem;
+      color: var(--accent-color);
+    }
+
+    /* Cinematic reveal for custom tasks */
+    .task-content {
+      display: none;
+      animation: reveal-task 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes reveal-task {
+      0% { opacity: 0; transform: scale(0.95) translateY(10px); filter: blur(5px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+    }
+
+    .task-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-color);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .task-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--text-primary);
+    }
+
+    /* Timer Dial Visualizer */
+    .timer-container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 2rem auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .timer-svg {
+      transform: rotate(-90deg);
+      width: 100%;
+      height: 100%;
+    }
+
+    .timer-bg {
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.03);
+      stroke-width: 10;
+    }
+
+    .timer-progress {
+      fill: none;
+      stroke: var(--accent-color);
+      stroke-width: 10;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 1s linear, stroke 0.5s ease;
+    }
+
+    .timer-text {
+      position: absolute;
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.1;
+      transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    /* Kinetic ticking pops */
+    @keyframes tick-pop {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); text-shadow: 0 0 15px var(--accent-color); }
+      100% { transform: scale(1); }
+    }
+
+    .timer-tick-pop {
+      animation: tick-pop 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .timer-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    .timer-warning .timer-progress {
+      stroke: #f59e0b; /* Orange warning */
+    }
+
+    .timer-danger .timer-progress {
+      stroke: var(--danger-color);
+      animation: pulse-border 1s infinite alternate;
+    }
+
+    @keyframes pulse-border {
+      0% { opacity: 0.8; }
+      100% { opacity: 1; }
+    }
+
+    /* Game Console Controls */
+    .game-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .controls-row {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .controls-row .btn {
+      flex: 1;
+    }
+
+    /* Leaderboard Card List */
+    .leaderboard-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Staggered slide in listings */
+    .leaderboard-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-light);
+      border-radius: 1.25rem;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slide-in-item 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes slide-in-item {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .leaderboard-item:hover {
+      transform: scale(1.015) translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 10px 20px -10px rgba(0,0,0,0.5);
+    }
+
+    .leaderboard-rank {
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .leaderboard-item.rank-1 .leaderboard-rank {
+      background: linear-gradient(135deg, #fef08a 0%, #eab308 100%);
+      color: #713f12;
+      box-shadow: 0 4px 10px rgba(234, 179, 8, 0.3);
+      border: none;
+    }
+    
+    .leaderboard-item.rank-2 .leaderboard-rank {
+      background: linear-gradient(135deg, #e2e8f0 0%, #94a3b8 100%);
+      color: #1e293b;
+      border: none;
+    }
+
+    .leaderboard-item.rank-3 .leaderboard-rank {
+      background: linear-gradient(135deg, #ffedd5 0%, #ea580c 100%);
+      color: #431407;
+      border: none;
+    }
+
+    .leaderboard-team-info {
+      flex: 1;
+      text-align: left;
+      padding-left: 1.25rem;
+    }
+
+    .leaderboard-team-name {
+      font-weight: 600;
+      font-size: 1.05rem;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .leaderboard-members-count {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    .leaderboard-score {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--accent-color);
+    }
+
+    .leaderboard-item.rank-1 .leaderboard-score {
+      color: #facc15;
+    }
+
+    .status-badge {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .status-badge.waiting {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-secondary);
+    }
+
+    .status-badge.completed {
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--success-color);
+    }
+
+    .status-badge.failed {
+      background: rgba(239, 68, 68, 0.1);
+      color: var(--danger-color);
+    }
+
+    /* Global reset / floating utility actions */
+    .top-action-bar {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      display: flex;
+      gap: 0.75rem;
+      z-index: 100;
+    }
+
+    .round-action-btn {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s, border-color 0.3s, color 0.3s;
+    }
+
+    .round-action-btn:hover {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: scale(1.1) rotate(6deg);
+    }
+
+    .round-action-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Modal styles */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal-content {
+      width: 90%;
+      max-width: 450px;
+      transform: scale(0.9) translateY(20px);
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .modal-overlay.active .modal-content {
+      transform: scale(1) translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating global actions -->
+  <div class="top-action-bar">
+    <button class="round-action-btn" id="btn-sound-toggle" title="Toggle ticking sound">
+      <i class="ph-bold ph-speaker-high"></i>
+    </button>
+    <button class="round-action-btn" id="btn-open-guide" title="View rules guide">
+      <i class="ph-bold ph-book-open"></i>
+    </button>
+    <button class="round-action-btn" id="btn-open-admin" title="Manage task pool (Hosts only)">
+      <i class="ph-bold ph-key"></i>
+    </button>
+    <button class="round-action-btn" id="btn-global-reset" title="Reset game entirely">
+      <i class="ph-bold ph-arrow-counter-clockwise"></i>
+    </button>
+  </div>
+
+  <!-- Ambient background elements -->
+  <div class="bg-mesh">
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+  </div>
+
+  <!-- App Wrapper -->
+  <main>
+    <div class="outer-shell">
+      <div class="inner-core">
+        
+        <!-- ================= TUTORIAL SCREEN ================= -->
+        <section id="view-tutorial" class="screen-view active">
+          <div class="eyebrow-tag">
+            <i class="ph-bold ph-game-controller"></i> Tutorial Briefing
+          </div>
+          
+          <div class="slider-container">
+            <div class="slides-wrapper" id="slides-wrapper">
+              
+              <!-- Slide 1 -->
+              <div class="slide active">
+                <div class="slide-graphic">
+                  <div class="glow-orb"></div>
+                  <i class="ph-bold ph-thermometer-hot"></i>
+                </div>
+                <h1>
+                  <i class="ph-bold ph-fire-simple"></i>
+                  Welcome to Hot-Cold!
+                </h1>
+                <p>An explosive physical party game where teams race against time, guided only by the voices of their friends calling out "Hot" or "Cold" to find hidden items or complete tasks.</p>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="slide">
+                <div class="slide-graphic">
+                  <div class="glow-orb"></div>
+                  <i class="ph-bold ph-users-three"></i>
+                </div>
+                <h1>
+                  <i class="ph-bold ph-split-horizontal"></i>
+                  Assemble & Split
+                </h1>
+                <p>Input your group. The game automatically divides everyone into 8 perfectly balanced teams. Turns rotate, and each team receives a randomly generated physical challenge.</p>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="slide">
+                <div class="slide-graphic">
+                  <div class="glow-orb"></div>
+                  <i class="ph-bold ph-eye-slash"></i>
+                </div>
+                <h1>
+                  <i class="ph-bold ph-eye-slash"></i>
+                  Hiding & Preparing
+                </h1>
+                <p>When a turn starts, the team's active player covers their eyes or steps out. The rest of the players view the secret physical task and prepare the setup in the room.</p>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="slide">
+                <div class="slide-graphic">
+                  <div class="glow-orb"></div>
+                  <i class="ph-bold ph-microphone"></i>
+                </div>
+                <h1>
+                  <i class="ph-bold ph-waves"></i>
+                  Hot or Cold?
+                </h1>
+                <p>The timer fires! As the active player searches, the room physically shouts <strong>"Hotter!"</strong> (getting closer) or <strong>"Colder!"</strong> (getting further away). Complete the task within the 7-minute limit.</p>
+              </div>
+
+              <!-- Slide 5 -->
+              <div class="slide">
+                <div class="slide-graphic">
+                  <div class="glow-orb"></div>
+                  <i class="ph-bold ph-trophy"></i>
+                </div>
+                <h1>
+                  <i class="ph-bold ph-crown"></i>
+                  The Victory Lap
+                </h1>
+                <p>The team that completes their physical task with the fastest time dominates the leaderboard and takes home the ultimate title of Hot-Cold Champions!</p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="slide-progress-bar">
+            <div class="slide-progress-fill" id="slide-progress-fill"></div>
+          </div>
+
+          <div class="slider-actions">
+            <button class="btn btn-secondary" id="btn-skip-tutorial">Skip</button>
+            <button class="btn" id="btn-next-slide">
+              <span id="btn-next-text">Next Step</span>
+              <div class="btn-icon-wrapper">
+                <i class="ph-bold ph-arrow-right"></i>
+              </div>
+            </button>
+          </div>
+        </section>
+
+        <!-- ================= SETUP SCREEN ================= -->
+        <section id="view-setup" class="screen-view">
+          <div class="eyebrow-tag">
+            <i class="ph-bold ph-user-plus"></i> Roster Setup
+          </div>
+          <h1>
+            <i class="ph-bold ph-users-three" style="color: var(--accent-color); font-size: 2rem;"></i>
+            Assemble Players
+          </h1>
+          <p>Provide your list of players. We'll balance and divide them into exactly 8 competing teams.</p>
+          
+          <div class="input-group">
+            <label class="input-label" for="player-roster">Player Names (One per line)</label>
+            <textarea id="player-roster" placeholder="Enter name of players...&#10;Jordan&#10;Taylor&#10;Casey..."></textarea>
+          </div>
+
+          <div class="setup-actions">
+            <button class="btn btn-secondary" id="btn-autofill-mock">
+              <i class="ph-bold ph-magic-wand"></i> Autofill 83 Mock Players
+            </button>
+            <button class="btn" id="btn-generate-teams">
+              Divide into 8 Teams
+              <div class="btn-icon-wrapper">
+                <i class="ph-bold ph-split-horizontal"></i>
+              </div>
+            </button>
+          </div>
+        </section>
+
+        <!-- ================= TEAMS PREVIEW SCREEN ================= -->
+        <section id="view-teams" class="screen-view">
+          <div class="eyebrow-tag">
+            <i class="ph-bold ph-shield"></i> Tactical Lineup
+          </div>
+          <h1>
+            <i class="ph-bold ph-shield" style="color: var(--accent-color); font-size: 2rem;"></i>
+            Teams Formed
+          </h1>
+          <p>Review the roster. Tap re-shuffle to randomize groups again or click start to begin the championship.</p>
+
+          <div class="teams-grid" id="teams-grid-container">
+            <!-- Team cards injected here -->
+          </div>
+
+          <div class="slider-actions">
+            <button class="btn btn-secondary" id="btn-re-shuffle">
+              <i class="ph-bold ph-shuffle"></i> Shuffle
+            </button>
+            <button class="btn" id="btn-start-championship">
+              Start Tournament
+              <div class="btn-icon-wrapper">
+                <i class="ph-bold ph-play"></i>
+              </div>
+            </button>
+          </div>
+        </section>
+
+        <!-- ================= GAME LOOP BOARD SCREEN ================= -->
+        <section id="view-game" class="screen-view">
+          <div class="hud-header">
+            <div class="hud-title-wrap">
+              <div class="hud-sub">Match Turn</div>
+              <div class="active-team-banner" id="game-active-team-name">Team 1</div>
+            </div>
+            <div class="status-badge waiting" id="game-team-counter">Turn 1/8</div>
+          </div>
+
+          <!-- Timer Dial SVG -->
+          <div class="timer-container" id="timer-box">
+            <svg class="timer-svg" viewBox="0 0 100 100">
+              <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
+              <circle class="timer-progress" id="timer-progress-ring" cx="50" cy="50" r="45" stroke-dasharray="282.7" stroke-dashoffset="0"></circle>
+            </svg>
+            <div class="timer-text" id="timer-text-container">
+              <span id="timer-display">07:00</span>
+              <span class="timer-label">Remaining</span>
+            </div>
+          </div>
+
+          <!-- Secret Task Reveal Glassmorphic Box -->
+          <div class="task-box">
+            <div class="task-placeholder" id="task-trigger-reveal">
+              <i class="ph-bold ph-eye"></i>
+              <span>Tap to Reveal Secret Team Challenge</span>
+            </div>
+            <div class="task-content" id="task-reveal-content">
+              <div class="task-title">Assigned Secret Task</div>
+              <div class="task-text" id="game-task-text">Retrieve a water bottle and take a sip of water.</div>
+            </div>
+          </div>
+
+          <!-- Game State Dynamic Controls -->
+          <div class="game-controls">
+            <!-- Stage 1: Reveal click reveals Start Button -->
+            <button class="btn btn-secondary" id="btn-generate-another-task" style="display: none; margin-bottom: 0.5rem;">
+              <i class="ph-bold ph-arrows-clockwise"></i> Generate Different Task
+            </button>
+            <button class="btn" id="btn-trigger-start" style="display: none;">
+              Begin Timer (7:00 Max)
+              <div class="btn-icon-wrapper">
+                <i class="ph-bold ph-play"></i>
+              </div>
+            </button>
+            
+            <!-- Stage 2: Active countdown controls -->
+            <div class="controls-row" id="active-play-controls" style="display: none;">
+              <button class="btn btn-danger" id="btn-give-up">
+                Give Up (Max Time)
+                <div class="btn-icon-wrapper">
+                  <i class="ph-bold ph-x"></i>
+                </div>
+              </button>
+              <button class="btn btn-success" id="btn-task-success">
+                Task Completed
+                <div class="btn-icon-wrapper">
+                  <i class="ph-bold ph-check"></i>
+                </div>
+              </button>
+            </div>
+
+            <!-- Stage 3: Turn completion, go next -->
+            <button class="btn" id="btn-next-turn" style="display: none;">
+              Next Team's Turn
+              <div class="btn-icon-wrapper">
+                <i class="ph-bold ph-arrow-right"></i>
+              </div>
+            </button>
+          </div>
+        </section>
+
+        <!-- ================= LEADERBOARD CHAMPION SCREEN ================= -->
+        <section id="view-leaderboard" class="screen-view">
+          <div class="eyebrow-tag">
+            <i class="ph-bold ph-crown"></i> Final Standings
+          </div>
+          <h1 id="leaderboard-winner-header">Team 1 Wins!</h1>
+          <p>Here is the final ranking of all teams based on physical completion times.</p>
+
+          <div class="leaderboard-list" id="leaderboard-list-container">
+            <!-- Leaderboard items injected here -->
+          </div>
+
+          <button class="btn" id="btn-play-again">
+            New Championship Tournament
+            <div class="btn-icon-wrapper">
+              <i class="ph-bold ph-arrow-counter-clockwise"></i>
+            </div>
+          </button>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Confirm Reset Modal -->
+  <div class="modal-overlay" id="reset-confirm-modal">
+    <div class="outer-shell modal-content">
+      <div class="inner-core" style="padding: 2rem;">
+        <h2 style="font-family: 'Outfit'; font-size: 1.5rem; margin-bottom: 0.5rem; text-align: left;">Reset Championship?</h2>
+        <p style="text-align: left; margin-bottom: 2rem;">Are you sure you want to reset the current game state? All entered players, teams, and scores will be cleared.</p>
+        <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+          <button class="btn btn-secondary" id="btn-modal-cancel">Cancel</button>
+          <button class="btn btn-danger" id="btn-modal-confirm">Reset Everything</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rules Guide Modal -->
+  <div class="modal-overlay" id="guide-modal">
+    <div class="outer-shell modal-content" style="max-width: 500px;">
+      <div class="inner-core" style="padding: 2rem 1.5rem; max-height: 85dvh; overflow-y: auto;">
+        <h2 style="font-family: 'Outfit'; font-size: 1.6rem; margin-bottom: 0.5rem; text-align: center;">Hot-Cold Rules Guide</h2>
+        <p style="text-align: center; margin-bottom: 1.5rem; font-size: 0.9rem;">Quick reference guide for the party championship.</p>
+        
+        <div style="display: flex; flex-direction: column; gap: 1.25rem; text-align: left; margin-bottom: 2rem;">
+          <!-- Step 1 -->
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div style="width: 2.25rem; height: 2.25rem; border-radius: 50%; background: var(--primary-glow); border: 1px solid rgba(99, 102, 241, 0.2); display: flex; align-items: center; justify-content: center; color: var(--accent-color); font-weight: 700; flex-shrink: 0;">1</div>
+            <div>
+              <h4 style="font-family: 'Outfit'; font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem;">Form 8 Teams</h4>
+              <p style="margin-bottom: 0; font-size: 0.85rem; line-height: 1.4; color: var(--text-secondary);">Players are shuffled and divided into 8 competing groups. Turns rotate sequence by sequence.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div style="width: 2.25rem; height: 2.25rem; border-radius: 50%; background: var(--primary-glow); border: 1px solid rgba(99, 102, 241, 0.2); display: flex; align-items: center; justify-content: center; color: var(--accent-color); font-weight: 700; flex-shrink: 0;">2</div>
+            <div>
+              <h4 style="font-family: 'Outfit'; font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem;">Hide and Setup</h4>
+              <p style="margin-bottom: 0; font-size: 0.85rem; line-height: 1.4; color: var(--text-secondary);">The active player covers their eyes. The team reveals the secret task and prepares the physical room setup.</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div style="width: 2.25rem; height: 2.25rem; border-radius: 50%; background: var(--primary-glow); border: 1px solid rgba(99, 102, 241, 0.2); display: flex; align-items: center; justify-content: center; color: var(--accent-color); font-weight: 700; flex-shrink: 0;">3</div>
+            <div>
+              <h4 style="font-family: 'Outfit'; font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem;">Hot / Cold Shouting</h4>
+              <p style="margin-bottom: 0; font-size: 0.85rem; line-height: 1.4; color: var(--text-secondary);">The search starts. The room shouts <strong>"Hotter!"</strong> as they get close, and <strong>"Colder!"</strong> as they drift away from the target object.</p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div style="width: 2.25rem; height: 2.25rem; border-radius: 50%; background: var(--primary-glow); border: 1px solid rgba(99, 102, 241, 0.2); display: flex; align-items: center; justify-content: center; color: var(--accent-color); font-weight: 700; flex-shrink: 0;">4</div>
+            <div>
+              <h4 style="font-family: 'Outfit'; font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem;">Race the Timer</h4>
+              <p style="margin-bottom: 0; font-size: 0.85rem; line-height: 1.4; color: var(--text-secondary);">Complete the physical task before the 7-minute limit. The fastest team wins the trophy!</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: center;">
+          <button class="btn btn-secondary" id="btn-guide-close" style="width: 100%;">Close Guide</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Passcode Verification Modal -->
+  <div class="modal-overlay" id="admin-auth-modal">
+    <div class="outer-shell modal-content">
+      <div class="inner-core" style="padding: 2rem;">
+        <h2 style="font-family: 'Outfit'; font-size: 1.5rem; margin-bottom: 0.5rem; text-align: left;"><i class="ph-bold ph-lock-key" style="color: var(--accent-color); margin-right: 0.5rem; vertical-align: middle;"></i>Host Verification</h2>
+        <p style="text-align: left; margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--text-secondary);">Enter passcode to access Task Pool settings. (Default: 1234)</p>
+        <div class="input-group" style="margin-bottom: 1.5rem;">
+          <input type="password" id="admin-passcode-input" placeholder="••••" style="width: 100%; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-light); border-radius: 0.75rem; padding: 0.85rem 1rem; color: var(--text-primary); font-size: 1.25rem; letter-spacing: 0.2em; text-align: center; outline: none; transition: var(--transition-smooth);" maxLength="6">
+          <div id="auth-error-msg" style="color: var(--danger-color); font-size: 0.8rem; margin-top: 0.5rem; display: none;">Incorrect passcode. Try again.</div>
+        </div>
+        <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+          <button class="btn btn-secondary" id="btn-auth-cancel">Cancel</button>
+          <button class="btn" id="btn-auth-submit">Verify</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Task Pool Manager Modal -->
+  <div class="modal-overlay" id="admin-tasks-modal">
+    <div class="outer-shell modal-content" style="max-width: 550px;">
+      <div class="inner-core" style="padding: 2rem 1.5rem;">
+        <h2 style="font-family: 'Outfit'; font-size: 1.5rem; margin-bottom: 0.5rem; text-align: left;"><i class="ph-bold ph-gear" style="color: var(--accent-color); margin-right: 0.5rem; vertical-align: middle;"></i>Manage Task Pool</h2>
+        <p style="text-align: left; margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--text-secondary);">Add or remove tasks from the challenge pool. Custom tasks are saved in memory.</p>
+        
+        <!-- Add Task Form -->
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem;">
+          <input type="text" id="new-task-input" placeholder="Type a physical task (e.g. Find a coin...)" style="flex: 1; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-light); border-radius: 0.75rem; padding: 0.85rem; color: var(--text-primary); outline: none; font-size: 0.9rem;">
+          <button class="btn" id="btn-add-task" style="padding: 0.85rem 1.25rem;"><i class="ph-bold ph-plus"></i></button>
+        </div>
+
+        <!-- Task List scroll wrapper -->
+        <div style="border: 1px solid var(--border-light); border-radius: 1rem; background: rgba(0, 0, 0, 0.2); margin-bottom: 1.5rem; overflow: hidden;">
+          <div id="admin-tasks-list" style="max-height: 220px; overflow-y: auto; padding: 0.5rem;">
+            <!-- Task items injected here -->
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 1rem; justify-content: space-between; align-items: center;">
+          <button class="btn btn-secondary" id="btn-reset-tasks-pool" style="font-size: 0.85rem; padding: 0.75rem 1.25rem;">
+            <i class="ph-bold ph-arrow-counter-clockwise"></i> Reset to Defaults
+          </button>
+          <button class="btn btn-success" id="btn-tasks-close" style="padding: 0.75rem 1.5rem;">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio elements for ticking and alerts -->
+  <script>
+    // Audio synthesizer context to generate sounds without raw audio files
+    const SoundEffects = {
+      audioCtx: null,
+      enabled: true,
+      tickingInterval: null,
+
+      init() {
+        if (!this.audioCtx) {
+          this.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (this.audioCtx.state === 'suspended') {
+          this.audioCtx.resume();
+        }
+      },
+
+      toggle() {
+        this.enabled = !this.enabled;
+        const icon = document.querySelector('#btn-sound-toggle i');
+        if (this.enabled) {
+          icon.className = 'ph-bold ph-speaker-high';
+        } else {
+          icon.className = 'ph-bold ph-speaker-x';
+          this.stopTicking();
+        }
+      },
+
+      playTick() {
+        if (!this.enabled) return;
+        this.init();
+        try {
+          const osc = this.audioCtx.createOscillator();
+          const gain = this.audioCtx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(600, this.audioCtx.currentTime);
+          
+          gain.gain.setValueAtTime(0.04, this.audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, this.audioCtx.currentTime + 0.08);
+          
+          osc.connect(gain);
+          gain.connect(this.audioCtx.destination);
+          osc.start();
+          osc.stop(this.audioCtx.currentTime + 0.1);
+        } catch (e) {
+          console.warn("Audio Context blocked or failed:", e);
+        }
+      },
+
+      playWarningTick() {
+        if (!this.enabled) return;
+        this.init();
+        try {
+          const osc = this.audioCtx.createOscillator();
+          const gain = this.audioCtx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(1000, this.audioCtx.currentTime);
+          
+          gain.gain.setValueAtTime(0.08, this.audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, this.audioCtx.currentTime + 0.15);
+          
+          osc.connect(gain);
+          gain.connect(this.audioCtx.destination);
+          osc.start();
+          osc.stop(this.audioCtx.currentTime + 0.2);
+        } catch (e) {}
+      },
+
+      playAlarm() {
+        if (!this.enabled) return;
+        this.init();
+        try {
+          const osc = this.audioCtx.createOscillator();
+          const gain = this.audioCtx.createGain();
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(220, this.audioCtx.currentTime);
+          osc.frequency.linearRampToValueAtTime(880, this.audioCtx.currentTime + 0.5);
+          
+          gain.gain.setValueAtTime(0.15, this.audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, this.audioCtx.currentTime + 0.8);
+          
+          osc.connect(gain);
+          gain.connect(this.audioCtx.destination);
+          osc.start();
+          osc.stop(this.audioCtx.currentTime + 1.0);
+        } catch (e) {}
+      },
+
+      playSuccess() {
+        if (!this.enabled) return;
+        this.init();
+        try {
+          const now = this.audioCtx.currentTime;
+          const playNote = (freq, start, duration) => {
+            const osc = this.audioCtx.createOscillator();
+            const gain = this.audioCtx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(freq, now + start);
+            gain.gain.setValueAtTime(0.1, now + start);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + start + duration);
+            osc.connect(gain);
+            gain.connect(this.audioCtx.destination);
+            osc.start(now + start);
+            osc.stop(now + start + duration);
+          };
+          playNote(523.25, 0, 0.15); // C5
+          playNote(659.25, 0.1, 0.15); // E5
+          playNote(783.99, 0.2, 0.15); // G5
+          playNote(1046.50, 0.3, 0.3); // C6
+        } catch (e) {}
+      },
+
+      startTicking(isUrgent = false) {
+        this.stopTicking();
+        if (!this.enabled) return;
+        this.tickingInterval = setInterval(() => {
+          if (isUrgent) {
+            this.playWarningTick();
+          } else {
+            this.playTick();
+          }
+        }, 1000);
+      },
+
+      stopTicking() {
+        if (this.tickingInterval) {
+          clearInterval(this.tickingInterval);
+          this.tickingInterval = null;
+        }
+      }
+    };
+  </script>
+
+  <!-- Game Logic script -->
+  <script>
+    // Pool of fun physical hot-and-cold interactive challenges
+    const GAME_TASKS = [
+      "Find a water bottle and take a sip of water.",
+      "Locate a key or keyholder and place it on the center table.",
+      "Find a book, open it to page 42, and show it to the room.",
+      "Locate a coin and balance it on your forehead for 5 seconds.",
+      "Find a pen and write the word 'HOT' on a piece of scrap paper.",
+      "Find a remote control and hold it high above your head.",
+      "Find a pair of glasses (or sunglasses) and wear them properly.",
+      "Find a coffee mug or cup and place it upside down on a flat surface.",
+      "Find a charger cable and plug it cleanly into any device.",
+      "Locate a piece of tissue paper and discard it in the trash bin.",
+      "Find a watch or smartphone showing the exact current time.",
+      "Find a spoon, fork, or utensil and hold it in your hand.",
+      "Find a plant or leaf (real or artificial) and touch it with your elbow.",
+      "Find a pillow or cushion and sit cross-legged on it on the floor.",
+      "Find a shoe and place it on top of your head.",
+      "Find a paper clip or sticky note and attach it to your shirt.",
+      "Locate a wallet or cardholder and present a card.",
+      "Find a piece of fruit or a wrapped snack and hold it up.",
+      "Find a coin and flip it on a table until it lands on heads.",
+      "Find a sock and put it on your hand like a puppet."
+    ];
+
+    // Roster of exactly 83 distinct names for testing team distribution
+    const MOCK_ROSTER = [
+      "Alex", "Jordan", "Taylor", "Morgan", "Casey", "Riley", "Jamie", "Skyler", "Rowan", "Avery",
+      "Cameron", "Peyton", "Emerson", "Dakota", "Hayden", "Logan", "Reese", "Parker", "Charlie", "Finley",
+      "Quinn", "Phoenix", "Dallas", "Denver", "River", "Sage", "Skye", "Winter", "Eden", "Harley",
+      "Blake", "Drew", "Ryan", "Tyler", "Dylan", "Sam", "Jessie", "Kelly", "Chris", "Pat",
+      "Andy", "Robin", "Kerry", "Jody", "Dana", "Tracy", "Lee", "Terry", "Gale", "Leslie",
+      "Jean", "Kim", "Patty", "Sandy", "Dale", "Lynn", "Bobby", "Billy", "Danny", "Jimmy",
+      "Tommy", "Joey", "Mickey", "Ricky", "Oliver", "Harry", "Jack", "William", "Thomas", "George",
+      "James", "Arthur", "Henry", "Lucas", "Noah", "Olivia", "Amelia", "Emily", "Isla", "Ava",
+      "Lily", "Mia", "Sophia"
+    ].join("\n");
+
+    // Standard State Schema
+    let state = {
+      screen: 'tutorial',
+      tutorialSlide: 0,
+      playersText: '',
+      teams: [], // array of { id, name: string, members: string[], time: number|null, status: 'waiting'|'completed'|'failed' }
+      currentTeamIndex: 0,
+      currentTask: '',
+      timerRemaining: 420, // 7 minutes
+      timerRunning: false,
+      timerStartedAt: null, // timestamp
+      timerInitialDuration: 420,
+      customTasks: [] // Users can add/remove tasks here! Persisted in localStorage
+    };
+
+    const TOTAL_SLIDES = 5;
+    const MAX_TIMER_SECONDS = 420; // 7 minutes
+    let countdownTimerId = null;
+
+    // Load state from localStorage on startup
+    function loadState() {
+      const saved = localStorage.getItem('hot_cold_game_state');
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          state = { ...state, ...parsed };
+          
+          // Handle active running timers from previous sessions
+          if (state.timerRunning && state.timerStartedAt) {
+            const elapsedSinceStart = Math.floor((Date.now() - state.timerStartedAt) / 1000);
+            const remaining = state.timerRemaining - elapsedSinceStart;
+            
+            if (remaining > 0) {
+              state.timerRemaining = remaining;
+            } else {
+              state.timerRemaining = 0;
+              state.timerRunning = false;
+              if (state.teams[state.currentTeamIndex]) {
+                state.teams[state.currentTeamIndex].time = MAX_TIMER_SECONDS;
+                state.teams[state.currentTeamIndex].status = 'failed';
+              }
+            }
+          }
+        } catch (e) {
+          console.error("Failed to parse saved state:", e);
+        }
+      }
+
+      // Initialize custom tasks with defaults if empty
+      if (!state.customTasks || state.customTasks.length === 0) {
+        state.customTasks = [...GAME_TASKS];
+      }
+    }
+
+    // Save state to localStorage
+    function saveState() {
+      localStorage.setItem('hot_cold_game_state', JSON.stringify(state));
+    }
+
+    // Transition view screens
+    function showScreen(screenId) {
+      document.querySelectorAll('.screen-view').forEach(view => {
+        view.classList.remove('active');
+      });
+      const activeScreen = document.getElementById(`view-${screenId}`);
+      if (activeScreen) {
+        activeScreen.classList.add('active');
+      }
+      state.screen = screenId;
+      saveState();
+
+      // Scroll window to top smoothly when shifting views to avoid cutoff positioning
+      window.scrollTo(0, 0);
+    }
+
+    // Switch slide in tutorial
+    function updateSlide() {
+      const slidesWrapper = document.getElementById('slides-wrapper');
+      const progressFill = document.getElementById('slide-progress-fill');
+      const nextBtnText = document.getElementById('btn-next-text');
+      
+      const offset = -state.tutorialSlide * 100;
+      slidesWrapper.style.transform = `translateX(${offset}%)`;
+      
+      // Update slide active classes
+      document.querySelectorAll('.slide').forEach((slide, index) => {
+        if (index === state.tutorialSlide) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+
+      // Progress bar
+      const progressPercent = ((state.tutorialSlide + 1) / TOTAL_SLIDES) * 100;
+      progressFill.style.width = `${progressPercent}%`;
+
+      // Next button text changes on last slide
+      if (state.tutorialSlide === TOTAL_SLIDES - 1) {
+        nextBtnText.textContent = "Start Setup";
+      } else {
+        nextBtnText.textContent = "Next Step";
+      }
+    }
+
+    // Setup teams page rendering
+    function generateTeams() {
+      const rosterInput = document.getElementById('player-roster').value;
+      const names = rosterInput.split('\n')
+        .map(name => name.trim())
+        .filter(name => name.length > 0);
+
+      if (names.length < 8) {
+        alert("Please enter at least 8 player names to form 8 teams.");
+        return;
+      }
+
+      state.playersText = rosterInput;
+
+      // Randomize names (Fisher-Yates)
+      const shuffled = [...names];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+
+      // Distribute into 8 teams
+      const teams = Array.from({ length: 8 }, (_, index) => ({
+        id: index + 1,
+        name: `Team ${index + 1}`,
+        members: [],
+        time: null,
+        status: 'waiting'
+      }));
+
+      shuffled.forEach((name, index) => {
+        teams[index % 8].members.push(name);
+      });
+
+      state.teams = teams;
+      state.currentTeamIndex = 0;
+      saveState();
+
+      renderTeamsPreview();
+      showScreen('teams');
+    }
+
+    function renderTeamsPreview() {
+      const container = document.getElementById('teams-grid-container');
+      container.innerHTML = '';
+
+      state.teams.forEach(team => {
+        const card = document.createElement('div');
+        card.className = 'team-card';
+        card.innerHTML = `
+          <div class="team-card-header">
+            <div class="team-card-title">${team.name}</div>
+            <div class="team-card-badge">${team.members.length} Players</div>
+          </div>
+          <div class="team-members-list">
+            ${team.members.join(', ')}
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Render active game dashboard
+    function renderGameBoard() {
+      const activeTeam = state.teams[state.currentTeamIndex];
+      if (!activeTeam) {
+        showScreen('setup');
+        return;
+      }
+
+      // Title & Progress Counters
+      document.getElementById('game-active-team-name').textContent = activeTeam.name;
+      document.getElementById('game-team-counter').textContent = `Turn ${state.currentTeamIndex + 1}/8`;
+
+      // Set/Restore Timer View
+      updateTimerDisplay();
+
+      // Secret Challenge panel setup
+      const placeholder = document.getElementById('task-trigger-reveal');
+      const content = document.getElementById('task-reveal-content');
+      const textElem = document.getElementById('game-task-text');
+      
+      const startBtn = document.getElementById('btn-trigger-start');
+      const changeTaskBtn = document.getElementById('btn-generate-another-task');
+      const activeControls = document.getElementById('active-play-controls');
+      const nextTurnBtn = document.getElementById('btn-next-turn');
+
+      if (state.currentTask) {
+        // Task already generated
+        placeholder.style.display = 'none';
+        content.style.display = 'block';
+        textElem.textContent = state.currentTask;
+
+        if (state.timerRunning) {
+          // Playing
+          startBtn.style.display = 'none';
+          changeTaskBtn.style.display = 'none';
+          activeControls.style.display = 'flex';
+          nextTurnBtn.style.display = 'none';
+          
+          // Resume actual ticker loop
+          startIntervalTimer();
+        } else {
+          // Task revealed but not started yet OR completed
+          if (activeTeam.status === 'completed' || activeTeam.status === 'failed') {
+            startBtn.style.display = 'none';
+            changeTaskBtn.style.display = 'none';
+            activeControls.style.display = 'none';
+            nextTurnBtn.style.display = 'inline-flex';
+            
+            // Show score/results in timer text
+            document.getElementById('timer-display').textContent = formatSeconds(activeTeam.time);
+          } else {
+            // Revealed, ready to click start
+            startBtn.style.display = 'inline-flex';
+            changeTaskBtn.style.display = 'inline-flex';
+            activeControls.style.display = 'none';
+            nextTurnBtn.style.display = 'none';
+          }
+        }
+      } else {
+        // Initial state, clean reveal panel
+        placeholder.style.display = 'flex';
+        content.style.display = 'none';
+        startBtn.style.display = 'none';
+        changeTaskBtn.style.display = 'none';
+        activeControls.style.display = 'none';
+        nextTurnBtn.style.display = 'none';
+      }
+    }
+
+    // Generate random secret task
+    function selectRandomTask() {
+      const pool = state.customTasks && state.customTasks.length > 0 ? state.customTasks : GAME_TASKS;
+      const index = Math.floor(Math.random() * pool.length);
+      state.currentTask = pool[index];
+      saveState();
+
+      // UI animation trigger
+      document.getElementById('task-trigger-reveal').style.display = 'none';
+      const content = document.getElementById('task-reveal-content');
+      content.style.display = 'block';
+      document.getElementById('game-task-text').textContent = state.currentTask;
+
+      document.getElementById('btn-trigger-start').style.display = 'inline-flex';
+      document.getElementById('btn-generate-another-task').style.display = 'inline-flex';
+    }
+
+    // Formats seconds into mm:ss
+    function formatSeconds(sec) {
+      const mins = Math.floor(sec / 60);
+      const secs = sec % 60;
+      return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    // Handles radial timer dial and ticking sounds
+    function updateTimerDisplay() {
+      const display = document.getElementById('timer-display');
+      display.textContent = formatSeconds(state.timerRemaining);
+
+      const circle = document.getElementById('timer-progress-ring');
+      const box = document.getElementById('timer-box');
+      
+      // Calculate SVG stroke dashes
+      const maxOffset = 282.7; // 2 * PI * r (r=45)
+      const offset = (state.timerRemaining / MAX_TIMER_SECONDS) * maxOffset;
+      circle.style.strokeDashoffset = maxOffset - offset;
+
+      // Class toggles for color shift
+      box.className = "timer-container";
+      if (state.timerRemaining <= 60 && state.timerRemaining > 0) {
+        box.classList.add("timer-danger");
+        if (state.timerRunning) SoundEffects.startTicking(true); // Switch to rapid alerts
+      } else if (state.timerRemaining <= 180 && state.timerRemaining > 0) {
+        box.classList.add("timer-warning");
+        if (state.timerRunning) SoundEffects.startTicking(false);
+      }
+    }
+
+    // Main running timer interval
+    function startIntervalTimer() {
+      if (countdownTimerId) clearInterval(countdownTimerId);
+      
+      if (!state.timerStartedAt) {
+        state.timerStartedAt = Date.now();
+      }
+      state.timerRunning = true;
+      saveState();
+
+      SoundEffects.startTicking(state.timerRemaining <= 60);
+
+      countdownTimerId = setInterval(() => {
+        // Calculate remaining seconds exactly
+        const elapsed = Math.floor((Date.now() - state.timerStartedAt) / 1000);
+        state.timerRemaining = state.timerInitialDuration - elapsed;
+
+        if (state.timerRemaining <= 0) {
+          state.timerRemaining = 0;
+          handleTimeOut();
+        } else {
+          updateTimerDisplay();
+
+          // Physical pop/pulse trigger inside DOM for tactile clock ticks
+          const textContainer = document.getElementById('timer-text-container');
+          if (textContainer) {
+            textContainer.classList.remove('timer-tick-pop');
+            void textContainer.offsetWidth; // force redraw/reflow
+            textContainer.classList.add('timer-tick-pop');
+          }
+        }
+      }, 1000);
+    }
+
+    function stopIntervalTimer() {
+      if (countdownTimerId) {
+        clearInterval(countdownTimerId);
+        countdownTimerId = null;
+      }
+      state.timerRunning = false;
+      state.timerStartedAt = null;
+      SoundEffects.stopTicking();
+      saveState();
+    }
+
+    // Start current team timer countdown
+    function startActiveTimer() {
+      SoundEffects.init(); // Initialize audio context on player click action to satisfy browsers
+      state.timerRemaining = MAX_TIMER_SECONDS;
+      state.timerInitialDuration = MAX_TIMER_SECONDS;
+      state.timerStartedAt = Date.now();
+      
+      document.getElementById('btn-trigger-start').style.display = 'none';
+      document.getElementById('btn-generate-another-task').style.display = 'none';
+      document.getElementById('active-play-controls').style.display = 'flex';
+
+      startIntervalTimer();
+    }
+
+    // Stop active team timer and record score
+    function stopActiveTimer(success = true) {
+      stopIntervalTimer();
+      const currentTeam = state.teams[state.currentTeamIndex];
+
+      if (success) {
+        const timeTaken = MAX_TIMER_SECONDS - state.timerRemaining;
+        currentTeam.time = timeTaken;
+        currentTeam.status = 'completed';
+        SoundEffects.playSuccess();
+      } else {
+        currentTeam.time = MAX_TIMER_SECONDS; // Maximum penalty time
+        currentTeam.status = 'failed';
+        SoundEffects.playAlarm();
+      }
+
+      saveState();
+      
+      // Update display with final recorded time
+      document.getElementById('timer-display').textContent = formatSeconds(currentTeam.time);
+
+      document.getElementById('active-play-controls').style.display = 'none';
+      document.getElementById('btn-next-turn').style.display = 'inline-flex';
+    }
+
+    function handleTimeOut() {
+      stopActiveTimer(false);
+    }
+
+    // Advance to next team or show final standings
+    function advanceNextTurn() {
+      // Clear task
+      state.currentTask = '';
+      state.timerRemaining = MAX_TIMER_SECONDS;
+      
+      state.currentTeamIndex += 1;
+      
+      if (state.currentTeamIndex >= state.teams.length) {
+        // Finished all 8 teams, transition to leaderboard
+        showLeaderboard();
+      } else {
+        saveState();
+        renderGameBoard();
+      }
+    }
+
+    // Format seconds beautifully for leaderboard
+    function formatLeaderboardScore(team) {
+      if (team.status === 'failed') return 'DNF (7:00)';
+      if (team.time === null) return 'Waiting';
+      return formatSeconds(team.time);
+    }
+
+    // Compute and display leaderboard standings
+    function showLeaderboard() {
+      const sortedTeams = [...state.teams].sort((a, b) => {
+        // DNF (failed) go to bottom
+        if (a.status === 'failed' && b.status !== 'failed') return 1;
+        if (b.status === 'failed' && a.status !== 'failed') return -1;
+        if (a.time === null) return 1;
+        if (b.time === null) return -1;
+        return a.time - b.time;
+      });
+
+      const winner = sortedTeams[0];
+      const winnerHeader = document.getElementById('leaderboard-winner-header');
+      
+      if (winner && winner.status === 'completed') {
+        winnerHeader.textContent = `${winner.name} Wins!`;
+        // Blast confetti for champions!
+        triggerChampionshipConfetti();
+      } else {
+        winnerHeader.textContent = `No Winners!`;
+      }
+
+      const listContainer = document.getElementById('leaderboard-list-container');
+      listContainer.innerHTML = '';
+
+      sortedTeams.forEach((team, idx) => {
+        const rank = idx + 1;
+        const item = document.createElement('div');
+        item.className = `leaderboard-item rank-${rank}`;
+        
+        // Inject kinetic staggering delays based on grid index
+        item.style.animationDelay = `${idx * 0.08}s`;
+        
+        item.innerHTML = `
+          <div class="leaderboard-rank">${rank}</div>
+          <div class="leaderboard-team-info">
+            <div class="leaderboard-team-name">${team.name}</div>
+            <div class="leaderboard-members-count">${team.members.length} Members</div>
+          </div>
+          <div class="leaderboard-score">${formatLeaderboardScore(team)}</div>
+        `;
+        listContainer.appendChild(item);
+      });
+
+      showScreen('leaderboard');
+    }
+
+    // Double blast of standard party confetti
+    function triggerChampionshipConfetti() {
+      const duration = 4 * 1000;
+      const animationEnd = Date.now() + duration;
+      const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
+
+      function randomInRange(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      const interval = setInterval(function() {
+        const timeLeft = animationEnd - Date.now();
+
+        if (timeLeft <= 0) {
+          return clearInterval(interval);
+        }
+
+        const particleCount = 50 * (timeLeft / duration);
+        confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+        confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+      }, 250);
+    }
+
+    // Modal Confirmation Dialogs
+    const resetModal = document.getElementById('reset-confirm-modal');
+    const guideModal = document.getElementById('guide-modal');
+    const authModal = document.getElementById('admin-auth-modal');
+    const tasksModal = document.getElementById('admin-tasks-modal');
+    
+    function showResetModal() {
+      resetModal.classList.add('active');
+    }
+
+    function hideResetModal() {
+      resetModal.classList.remove('active');
+    }
+
+    function resetGameEntirely() {
+      stopIntervalTimer();
+      hideResetModal();
+      
+      // Clear game local storage variables
+      localStorage.removeItem('hot_cold_game_state');
+      
+      // Re-assign default values
+      state = {
+        screen: 'setup',
+        tutorialSlide: 0,
+        playersText: '',
+        teams: [],
+        currentTeamIndex: 0,
+        currentTask: '',
+        timerRemaining: MAX_TIMER_SECONDS,
+        timerRunning: false,
+        timerStartedAt: null,
+        timerInitialDuration: MAX_TIMER_SECONDS,
+        customTasks: []
+      };
+
+      // Set input values back to empty
+      document.getElementById('player-roster').value = '';
+      
+      showScreen('setup');
+    }
+
+    // Universal navigation bypass helper for skip/slide completions
+    function skipOrCompleteInstructions() {
+      if (state.teams && state.teams.length > 0) {
+        const allPlayed = state.teams.every(t => t.time !== null);
+        if (allPlayed) {
+          showScreen('leaderboard');
+        } else {
+          showScreen('game');
+          renderGameBoard();
+        }
+      } else {
+        showScreen('setup');
+      }
+    }
+
+    // Render Admin task manager list items
+    function renderTasksList() {
+      const listContainer = document.getElementById('admin-tasks-list');
+      listContainer.innerHTML = '';
+      
+      const pool = state.customTasks && state.customTasks.length > 0 ? state.customTasks : GAME_TASKS;
+      
+      pool.forEach((task, index) => {
+        const item = document.createElement('div');
+        item.style.cssText = "display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.04); gap: 1rem; opacity: 0; transform: translateY(10px); animation: slide-in-item 0.4s ease forwards;";
+        item.style.animationDelay = `${index * 0.03}s`;
+        item.innerHTML = `
+          <span style="font-size: 0.85rem; line-height: 1.4; color: var(--text-primary); text-align: left; flex: 1;">${task}</span>
+          <button class="round-action-btn" style="width: 2rem; height: 2rem; border-radius: 50%; color: var(--danger-color); background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.15); flex-shrink: 0;" onclick="deleteTask(${index})">
+            <i class="ph-bold ph-trash"></i>
+          </button>
+        `;
+        listContainer.appendChild(item);
+      });
+    }
+
+    // Global deletion callback hook for inline events
+    window.deleteTask = function(index) {
+      if (!state.customTasks || state.customTasks.length === 0) {
+        state.customTasks = [...GAME_TASKS];
+      }
+      state.customTasks.splice(index, 1);
+      if (state.customTasks.length === 0) {
+        state.customTasks = [...GAME_TASKS];
+      }
+      saveState();
+      renderTasksList();
+    };
+
+    // Initialization and event bindings
+    window.addEventListener('DOMContentLoaded', () => {
+      loadState();
+
+      // Override screen on startup: Always display instructions slideshow first
+      state.screen = 'tutorial';
+      state.tutorialSlide = 0;
+      updateSlide();
+
+      // Bind dynamic slider steps
+      document.getElementById('btn-next-slide').addEventListener('click', () => {
+        SoundEffects.init(); // prime context
+        if (state.tutorialSlide < TOTAL_SLIDES - 1) {
+          state.tutorialSlide += 1;
+          updateSlide();
+          saveState();
+        } else {
+          skipOrCompleteInstructions();
+        }
+      });
+
+      document.getElementById('btn-skip-tutorial').addEventListener('click', () => {
+        SoundEffects.init(); // prime context
+        skipOrCompleteInstructions();
+      });
+
+      // Roster screen setup
+      document.getElementById('btn-autofill-mock').addEventListener('click', () => {
+        document.getElementById('player-roster').value = MOCK_ROSTER;
+      });
+
+      document.getElementById('btn-generate-teams').addEventListener('click', generateTeams);
+
+      // Teams Preview actions
+      document.getElementById('btn-re-shuffle').addEventListener('click', generateTeams);
+      document.getElementById('btn-start-championship').addEventListener('click', () => {
+        showScreen('game');
+        renderGameBoard();
+      });
+
+      // Active gaming events
+      document.getElementById('task-trigger-reveal').addEventListener('click', () => {
+        SoundEffects.init();
+        selectRandomTask();
+      });
+      document.getElementById('btn-generate-another-task').addEventListener('click', selectRandomTask);
+      document.getElementById('btn-trigger-start').addEventListener('click', startActiveTimer);
+      
+      document.getElementById('btn-task-success').addEventListener('click', () => {
+        stopActiveTimer(true);
+      });
+
+      document.getElementById('btn-give-up').addEventListener('click', () => {
+        stopActiveTimer(false);
+      });
+
+      document.getElementById('btn-next-turn').addEventListener('click', advanceNextTurn);
+
+      // Play Again Action
+      document.getElementById('btn-play-again').addEventListener('click', () => {
+        state.teams = [];
+        state.currentTeamIndex = 0;
+        state.currentTask = '';
+        state.timerRemaining = MAX_TIMER_SECONDS;
+        state.timerRunning = false;
+        state.timerStartedAt = null;
+        saveState();
+        
+        document.getElementById('player-roster').value = state.playersText;
+        showScreen('setup');
+      });
+
+      // Top floating bar handlers
+      document.getElementById('btn-sound-toggle').addEventListener('click', () => {
+        SoundEffects.toggle();
+      });
+
+      document.getElementById('btn-open-guide').addEventListener('click', () => {
+        SoundEffects.init();
+        guideModal.classList.add('active');
+      });
+      document.getElementById('btn-guide-close').addEventListener('click', () => {
+        guideModal.classList.remove('active');
+      });
+
+      // Verification modal listeners
+      const passcodeField = document.getElementById('admin-passcode-input');
+      const errorMsg = document.getElementById('auth-error-msg');
+
+      document.getElementById('btn-open-admin').addEventListener('click', () => {
+        SoundEffects.init();
+        passcodeField.value = '';
+        errorMsg.style.display = 'none';
+        authModal.classList.add('active');
+        passcodeField.focus();
+      });
+
+      document.getElementById('btn-auth-cancel').addEventListener('click', () => {
+        authModal.classList.remove('active');
+      });
+
+      document.getElementById('btn-auth-submit').addEventListener('click', verifyPasscode);
+      passcodeField.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') verifyPasscode();
+      });
+
+      function verifyPasscode() {
+        const input = passcodeField.value.trim();
+        if (input === '1234') {
+          authModal.classList.remove('active');
+          tasksModal.classList.add('active');
+          renderTasksList();
+        } else {
+          errorMsg.style.display = 'block';
+          passcodeField.value = '';
+          passcodeField.focus();
+        }
+      }
+
+      // Task manager specific action controls
+      document.getElementById('btn-tasks-close').addEventListener('click', () => {
+        tasksModal.classList.remove('active');
+      });
+
+      function addNewTask() {
+        const input = document.getElementById('new-task-input');
+        const text = input.value.trim();
+        if (text.length > 0) {
+          if (!state.customTasks) state.customTasks = [];
+          state.customTasks.push(text);
+          input.value = '';
+          saveState();
+          renderTasksList();
+        }
+      }
+
+      document.getElementById('btn-add-task').addEventListener('click', addNewTask);
+      document.getElementById('new-task-input').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') addNewTask();
+      });
+
+      document.getElementById('btn-reset-tasks-pool').addEventListener('click', () => {
+        state.customTasks = [...GAME_TASKS];
+        saveState();
+        renderTasksList();
+      });
+
+      document.getElementById('btn-global-reset').addEventListener('click', showResetModal);
+      document.getElementById('btn-modal-cancel').addEventListener('click', hideResetModal);
+      document.getElementById('btn-modal-confirm').addEventListener('click', resetGameEntirely);
+
+      // Restore active screen variables inside local data structure
+      if (state.screen === 'setup') {
+        document.getElementById('player-roster').value = state.playersText;
+      } else if (state.screen === 'teams') {
+        renderTeamsPreview();
+      } else if (state.screen === 'game') {
+        renderGameBoard();
+      } else if (state.screen === 'leaderboard') {
+        showLeaderboard();
+      }
+
+      showScreen('tutorial');
+    });
+  </script>
+</body>
+</html>
